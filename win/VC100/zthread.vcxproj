@@ -19,7 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{8F1DEA42-6A5B-4B62-839D-C141A7BFACF2}</ProjectGuid>
+    <ProjectGuid>{262199E8-EEDF-4700-A1D1-E9CC901CF480}</ProjectGuid>
+    <RootNamespace>zthread</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -60,14 +61,14 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\zlib__$(Platform)_$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\zlib__$(Platform)_$(Configuration)\</IntDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\zlib__$(Platform)_$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\zlib__$(Platform)_$(Configuration)\</IntDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\zlib__$(Platform)_$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\zlib__$(Platform)_$(Configuration)\</IntDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\zlib__$(Platform)_$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\zlib__$(Platform)_$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\zthread__$(Platform)_$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\zthread__$(Platform)_$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\zthread__$(Platform)_$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\zthread__$(Platform)_$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\zthread__$(Platform)_$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\zthread__$(Platform)_$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\zthread__$(Platform)_$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\zthread__$(Platform)_$(Configuration)\</IntDir>
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
@@ -93,13 +94,13 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <PrecompiledHeaderOutputFile>.\zlib__$(Platform)_$(Configuration)\zlib.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>.\zthread__$(Platform)_$(Configuration)\zthread.pch</PrecompiledHeaderOutputFile>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CallingConvention>Cdecl</CallingConvention>
     </ClCompile>
     <Lib>
-      <OutputFile>$(OutDir)zlib.lib</OutputFile>
+      <OutputFile>$(OutDir)zthread.lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -112,13 +113,13 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <PrecompiledHeaderOutputFile>.\zlib__$(Platform)_$(Configuration)\zlib.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>.\zthread__$(Platform)_$(Configuration)\zthread.pch</PrecompiledHeaderOutputFile>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CallingConvention>Cdecl</CallingConvention>
     </ClCompile>
     <Lib>
-      <OutputFile>$(OutDir)zlib.lib</OutputFile>
+      <OutputFile>$(OutDir)zthread.lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -136,13 +137,13 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <PrecompiledHeaderOutputFile>.\zlib__$(Platform)_$(Configuration)\zlib.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>.\zthread__$(Platform)_$(Configuration)\zthread.pch</PrecompiledHeaderOutputFile>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CallingConvention>Cdecl</CallingConvention>
     </ClCompile>
     <Lib>
-      <OutputFile>$(OutDir)zlib.lib</OutputFile>
+      <OutputFile>$(OutDir)zthread.lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -158,41 +159,106 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <PrecompiledHeaderOutputFile>.\zlib__$(Platform)_$(Configuration)\zlib.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>.\zthread__$(Platform)_$(Configuration)\zthread.pch</PrecompiledHeaderOutputFile>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CallingConvention>Cdecl</CallingConvention>
     </ClCompile>
     <Lib>
-      <OutputFile>$(OutDir)zlib.lib</OutputFile>
+      <OutputFile>$(OutDir)zthread.lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\dep\src\zlib\adler32.c" />
-    <ClCompile Include="..\..\dep\src\zlib\compress.c" />
-    <ClCompile Include="..\..\dep\src\zlib\crc32.c" />
-    <ClCompile Include="..\..\dep\src\zlib\deflate.c" />
-    <ClCompile Include="..\..\dep\src\zlib\example.c" />
-    <ClCompile Include="..\..\dep\src\zlib\gzio.c" />
-    <ClCompile Include="..\..\dep\src\zlib\infback.c" />
-    <ClCompile Include="..\..\dep\src\zlib\inffast.c" />
-    <ClCompile Include="..\..\dep\src\zlib\inflate.c" />
-    <ClCompile Include="..\..\dep\src\zlib\inftrees.c" />
-    <ClCompile Include="..\..\dep\src\zlib\trees.c" />
-    <ClCompile Include="..\..\dep\src\zlib\uncompr.c" />
-    <ClCompile Include="..\..\dep\src\zlib\zutil.c" />
+    <ClCompile Include="..\..\dep\src\zthread\AtomicCount.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\ConcurrentExecutor.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\Condition.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\CountingSemaphore.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\FastMutex.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\FastRecursiveMutex.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\Monitor.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\Mutex.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\PoolExecutor.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\PriorityCondition.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\PriorityInheritanceMutex.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\PriorityMutex.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\PrioritySemaphore.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\RecursiveMutex.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\RecursiveMutexImpl.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\Semaphore.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\SynchronousExecutor.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\Thread.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\ThreadedExecutor.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\ThreadImpl.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\ThreadLocalImpl.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\ThreadOps.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\ThreadQueue.cxx" />
+    <ClCompile Include="..\..\dep\src\zthread\Time.cxx" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\dep\src\zlib\crc32.h" />
-    <ClInclude Include="..\..\dep\src\zlib\deflate.h" />
-    <ClInclude Include="..\..\dep\src\zlib\inffast.h" />
-    <ClInclude Include="..\..\dep\src\zlib\inffixed.h" />
-    <ClInclude Include="..\..\dep\src\zlib\inflate.h" />
-    <ClInclude Include="..\..\dep\src\zlib\inftrees.h" />
-    <ClInclude Include="..\..\dep\src\zlib\trees.h" />
-    <ClInclude Include="..\..\dep\src\zlib\zconf.h" />
-    <ClInclude Include="..\..\dep\src\zlib\zlib.h" />
-    <ClInclude Include="..\..\dep\src\zlib\zutil.h" />
+    <ClInclude Include="..\..\dep\src\zthread\ConditionImpl.h" />
+    <ClInclude Include="..\..\dep\src\zthread\config.h" />
+    <ClInclude Include="..\..\dep\src\zthread\Debug.h" />
+    <ClInclude Include="..\..\dep\src\zthread\DeferredInterruptionScope.h" />
+    <ClInclude Include="..\..\dep\src\zthread\FastLock.h" />
+    <ClInclude Include="..\..\dep\src\zthread\FastRecursiveLock.h" />
+    <ClInclude Include="..\..\dep\src\zthread\IntrusivePtr.h" />
+    <ClInclude Include="..\..\dep\src\zthread\Monitor.h" />
+    <ClInclude Include="..\..\dep\src\zthread\MutexImpl.h" />
+    <ClInclude Include="..\..\dep\src\zthread\RecursiveMutexImpl.h" />
+    <ClInclude Include="..\..\dep\src\zthread\Scheduling.h" />
+    <ClInclude Include="..\..\dep\src\zthread\SemaphoreImpl.h" />
+    <ClInclude Include="..\..\dep\src\zthread\State.h" />
+    <ClInclude Include="..\..\dep\src\zthread\Status.h" />
+    <ClInclude Include="..\..\dep\src\zthread\ThreadImpl.h" />
+    <ClInclude Include="..\..\dep\src\zthread\ThreadOps.h" />
+    <ClInclude Include="..\..\dep\src\zthread\ThreadQueue.h" />
+    <ClInclude Include="..\..\dep\src\zthread\TimeStrategy.h" />
+    <ClInclude Include="..\..\dep\src\zthread\TSS.h" />
+    <ClInclude Include="..\..\dep\include\zthread\AtomicCount.h" />
+    <ClInclude Include="..\..\dep\include\zthread\Barrier.h" />
+    <ClInclude Include="..\..\dep\include\zthread\BiasedReadWriteLock.h" />
+    <ClInclude Include="..\..\dep\include\zthread\BlockingQueue.h" />
+    <ClInclude Include="..\..\dep\include\zthread\BoundedQueue.h" />
+    <ClInclude Include="..\..\dep\include\zthread\Cancelable.h" />
+    <ClInclude Include="..\..\dep\include\zthread\ClassLockable.h" />
+    <ClInclude Include="..\..\dep\include\zthread\ConcurrentExecutor.h" />
+    <ClInclude Include="..\..\dep\include\zthread\Condition.h" />
+    <ClInclude Include="..\..\dep\include\zthread\Config.h" />
+    <ClInclude Include="..\..\dep\include\zthread\CountedPtr.h" />
+    <ClInclude Include="..\..\dep\include\zthread\CountingSemaphore.h" />
+    <ClInclude Include="..\..\dep\include\zthread\Exceptions.h" />
+    <ClInclude Include="..\..\dep\include\zthread\Executor.h" />
+    <ClInclude Include="..\..\dep\include\zthread\FairReadWriteLock.h" />
+    <ClInclude Include="..\..\dep\include\zthread\FastMutex.h" />
+    <ClInclude Include="..\..\dep\include\zthread\FastRecursiveMutex.h" />
+    <ClInclude Include="..\..\dep\include\zthread\Guard.h" />
+    <ClInclude Include="..\..\dep\include\zthread\GuardedClass.h" />
+    <ClInclude Include="..\..\dep\include\zthread\Lockable.h" />
+    <ClInclude Include="..\..\dep\include\zthread\LockedQueue.h" />
+    <ClInclude Include="..\..\dep\include\zthread\MonitoredQueue.h" />
+    <ClInclude Include="..\..\dep\include\zthread\Mutex.h" />
+    <ClInclude Include="..\..\dep\include\zthread\NonCopyable.h" />
+    <ClInclude Include="..\..\dep\include\zthread\PoolExecutor.h" />
+    <ClInclude Include="..\..\dep\include\zthread\Priority.h" />
+    <ClInclude Include="..\..\dep\include\zthread\PriorityCondition.h" />
+    <ClInclude Include="..\..\dep\include\zthread\PriorityInheritanceMutex.h" />
+    <ClInclude Include="..\..\dep\include\zthread\PriorityMutex.h" />
+    <ClInclude Include="..\..\dep\include\zthread\PrioritySemaphore.h" />
+    <ClInclude Include="..\..\dep\include\zthread\Queue.h" />
+    <ClInclude Include="..\..\dep\include\zthread\ReadWriteLock.h" />
+    <ClInclude Include="..\..\dep\include\zthread\RecursiveMutex.h" />
+    <ClInclude Include="..\..\dep\include\zthread\Runnable.h" />
+    <ClInclude Include="..\..\dep\include\zthread\Semaphore.h" />
+    <ClInclude Include="..\..\dep\include\zthread\Singleton.h" />
+    <ClInclude Include="..\..\dep\include\zthread\SynchronousExecutor.h" />
+    <ClInclude Include="..\..\dep\include\zthread\Task.h" />
+    <ClInclude Include="..\..\dep\include\zthread\Thread.h" />
+    <ClInclude Include="..\..\dep\include\zthread\ThreadedExecutor.h" />
+    <ClInclude Include="..\..\dep\include\zthread\ThreadLocal.h" />
+    <ClInclude Include="..\..\dep\include\zthread\ThreadLocalImpl.h" />
+    <ClInclude Include="..\..\dep\include\zthread\Time.h" />
+    <ClInclude Include="..\..\dep\include\zthread\Waitable.h" />
+    <ClInclude Include="..\..\dep\include\zthread\ZThread.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
