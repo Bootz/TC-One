@@ -24,46 +24,31 @@
 #include "MutexImpl.h"
 #include "ThreadOps.h"
 
-
 namespace ZThread {
-
   class PriorityMutexImpl : public MutexImpl<priority_list, NullBehavior> { };
 
-  PriorityMutex::PriorityMutex() { 
-  
+  PriorityMutex::PriorityMutex() {
     _impl = new PriorityMutexImpl();
-  
   }
 
   PriorityMutex::~PriorityMutex() {
-
-    if(_impl != 0) 
+    if(_impl != 0)
       delete _impl;
-
   }
 
   // P
   void PriorityMutex::acquire() {
-
-    _impl->acquire(); 
-
+    _impl->acquire();
   }
-
 
   // P
   bool PriorityMutex::tryAcquire(unsigned long ms) {
-
-    return _impl->tryAcquire(ms); 
-
+    return _impl->tryAcquire(ms);
   }
 
   // V
   void PriorityMutex::release() {
-
-    _impl->release(); 
-
+    _impl->release();
   }
-
-
 } // namespace ZThread
 

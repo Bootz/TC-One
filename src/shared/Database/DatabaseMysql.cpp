@@ -72,7 +72,6 @@ DatabaseMysql::~DatabaseMysql()
 
 bool DatabaseMysql::Initialize(const char *infoString, bool initDelayThread)
 {
-
     if(!Database::Initialize(infoString))
         return false;
 

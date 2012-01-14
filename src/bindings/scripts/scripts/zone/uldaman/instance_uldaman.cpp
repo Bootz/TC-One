@@ -62,20 +62,19 @@ struct TRINITY_DLL_DECL instance_uldaman : public ScriptedInstance
 
         for(uint8 i=0; i < ENCOUNTERS; ++i)
             Encounters[i] = NOT_STARTED;
-
     }
 
     uint64 archaedasGUID;
     uint64 ironayaGUID;
     uint64 whoWokeArchaedasGUID;
-    
+
     uint64 altarOfTheKeeperTempleDoor;
     uint64 archaedasTempleDoor;
     uint64 ancientVaultDoor;
     uint64 ironayaSealDoor;
-    
+
     uint64 keystoneGUID;
-    
+
     uint32 ironayaSealDoorTimer;
     bool keystoneCheck;
 
@@ -95,14 +94,14 @@ struct TRINITY_DLL_DECL instance_uldaman : public ScriptedInstance
             case ALTAR_OF_THE_KEEPER_TEMPLE_DOOR:         // lock the door
                 altarOfTheKeeperTempleDoor = go->GetGUID();
 
-                if (Encounters[0] == DONE) 
+                if (Encounters[0] == DONE)
                     HandleGameObject(NULL,true,go);
                 break;
 
             case ARCHAEDAS_TEMPLE_DOOR:
                 archaedasTempleDoor = go->GetGUID();
 
-                if (Encounters[0] == DONE) 
+                if (Encounters[0] == DONE)
                     HandleGameObject(NULL,true,go);
                 break;
 
@@ -110,24 +109,24 @@ struct TRINITY_DLL_DECL instance_uldaman : public ScriptedInstance
                 go->SetUInt32Value(GAMEOBJECT_STATE,1);
                 go->SetUInt32Value(GAMEOBJECT_FLAGS, 33);
                 ancientVaultDoor = go->GetGUID();
-                
-                if (Encounters[1] == DONE) 
+
+                if (Encounters[1] == DONE)
                     HandleGameObject(NULL,true,go);
                 break;
-	    
+
 	    case IRONAYA_SEAL_DOOR:
                 ironayaSealDoor = go->GetGUID();
 
-                if (Encounters[2] == DONE) 
+                if (Encounters[2] == DONE)
                     HandleGameObject(NULL,true,go);
 	        break;
-	    
+
 	    case KEYSTONE_GO:
 	        keystoneGUID = go->GetGUID();
 
                 if (Encounters[2] == DONE)
                 {
-                    HandleGameObject(NULL,true,go);		
+                    HandleGameObject(NULL,true,go);
                     go->SetUInt32Value(GAMEOBJECT_FLAGS, GO_FLAG_INTERACT_COND);
 		}
 	        break;
@@ -151,14 +150,13 @@ struct TRINITY_DLL_DECL instance_uldaman : public ScriptedInstance
 
         HandleGameObject(NULL,open,go);
     }
-    
+
     void BlockGO(uint64 guid)
     {
         GameObject *go = instance->GetGameObjectInMap(guid);
         if(!go)
             return;
         go->SetUInt32Value(GAMEOBJECT_FLAGS, GO_FLAG_INTERACT_COND);
-
     }
 
     void ActivateStoneKeepers()
@@ -241,7 +239,7 @@ struct TRINITY_DLL_DECL instance_uldaman : public ScriptedInstance
             whoWokeArchaedasGUID = target;
         }
     }
-    
+
     void ActivateIronaya()
     {
         Creature *ironaya = instance->GetCreatureInMap(ironayaGUID);
@@ -296,20 +294,20 @@ struct TRINITY_DLL_DECL instance_uldaman : public ScriptedInstance
     {
         if (!keystoneCheck)
 	    return;
-	    
+
 	if(ironayaSealDoorTimer <= diff)
         {
 	    ActivateIronaya();
-	    
+
 	    SetDoor(ironayaSealDoor, true);
 	    BlockGO(keystoneGUID);
-	    
+
             SetData(DATA_IRONAYA_DOOR, DONE); //save state
 	    keystoneCheck = false;
         }
 	else
             ironayaSealDoorTimer -= diff;
-    }     
+    }
 
     void SetData (uint32 type, uint32 data)
     {
@@ -320,7 +318,7 @@ struct TRINITY_DLL_DECL instance_uldaman : public ScriptedInstance
                 if(data == DONE)
                     SetDoor (altarOfTheKeeperTempleDoor, true);
                 break;
-	    
+
 	    case DATA_ANCIENT_DOOR:
 	        Encounters[1] = data;
 	        if(data == DONE) //archeadas defeat
@@ -329,20 +327,20 @@ struct TRINITY_DLL_DECL instance_uldaman : public ScriptedInstance
                     SetDoor (ancientVaultDoor, true);
                 }
                 break;
-	    
+
 	    case DATA_IRONAYA_DOOR:
 	    	Encounters[2] = data;
                 break;
-	
+
 	    case DATA_STONE_KEEPERS:
 	        ActivateStoneKeepers();
                 break;
-	
+
 	    case DATA_MINIONS:
                 switch(data)
                 {
                     case NOT_STARTED:
-	                if (Encounters[0] == DONE) //if players opened the doors 
+	                if (Encounters[0] == DONE) //if players opened the doors
                             SetDoor (archaedasTempleDoor, true);
 
                         RespawnMinions();
@@ -363,7 +361,6 @@ struct TRINITY_DLL_DECL instance_uldaman : public ScriptedInstance
 
 	if(data == DONE)
 	{
-
             OUT_SAVE_INST_DATA;
 
             std::ostringstream saveStream;
@@ -373,7 +370,6 @@ struct TRINITY_DLL_DECL instance_uldaman : public ScriptedInstance
 
             SaveToDB();
             OUT_SAVE_INST_DATA_COMPLETE;
-	    
 	}
     }
 
@@ -386,7 +382,6 @@ struct TRINITY_DLL_DECL instance_uldaman : public ScriptedInstance
             SetDoor (archaedasTempleDoor, false); //close when event is started
         }
     }
-
 
     void OnCreatureCreate (Creature *creature, uint32 creature_entry)
     {
@@ -407,10 +402,10 @@ struct TRINITY_DLL_DECL instance_uldaman : public ScriptedInstance
             case 7076:    // Earthen Guardian
                 earthenGuardian.push_back(creature->GetGUID());
                 break;
-		
+
             case 7228:   // Ironaya
                 ironayaGUID = creature->GetGUID();
-                
+
                 if(Encounters[2] != DONE)
                     SetFrozenState (creature);
                 break;
@@ -422,10 +417,8 @@ struct TRINITY_DLL_DECL instance_uldaman : public ScriptedInstance
             case 2748:    // Archaedas
                 archaedasGUID = creature->GetGUID();
                 break;
-
         } // end switch
     } // end OnCreatureCreate
-    
 
     uint64 GetData64 (uint32 identifier)
     {
@@ -468,12 +461,8 @@ struct TRINITY_DLL_DECL instance_uldaman : public ScriptedInstance
                 Encounters[i] = NOT_STARTED;
 
         OUT_LOAD_INST_DATA_COMPLETE;
-
     }
-
 };
-
-
 
 InstanceData* GetInstanceData_instance_uldaman(Map* map)
 {

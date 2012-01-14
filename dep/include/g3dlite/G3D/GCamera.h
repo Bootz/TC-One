@@ -16,7 +16,6 @@
 #include "G3D/Plane.h"
 
 namespace G3D {
-
 /**
   There is a viewport of width x height size in world space that corresponds to
   a screenWidth x screenHeight pixel grid on a
@@ -80,7 +79,6 @@ public:
     GCamera();
 
     virtual ~GCamera();
-
 
     CoordinateFrame getCoordinateFrame() const;
     void getCoordinateFrame(CoordinateFrame& c) const;
@@ -152,13 +150,11 @@ public:
     float getImagePlaneDepth(
         const class Rect2D&                     viewport) const;
 
-
     /**
       Returns the world space ray passing through the center of pixel
       (x, y) on the image plane.  The pixel x and y axes are opposite
       the 3D object space axes: (0,0) is the upper left corner of the screen.
       They are in viewport coordinates, not screen coordinates.
-
 
       Integer (x, y) values correspond to
       the upper left corners of pixels.  If you want to cast rays
@@ -168,7 +164,6 @@ public:
         float                                  x,
         float                                  y,
         const class Rect2D&                     viewport) const;
-
 
     /**
       Returns a negative z-value.
@@ -243,9 +238,7 @@ public:
    void getFrustum(const Rect2D& viewport, GCamera::Frustum& f) const;
 
    GCamera::Frustum frustum(const Rect2D& viewport) const;
-
 };
-
 } // namespace G3D
 
 #endif

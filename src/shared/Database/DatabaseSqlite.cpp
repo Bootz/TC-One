@@ -43,7 +43,6 @@ bool DatabaseSqlite::Initialize(const char *infoString)
 
     if (!mSqlite)
     {
-
         if (errmsg)
             sqlite_freemem(errmsg);
         return false;
@@ -70,7 +69,6 @@ QueryResult* DatabaseSqlite::Query(const char *sql)
 
     if (!tableData)
     {
-
         if (errmsg)
             sqlite_freemem(errmsg);
         return 0;
@@ -79,7 +77,6 @@ QueryResult* DatabaseSqlite::Query(const char *sql)
     QueryResultSqlite *queryResult = new QueryResultSqlite(tableData, rowCount, fieldCount);
     if(!queryResult)
     {
-
         return 0;
     }
 

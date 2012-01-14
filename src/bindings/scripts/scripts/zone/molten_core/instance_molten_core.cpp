@@ -85,15 +85,12 @@ struct TRINITY_DLL_DECL instance_molten_core : public ScriptedInstance
 
              for(uint8 i = 0; i < ENCOUNTERS; i++)
                   Encounter[i] = NOT_STARTED;
-
-
         }
 
         bool IsEncounterInProgress() const
         {
             return false;
         };
-
 
        void OnObjectCreate(GameObject *go)
         {
@@ -122,7 +119,6 @@ struct TRINITY_DLL_DECL instance_molten_core : public ScriptedInstance
                  break;
                  }
         }
-
 
         void OnCreatureCreate(Creature *creature, uint32 creature_entry)
         {

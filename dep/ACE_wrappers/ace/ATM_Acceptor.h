@@ -10,7 +10,6 @@
  */
 //=============================================================================
 
-
 #ifndef ACE_ATM_ACCEPTOR_H
 #define ACE_ATM_ACCEPTOR_H
 #include /**/ "ace/pre.h"
@@ -59,7 +58,6 @@ class ACE_Time_Value;
  */
 class ACE_Export ACE_ATM_Acceptor
 {
-
 public:
   // = Initialization and termination methods.
   /// Default constructor.
@@ -112,7 +110,6 @@ private:
 
 // Close versioned namespace, if enabled by the user.
 ACE_END_VERSIONED_NAMESPACE_DECL
-
 
 #if defined (__ACE_INLINE__)
 #include "ace/ATM_Acceptor.inl"

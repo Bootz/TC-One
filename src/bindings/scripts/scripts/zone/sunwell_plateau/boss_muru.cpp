@@ -160,7 +160,6 @@ struct TRINITY_DLL_DECL boss_entropiusAI : public ScriptedAI
     }
 
     void KilledUnit(Unit* victim){
-
     }
 
     void JustDied(Unit* killer){
@@ -191,7 +190,6 @@ struct TRINITY_DLL_DECL boss_entropiusAI : public ScriptedAI
 
         DoMeleeAttackIfReady();
     }
-
 };
 
 CreatureAI* GetAI_boss_entropius(Creature *_Creature)
@@ -332,7 +330,6 @@ struct TRINITY_DLL_DECL boss_muruAI : public Scripted_NoMovementAI
             else if(Phase == 2) Timer[i] -= diff;
         }
     }
-
 };
 
 CreatureAI* GetAI_boss_muru(Creature *_Creature)
@@ -397,8 +394,6 @@ struct TRINITY_DLL_DECL npc_muru_portalAI : public Scripted_NoMovementAI
             SummonSentinel = false;
         }else SummonTimer -= diff;
     }
-
-
 };
 
 CreatureAI* GetAI_npc_muru_portal(Creature *_Creature)
@@ -454,7 +449,6 @@ struct TRINITY_DLL_DECL npc_dark_fiendAI : public ScriptedAI
             }
         else WaitTimer -= diff;
     }
-
 };
 
 CreatureAI* GetAI_npc_dark_fiend(Creature *_Creature)
@@ -473,7 +467,6 @@ struct TRINITY_DLL_DECL npc_void_sentinelAI : public ScriptedAI
     uint32 PulseTimer;
     uint32 VoidBlastTimer;
 
-
     void Reset() {
         PulseTimer = 3000;
         VoidBlastTimer = 45000; //is this a correct timer?
@@ -488,7 +481,6 @@ struct TRINITY_DLL_DECL npc_void_sentinelAI : public ScriptedAI
         for (uint8 i = 0; i < 8; ++i){
             m_creature->SummonCreature(CREATURE_VOID_SPAWN, m_creature->GetPositionX(),m_creature->GetPositionY(),m_creature->GetPositionZ(), rand()%6, TEMPSUMMON_TIMED_OR_CORPSE_DESPAWN, 180000);
         }
-
     }
     void UpdateAI(const uint32 diff)
     {
@@ -507,7 +499,6 @@ struct TRINITY_DLL_DECL npc_void_sentinelAI : public ScriptedAI
 
         DoMeleeAttackIfReady();
     }
-
 };
 
 CreatureAI* GetAI_npc_void_sentinel(Creature *_Creature)

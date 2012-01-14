@@ -34,7 +34,6 @@ BattleGroundBE::BattleGroundBE()
 
 BattleGroundBE::~BattleGroundBE()
 {
-
 }
 
 void BattleGroundBE::Update(time_t diff)
@@ -203,7 +202,6 @@ void BattleGroundBE::FillInitialWorldStates(WorldPacket &data)
 
 void BattleGroundBE::ResetBGSubclass()
 {
-
 }
 
 bool BattleGroundBE::SetupBattleGround()
@@ -226,7 +224,6 @@ bool BattleGroundBE::SetupBattleGround()
 
 void BattleGroundBE::UpdatePlayerScore(Player* Source, uint32 type, uint32 value)
 {
-
     std::map<uint64, BattleGroundScore*>::iterator itr = m_PlayerScores.find(Source->GetGUID());
 
     if(itr == m_PlayerScores.end())                         // player not found...
@@ -234,7 +231,6 @@ void BattleGroundBE::UpdatePlayerScore(Player* Source, uint32 type, uint32 value
 
     //there is nothing special in this score
     BattleGround::UpdatePlayerScore(Source,type,value);
-
 }
 
 /*

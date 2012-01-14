@@ -80,7 +80,6 @@ struct TRINITY_DLL_DECL instance_mount_hyjal : public ScriptedInstance
 
         hordeRetreat = 0;
         allianceRetreat = 0;
-
     }
 
     bool IsEncounterInProgress() const

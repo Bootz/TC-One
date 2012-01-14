@@ -234,4 +234,3 @@ void AddSC_instance_deadmines()
     newscript->RegisterSelf();
 }
 
-

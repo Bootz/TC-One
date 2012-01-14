@@ -82,7 +82,6 @@ class DBCFile
                 DBCFile &file;
 
                 friend class DBCFile;
-
         };
 
         // Get record by id

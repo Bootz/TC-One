@@ -214,7 +214,7 @@ bool MapManager::CanPlayerEnter(uint32 mapid, Player* player)
         InstanceTemplate const* instance = objmgr.GetInstanceTemplate(mapid);
         if(!instance)
             return false;
-        
+
         return player->Satisfy(objmgr.GetAccessRequirement(instance->access_id), mapid, true);
     }
     else
@@ -259,7 +259,7 @@ MapManager::Update(time_t diff)
     gomp in gcc <4.4 version cannot parallelise loops using random access iterators
     so until gcc 4.4 isnt standard, we need the update_queue workaround
 */
-    
+
 #pragma omp parallel for schedule(dynamic) private(i) shared(update_queue)
     for(int32 i = 0; i < i_maps.size(); ++i)
     {
@@ -287,7 +287,7 @@ void MapManager::DoDelayedMovesAndRemoves()
 	update_queue[i] = iter->second;
 
     omp_set_num_threads(sWorld.getConfig(CONFIG_NUMTHREADS));
-    
+
 #pragma omp parallel for schedule(dynamic) private(i) shared(update_queue)
     for(i=0;i<i_maps.size();i++)
 	update_queue[i]->DoDelayedMovesAndRemoves();

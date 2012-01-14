@@ -188,7 +188,6 @@ struct TRINITY_DLL_DECL boss_hakkarAI : public ScriptedAI
                         DoCast(m_creature->getVictim(),SPELL_ASPECT_OF_MARLI);
                         AspectOfMarli_Timer = 10000;
                     }else AspectOfMarli_Timer -= diff;
-
                 }
             }
             CheckMarli_Timer = 1000;

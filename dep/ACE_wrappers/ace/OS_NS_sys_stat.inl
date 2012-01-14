@@ -11,7 +11,6 @@ ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 namespace ACE_OS
 {
-
   ACE_INLINE ACE_HANDLE
   creat (const ACE_TCHAR *filename, mode_t mode)
   {
@@ -289,7 +288,6 @@ namespace ACE_OS
     return ::umask (cmask); // This call shouldn't fail...
 # endif /* ACE_LACKS_UMASK */
   }
-
 } // ACE_OS namespace
 
 ACE_END_VERSIONED_NAMESPACE_DECL

@@ -24,30 +24,21 @@
 #include "FastRecursiveLock.h"
 
 namespace ZThread {
-
-  FastRecursiveMutex::FastRecursiveMutex() 
+  FastRecursiveMutex::FastRecursiveMutex()
     : _lock(new FastRecursiveLock) { }
 
-  FastRecursiveMutex::~FastRecursiveMutex() 
+  FastRecursiveMutex::~FastRecursiveMutex()
   { delete _lock; }
 
-
   void FastRecursiveMutex::acquire() {
-
     _lock->acquire();
-
   }
 
   bool FastRecursiveMutex::tryAcquire(unsigned long timeout) {
-  
     return _lock->tryAcquire(timeout);
-
   }
 
   void FastRecursiveMutex::release() {
-
     _lock->release();
-
   }
-
 } // namespace ZThread

@@ -975,7 +975,6 @@ void Player::HandleLava()
 
             m_breathTimer = 1000;
         }
-
     }
     //Death timer disabled and WaterFlags reset
     else if (m_deathState == DEAD)
@@ -1263,7 +1262,6 @@ void Player::Update( uint32 p_time )
             m_breathTimer = 0;
         else
             m_breathTimer -= p_time;
-
     }
 
     //Handle Water/drowning
@@ -3038,7 +3036,6 @@ void Player::removeSpell(uint32 spell_id, bool disabled)
                 SetSkill(prevSkill->skill,skill_value,skill_max_value);
             }
         }
-
     }
     else
     {
@@ -3464,7 +3461,6 @@ void Player::BuildCreateUpdateBlockForPlayer( UpdateData *data, Player *target )
 
     if(target == this)
     {
-
         for(int i = INVENTORY_SLOT_BAG_START; i < BANK_SLOT_BAG_END; i++)
         {
             if(m_items[i] == NULL)
@@ -4277,7 +4273,6 @@ void Player::CleanupChannels()
         ch->Leave(GetGUID(), false);                        // not send to client, not remove from player's channel list
         if (ChannelMgr* cMgr = channelMgr(GetTeam()))
             cMgr->LeftChannel(ch->GetName());               // deleted channel if empty
-
     }
     sLog.outDebug("Player: channels cleaned up!");
 }
@@ -7003,7 +6998,6 @@ void Player::UpdateEquipSpellsAtFormChange()
 }
 void Player::CastItemCombatSpell(Unit *target, WeaponAttackType attType, uint32 procVictim, uint32 procEx, SpellEntry const *spellInfo)
 {
-
     if(spellInfo && ( (spellInfo->Attributes & SPELL_ATTR_STOP_ATTACK_TARGET) ||
       (spellInfo->DmgClass == SPELL_DAMAGE_CLASS_MAGIC || spellInfo->DmgClass == SPELL_DAMAGE_CLASS_NONE)) )
         return;
@@ -8858,7 +8852,6 @@ bool Player::IsValidPos( uint8 bag, uint8 slot ) const
     // where this?
     return false;
 }
-
 
 bool Player::HasItemCount( uint32 item, uint32 count, bool inBankAlso ) const
 {
@@ -12324,7 +12317,6 @@ bool Player::CanCompleteQuest( uint32 quest_id )
 
         if ( q_status.m_status == QUEST_STATUS_INCOMPLETE )
         {
-
             if ( qInfo->HasFlag( QUEST_TRINITY_FLAGS_DELIVER ) )
             {
                 for(int i = 0; i < QUEST_OBJECTIVES_COUNT; i++)
@@ -13862,7 +13854,6 @@ void Player::_LoadArenaTeamInfo(QueryResult *result)
         m_uint32Values[PLAYER_FIELD_ARENA_TEAM_INFO_1_1 + arenaSlot * 6 + 3] = played_season;    // Played Season
         m_uint32Values[PLAYER_FIELD_ARENA_TEAM_INFO_1_1 + arenaSlot * 6 + 4] = 0;                // Unk
         m_uint32Values[PLAYER_FIELD_ARENA_TEAM_INFO_1_1 + arenaSlot * 6 + 5] = personal_rating;  // Personal Rating
-
     }while (result->NextRow());
     delete result;
 }
@@ -16956,7 +16947,6 @@ void Player::RemovePetitionsAndSigns(uint64 guid, uint32 type)
             Player* owner = objmgr.GetPlayer(ownerguid);
             if(owner)
                 owner->GetSession()->SendPetitionQueryOpcode(petitionguid);
-
         } while ( result->NextRow() );
 
         delete result;
@@ -19494,7 +19484,6 @@ void Player::SetTitle(CharTitlesEntry const* title)
     uint32 flag = 1 << (title->bit_index%32);
     SetFlag(PLAYER__FIELD_KNOWN_TITLES+fieldIndexOffset, flag);
 }
-
 
 /*-----------------------TRINITY--------------------------*/
 bool Player::isTotalImmunity()

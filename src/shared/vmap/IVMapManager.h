@@ -31,7 +31,6 @@ This is the minimum interface to the VMapMamager.
 
 namespace VMAP
 {
-
     enum VMAP_LOAD_RESULT
     {
         VMAP_LOAD_RESULT_ERROR,
@@ -96,7 +95,6 @@ namespace VMAP
             */
             virtual void preventMapsFromBeingUsed(const char* pMapIdString) =0;
     };
-
 }
 #endif
 

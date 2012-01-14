@@ -93,6 +93,5 @@ namespace VMAP
 
         return canHitThisNode;
     }
-
 }                                                           // VMAP
 

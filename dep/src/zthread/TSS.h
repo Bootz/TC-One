@@ -44,7 +44,6 @@
 
 #endif
 
-
 #ifndef __ZTTSS_H__
 #error "No TSS implementation could be selected"
 #endif

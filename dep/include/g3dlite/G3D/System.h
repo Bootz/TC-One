@@ -22,9 +22,7 @@
 #   include <CoreServices/CoreServices.h>
 #endif
 
-
 namespace G3D {
-
 typedef double RealTime;
 
 class System {
@@ -113,10 +111,7 @@ public:
     one on some processors.  Guaranteed to have the same behavior as memset
     in all cases. */
     static void memset(void* dst, uint8 value, size_t numBytes);
-
 };
-
-
 } // namespace
 
 #endif

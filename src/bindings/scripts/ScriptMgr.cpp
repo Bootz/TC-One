@@ -55,7 +55,6 @@ void LoadDatabase()
     }
 
     TScriptDB.HaltDelayThread();
-
 }
 
 struct TSpellSummary {
@@ -92,7 +91,7 @@ void ScriptsInit(char const* cfg_file = "trinitycore.conf")
     //Get configuration file
     if (!TScriptConfig.SetSource(cfg_file))
         error_log("TSCR: Unable to open configuration file. Database will be unaccessible. Configuration values will use default.");
-    else 
+    else
         outstring_log("TSCR: Using configuration file %s",cfg_file);
 
     outstring_log("");

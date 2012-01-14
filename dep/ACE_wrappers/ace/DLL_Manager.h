@@ -31,7 +31,6 @@
 
 #define ACE_DEFAULT_DLL_MANAGER_SIZE 1024
 
-
 ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 /**
@@ -260,7 +259,6 @@ private:
   /// Synchronization variable for the MT_SAFE Repository
   ACE_Thread_Mutex lock_;
 #endif /* ACE_MT_SAFE */
-
 };
 
 ACE_END_VERSIONED_NAMESPACE_DECL

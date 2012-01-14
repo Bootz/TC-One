@@ -3,7 +3,6 @@
 
   @maintainer Morgan McGuire, matrix@graphics3d.com
 
-
   @created 2006-03-29
   @edited  2006-04-06
  */
@@ -16,7 +15,6 @@
 #include <string>
 
 namespace G3D {
-
 /** Cryptography and hashing helper functions */
 class Crypto {
 public:
@@ -40,7 +38,6 @@ public:
     /** Returns 1 + the largest value that can be passed to smallPrime. */
     static int numSmallPrimes();
 };
-
 }
 
 #endif

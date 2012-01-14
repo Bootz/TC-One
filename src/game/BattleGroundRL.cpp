@@ -34,7 +34,6 @@ BattleGroundRL::BattleGroundRL()
 
 BattleGroundRL::~BattleGroundRL()
 {
-
 }
 
 void BattleGroundRL::Update(time_t diff)
@@ -198,7 +197,6 @@ void BattleGroundRL::FillInitialWorldStates(WorldPacket &data)
 
 void BattleGroundRL::ResetBGSubclass()
 {
-
 }
 
 bool BattleGroundRL::SetupBattleGround()

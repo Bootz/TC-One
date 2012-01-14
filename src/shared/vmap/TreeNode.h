@@ -170,7 +170,6 @@ namespace VMAP
                 int secondChild = NONE;
 
                 if (ray.origin[iSplitAxis] < iSplitLocation) {
-
                     // The ray starts on the small side
                     firstChild = 0;
 
@@ -178,9 +177,7 @@ namespace VMAP
                         // The ray will eventually reach the other side
                         secondChild = 1;
                     }
-
                 } else if (ray.origin[iSplitAxis] > iSplitLocation) {
-
                     // The ray starts on the large side
                     firstChild = 1;
 

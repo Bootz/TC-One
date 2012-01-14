@@ -92,7 +92,6 @@ inline long ace_timezone()
 #endif
 }
 
-
 #if !defined (ACE_LACKS_DIFFTIME)
 # if defined (_WIN32_WCE) && (_WIN32_WCE == 0x600) && !defined (_USE_32BIT_TIME_T) \
     && defined (_MSC_VER)
@@ -280,7 +279,6 @@ ACE_END_VERSIONED_NAMESPACE_DECL
 #else
 # define ACE_GETHRTIME_NAME ACE_gethrtime
 #endif  /* ACE_HAS_VERSIONED_NAMESPACE == 1 */
-
 
 # if defined (ACE_HAS_INLINED_OSCALLS)
 #   if defined (ACE_INLINE)

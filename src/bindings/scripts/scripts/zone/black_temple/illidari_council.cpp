@@ -346,7 +346,6 @@ struct TRINITY_DLL_DECL mob_illidari_councilAI : public ScriptedAI
                 CheckTimer = 2000;
             }else CheckTimer -= diff;
         }
-
     }
 };
 
@@ -524,7 +523,6 @@ struct TRINITY_DLL_DECL boss_gathios_the_shattererAI : public boss_illidari_coun
             {
                 if(Unit* pUnit = SelectCouncilMember())
                 {
-                    
                     switch(rand()%2)
                     {
                         case 0: DoCast(pUnit, SPELL_BLESS_SPELLWARD);  break;

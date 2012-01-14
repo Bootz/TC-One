@@ -221,7 +221,6 @@ void Creature::SearchFormation()
     CreatureGroupInfoType::iterator frmdata = CreatureGroupMap.find(lowguid);
     if(frmdata != CreatureGroupMap.end())
         formation_mgr.AddCreatureToGroup(frmdata->second->leaderGUID, this);
-
 }
 
 void Creature::RemoveCorpse()
@@ -1027,7 +1026,6 @@ void Creature::OnGossipSelect(Player* player, uint32 option)
             OnPoiSelect( player, gossip );
             break;
     }
-
 }
 
 void Creature::OnPoiSelect(Player* player, GossipOption const *gossip)
@@ -1900,7 +1898,7 @@ void Creature::DoFleeToGetAssistance()
 
     if(HasAuraType(SPELL_AURA_PREVENTS_FLEEING))
         return;
-    
+
     float radius = sWorld.getConfig(CONFIG_CREATURE_FAMILY_FLEE_ASSISTANCE_RADIUS);
     if (radius >0)
     {
@@ -1924,7 +1922,6 @@ void Creature::DoFleeToGetAssistance()
         else
             GetMotionMaster()->MoveSeekAssistance(pCreature->GetPositionX(), pCreature->GetPositionY(), pCreature->GetPositionZ());
     }
-
 }
 
 Unit* Creature::SelectNearestTarget(float dist) const

@@ -312,7 +312,6 @@ bool ChatHandler::HandleGMTicketListCommand(const char* args)
     return true;
 }
 
-
 bool ChatHandler::HandleGMTicketListOnlineCommand(const char* args)
 {
     SendSysMessage(LANG_COMMAND_TICKETSHOWONLINELIST);
@@ -2392,7 +2391,6 @@ bool ChatHandler::HandleNameTeleCommand(const char * args)
     Player *chr = objmgr.GetPlayer(name.c_str());
     if (chr)
     {
-
         if(chr->IsBeingTeleported()==true)
         {
             PSendSysMessage(LANG_IS_TELEPORTED, chr->GetName());

@@ -460,7 +460,6 @@ struct TRINITY_DLL_DECL boss_hex_lord_malacrassAI : public ScriptedAI
 
 struct TRINITY_DLL_DECL boss_thurgAI : public boss_hexlord_addAI
 {
-
     boss_thurgAI(Creature *c) : boss_hexlord_addAI(c) {}
 
     uint32 bloodlust_timer;
@@ -646,7 +645,6 @@ struct TRINITY_DLL_DECL boss_lord_raadanAI : public boss_hexlord_addAI
         thunderclap_timer = 13000;
 
         boss_hexlord_addAI::Reset();
-
     }
     void UpdateAI(const uint32 diff)
     {
@@ -682,7 +680,6 @@ struct TRINITY_DLL_DECL boss_darkheartAI : public boss_hexlord_addAI
         psychicwail_timer = 8000;
 
         boss_hexlord_addAI::Reset();
-
     }
     void UpdateAI(const uint32 diff)
     {
@@ -706,7 +703,6 @@ struct TRINITY_DLL_DECL boss_slitherAI : public boss_hexlord_addAI
     boss_slitherAI(Creature *c) : boss_hexlord_addAI(c) {}
 
     uint32 venomspit_timer;
-
 
     void Reset()
     {
@@ -754,12 +750,10 @@ struct TRINITY_DLL_DECL boss_fenstalkerAI : public boss_hexlord_addAI
 
     uint32 volatileinf_timer;
 
-
     void Reset()
     {
         volatileinf_timer = 15000;
         boss_hexlord_addAI::Reset();
-
     }
     void UpdateAI(const uint32 diff)
     {
@@ -781,7 +775,6 @@ struct TRINITY_DLL_DECL boss_fenstalkerAI : public boss_hexlord_addAI
 #define SPELL_COLD_STARE      43593
 #define SPELL_MIGHTY_BLOW     43592
 
-
 struct TRINITY_DLL_DECL boss_koraggAI : public boss_hexlord_addAI
 {
     boss_koraggAI(Creature *c) : boss_hexlord_addAI(c) {}
@@ -789,13 +782,11 @@ struct TRINITY_DLL_DECL boss_koraggAI : public boss_hexlord_addAI
     uint32 coldstare_timer;
     uint32 mightyblow_timer;
 
-
     void Reset()
     {
         coldstare_timer = 15000;
         mightyblow_timer = 10000;
         boss_hexlord_addAI::Reset();
-
     }
     void UpdateAI(const uint32 diff)
     {

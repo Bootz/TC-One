@@ -30,7 +30,6 @@
 #include "World.h"
 #include "Chat.h"
 
-
 void WorldSession::HandleGMTicketCreateOpcode( WorldPacket & recv_data )
 {
     // always do a packet check
@@ -83,7 +82,6 @@ void WorldSession::HandleGMTicketCreateOpcode( WorldPacket & recv_data )
     SendPacket(&data);
 
     sWorld.SendGMText(LANG_COMMAND_TICKETNEW, ticket->name.c_str(), ticket->guid);
-
 }
 
 void WorldSession::HandleGMTicketUpdateOpcode( WorldPacket & recv_data)
@@ -125,7 +123,6 @@ void WorldSession::HandleGMTicketUpdateOpcode( WorldPacket & recv_data)
     SendPacket(&data);
 
     sWorld.SendGMText(LANG_COMMAND_TICKETUPDATED, GetPlayer()->GetName(), ticket->guid);
-
 }
 
 void WorldSession::HandleGMTicketDeleteOpcode( WorldPacket & /*recv_data*/)
@@ -173,7 +170,6 @@ void WorldSession::HandleGMTicketGetTicketOpcode( WorldPacket & /*recv_data*/)
     data << ticket->message.c_str();
 
     SendPacket(&data);
-
 }
 
 void WorldSession::HandleGMTicketSystemStatusOpcode( WorldPacket & /*recv_data*/)
@@ -188,7 +184,6 @@ void WorldSession::HandleGMTicketSystemStatusOpcode( WorldPacket & /*recv_data*/
     // in case of disactivity, this should be set to (0)
 
     data << uint32(1);
-
 
     // Send Packet
     SendPacket(&data);

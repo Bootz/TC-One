@@ -30,7 +30,6 @@
 #include "ace/Basic_Types.h"
 #include "ace/Global_Macros.h"
 
-
 ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 /**
@@ -48,7 +47,6 @@ class ACE_Export ACE_Base64
 public:
 
   //@{
-
   /**
    * Encodes a stream of bytes to Base64 data
    *
@@ -111,7 +109,6 @@ private:
 
   /// Boolean to denote whether initialization is complete
   static bool init_;
-
 };
 
 ACE_END_VERSIONED_NAMESPACE_DECL

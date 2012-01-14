@@ -308,8 +308,6 @@ MotionMaster::MovePoint(uint32 id, float x, float y, float z)
     }
 }
 
-
-
 void MotionMaster::MoveJumpTo(float angle, float speedXY, float speedZ)
 {
     //this function may make players fall below map
@@ -404,7 +402,6 @@ MotionMaster::MoveSeekAssistanceDistract(uint32 time)
         Mutate(new AssistanceDistractMovementGenerator(time), MOTION_SLOT_ACTIVE);
     }
 }
-      
 
 void
 MotionMaster::MoveFleeing(Unit* enemy, uint32 time)
@@ -432,7 +429,6 @@ MotionMaster::MoveFleeing(Unit* enemy, uint32 time)
             Mutate(new TimedFleeingMovementGenerator(enemy->GetGUID(), time), MOTION_SLOT_CONTROLLED);
         else
             Mutate(new FleeingMovementGenerator<Creature>(enemy->GetGUID()), MOTION_SLOT_CONTROLLED);
-
     }
 }
 

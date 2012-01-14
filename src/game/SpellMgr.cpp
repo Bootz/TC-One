@@ -937,7 +937,6 @@ void SpellMgr::LoadSpellTargetPositions()
     QueryResult *result = WorldDatabase.Query("SELECT id, target_map, target_position_x, target_position_y, target_position_z, target_orientation FROM spell_target_position");
     if( !result )
     {
-
         barGoLink bar( 1 );
 
         bar.step();
@@ -1003,7 +1002,6 @@ void SpellMgr::LoadSpellTargetPositions()
         }
 
         mSpellTargetPositions[Spell_ID] = st;
-
     } while( result->NextRow() );
 
     delete result;
@@ -1022,7 +1020,6 @@ void SpellMgr::LoadSpellAffects()
     QueryResult *result = WorldDatabase.Query("SELECT entry, effectId, SpellFamilyMask FROM spell_affect");
     if( !result )
     {
-
         barGoLink bar( 1 );
 
         bar.step();
@@ -1162,7 +1159,6 @@ void SpellMgr::LoadSpellProcEvents()
     QueryResult *result = WorldDatabase.Query("SELECT entry, SchoolMask, SpellFamilyName, SpellFamilyMask, procFlags, procEx, ppmRate, CustomChance, Cooldown FROM spell_proc_event");
     if( !result )
     {
-
         barGoLink bar( 1 );
 
         bar.step();
@@ -1404,7 +1400,6 @@ void SpellMgr::LoadSpellElixirs()
     QueryResult *result = WorldDatabase.Query("SELECT entry, mask FROM spell_elixir");
     if( !result )
     {
-
         barGoLink bar( 1 );
 
         bar.step();
@@ -1464,7 +1459,6 @@ void SpellMgr::LoadSpellEnchantProcData()
     QueryResult *result = WorldDatabase.Query("SELECT entry, customChance, PPMChance, procEx FROM spell_enchant_proc_data");
     if( !result )
     {
-
         barGoLink bar( 1 );
 
         bar.step();
@@ -2236,7 +2230,6 @@ void SpellMgr::LoadSpellPetAuras()
     QueryResult *result = WorldDatabase.Query("SELECT spell, pet, aura FROM spell_pet_auras");
     if( !result )
     {
-
         barGoLink bar( 1 );
 
         bar.step();
@@ -2378,7 +2371,6 @@ void SpellMgr::LoadSpellCustomAttr()
                     break;
             }
         }
-
 
         for(uint32 j = 0; j < 3; ++j)
         {
@@ -2715,7 +2707,7 @@ bool IsSpellAllowedInLocation(SpellEntry const *spellInfo,uint32 map_id,uint32 z
             MapEntry const* mapEntry = sMapStore.LookupEntry(map_id);
             if(!mapEntry)
                 return false;
-            
+
             //the follow code doesn't work.
             //if(!mapEntry->IsBattleArena())
             //    return false;

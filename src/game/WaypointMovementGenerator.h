@@ -113,7 +113,6 @@ public PathMovementBase<Player>
         void SetCurrentNodeAfterTeleport();
         void SkipCurrentNode() { ++i_currentNode; }
         bool GetDestination(float& x, float& y, float& z) const { i_destinationHolder.GetDestination(x,y,z); return true; }
-
 };
 #endif
 

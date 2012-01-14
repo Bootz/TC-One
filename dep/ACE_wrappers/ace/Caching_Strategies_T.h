@@ -109,7 +109,6 @@ template <class ATTRIBUTES, class CACHING_UTILITY, class IMPLEMENTATION>
 class ACE_Caching_Strategy_Adapter
   : public ACE_Caching_Strategy<ATTRIBUTES, CACHING_UTILITY>
 {
-
 public:
 
   /// Constructor.
@@ -242,7 +241,6 @@ public:
   int notify_unbind (int result,
                      const ATTRIBUTES &attr);
 
-
   /// This method acts as a notification about the CONTAINERs trybind
   /// method call
   int notify_trybind (int result,
@@ -298,7 +296,6 @@ private:
 template <class ATTRIBUTES, class CACHING_UTILITY>
 class ACE_LFU_Caching_Strategy
 {
-
 public:
 
   // Traits.
@@ -391,7 +388,6 @@ private:
 template<class ATTRIBUTES, class CACHING_UTILITY>
 class ACE_FIFO_Caching_Strategy
 {
-
 public:
 
   typedef ATTRIBUTES CACHING_ATTRIBUTES;
@@ -478,7 +474,6 @@ private:
 template<class ATTRIBUTES, class CACHING_UTILITY>
 class ACE_Null_Caching_Strategy
 {
-
 public:
 
   // = Traits.

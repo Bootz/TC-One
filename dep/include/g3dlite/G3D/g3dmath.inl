@@ -1,8 +1,8 @@
 /**
  @file g3dmath.inl
- 
+
   @maintainer Morgan McGuire, matrix@graphics3d.com
- 
+
  @created 2001-06-02
  @edited  2006-01-14
  */
@@ -16,7 +16,6 @@
 #endif
 
 namespace G3D {
-
 inline bool isNaN(double x) {
     bool b1  = (x < 0.0);
     bool b2  = (x >= 0.0);
@@ -159,7 +158,6 @@ inline float uniformRandom(float low, float hi) {
     return (hi - low) * float(::rand()) / float(RAND_MAX) + low;
 }
 
-
 //----------------------------------------------------------------------------
 inline double G3D_DEPRECATED symmetricRandom () {
     return 2.0 * double(::rand()) / double(RAND_MAX) - 1.0;
@@ -280,7 +278,6 @@ inline bool fuzzyLe(double a, double b) {
 inline int iMod3(int x) {
     return x % 3;
 }
-
 } // namespace G3D
 
 #ifdef _MSC_VER

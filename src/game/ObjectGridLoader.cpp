@@ -130,7 +130,6 @@ void LoadHelper(CellGuidSet const& guid_set, CellPair &cell, GridRefManager<T> &
             map->AddToActive(obj);
 
         ++count;
-
     }
 }
 

@@ -79,7 +79,6 @@ class TRINITY_DLL_SPEC UnitBaseEvent
         bool matchesTypeMask(uint32 pMask) const { return iType & pMask; }
 
         void setType(uint32 pType) { iType = pType; }
-
 };
 
 //==============================================================

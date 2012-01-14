@@ -23,7 +23,6 @@
 #ifndef __ZTLIBRARY_H__
 #define __ZTLIBRARY_H__
 
-
 #include "zthread/Barrier.h"
 #include "zthread/BiasedReadWriteLock.h"
 #include "zthread/BlockingQueue.h"

@@ -230,7 +230,6 @@ public:
    */
   class ACE_Export Policy
   {
-
   public:
 
     /// Virtual destructor.
@@ -316,7 +315,6 @@ private:
  */
 class ACE_Export ACE_Event_Handler_var
 {
-
 public:
 
   /// Default constructor.

@@ -956,7 +956,6 @@ struct TRINITY_DLL_DECL boss_warlord_salarisAI : public boss_priestess_guestAI
     void JustDied(Unit* killer);
 
     void EnterCombat(Unit* who){}
-
 };*/
 
 struct TRINITY_DLL_DECL boss_garaxxasAI : public boss_priestess_guestAI

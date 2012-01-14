@@ -215,7 +215,6 @@ struct TRINITY_DLL_DECL boss_alarAI : public ScriptedAI
                 m_creature->GetMotionMaster()->MovePoint(0, waypoint[cur_wp][0], waypoint[cur_wp][1], waypoint[cur_wp][2]);
                 ForceTimer = 5000;
             }else ForceTimer -= diff;
-
         }
         if(WaitEvent)
         {
@@ -480,7 +479,6 @@ struct TRINITY_DLL_DECL mob_ember_of_alarAI : public ScriptedAI
 
         DoMeleeAttackIfReady();
     }
-
 };
 
 CreatureAI* GetAI_mob_ember_of_alar(Creature *_Creature)

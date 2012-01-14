@@ -139,7 +139,6 @@ namespace FactorySelector
         }*/
 
         return ( mv_factory == NULL ? NULL : mv_factory->Create(creature) );
-
     }
 }
 

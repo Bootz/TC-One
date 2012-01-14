@@ -338,7 +338,6 @@ namespace ACE_Utils
       return
         (static_cast<promote_type> (lhs) > static_cast<promote_type> (rhs));
     }
-
   };
 
   // -----------------------------------------------------
@@ -424,7 +423,6 @@ namespace ACE_Utils
          ? ACE_Numeric_Limits<TO>::max ()
          : static_cast<TO> (val));
     }
-
   };
 
   // Partial specialization for the case where the types are the same.
@@ -437,7 +435,6 @@ namespace ACE_Utils
       return val;
     }
   };
-
 
 #if defined (ACE_LACKS_LONGLONG_T) || defined (ACE_LACKS_UNSIGNEDLONGLONG_T)
   // Partial specialization for the case where we're casting from
@@ -507,7 +504,6 @@ namespace ACE_Utils
 
     return truncator() (val);
   }
-
 } // namespace ACE_Utils
 
 ACE_END_VERSIONED_NAMESPACE_DECL

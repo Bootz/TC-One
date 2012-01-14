@@ -15,7 +15,6 @@
  */
 //=============================================================================
 
-
 #ifndef ACE_TOKEN_REQUEST_REPLY_H
 #define ACE_TOKEN_REQUEST_REPLY_H
 #include /**/ "ace/pre.h"
@@ -254,7 +253,6 @@ private:
 
     /// magic cookie
     ACE_UINT32 arg_;
-
   } transfer_;
 };
 

@@ -21,7 +21,6 @@
 #include "G3D/Array.h"
 
 namespace G3D {
-
 /**
  An axis-aligned box.
  */
@@ -64,7 +63,6 @@ public:
         lo = low;
         hi = high;
     }
-
 
     inline const Vector3& low() const {
         return lo;
@@ -241,7 +239,6 @@ public:
         out = *this;
     }
 };
-
 }
 
 /**
@@ -250,7 +247,6 @@ public:
 inline unsigned int hashCode(const G3D::AABox& b) {
     return b.hashCode();
 }
-
 
 #endif
 

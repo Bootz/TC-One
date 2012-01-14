@@ -823,7 +823,6 @@ struct TRINITY_DLL_DECL boss_bigbadwolfAI : public ScriptedAI
             DoCast(m_creature->getVictim(), SPELL_WIDE_SWIPE);
             SwipeTimer = 25000 + rand()%5000;
         }else SwipeTimer -= diff;
-
     }
 };
 

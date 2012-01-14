@@ -95,7 +95,6 @@ void CombatAI::UpdateAI(const uint32 diff)
         DoMeleeAttackIfReady();
 }
 
-
 /////////////////
 //CasterAI
 /////////////////

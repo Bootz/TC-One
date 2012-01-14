@@ -185,7 +185,6 @@ struct TRINITY_DLL_DECL boss_high_king_maulgarAI : public ScriptedAI
             }
        }
 
-
     void EnterCombat(Unit *who)
     {
         StartEvent(who);
@@ -395,7 +394,6 @@ struct TRINITY_DLL_DECL boss_olm_the_summonerAI : public ScriptedAI
                 DoCast(target, SPELL_DEATH_COIL);
             DeathCoil_Timer = 20000;
         }else DeathCoil_Timer -= diff;
-
 
         DoMeleeAttackIfReady();
     }

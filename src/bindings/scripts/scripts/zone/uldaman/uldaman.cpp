@@ -33,8 +33,6 @@ EndContentData */
 
 #define QUEST_HIDDEN_CHAMBER 2240
 
-
-
 /*######
 ## mob_jadespine_basilisk
 ######*/
@@ -79,7 +77,6 @@ struct TRINITY_DLL_DECL mob_jadespine_basiliskAI : public ScriptedAI
 
             if (Target)
                 m_creature->TauntApply(Target);
-
         }else Cslumber_Timer -= diff;
 
         DoMeleeAttackIfReady();
@@ -177,7 +174,6 @@ bool GossipSelect_npc_lore_keeper_of_norgannon(Player *player, Creature *_Creatu
     return true;
 }
 
-
 /*######
 ## go_keystone_chamber
 ######*/
@@ -195,7 +191,6 @@ bool GOHello_go_keystone_chamber(Player *player, GameObject* go)
     return false;
 }
 
-
 /*######
 ## at_map_chamber
 ######*/
@@ -207,8 +202,6 @@ bool AT_map_chamber(Player *pPlayer, AreaTriggerEntry *at)
 
     return true;
 }
-
-
 
 void AddSC_uldaman()
 {
@@ -224,7 +217,7 @@ void AddSC_uldaman()
     newscript->pGossipHello = &GossipHello_npc_lore_keeper_of_norgannon;
     newscript->pGossipSelect = &GossipSelect_npc_lore_keeper_of_norgannon;
     newscript->RegisterSelf();
-    
+
     newscript = new Script;
     newscript->Name="go_keystone_chamber";
     newscript->pGOHello = &GOHello_go_keystone_chamber;

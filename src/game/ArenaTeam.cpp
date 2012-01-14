@@ -41,7 +41,6 @@ ArenaTeam::ArenaTeam()
 
 ArenaTeam::~ArenaTeam()
 {
-
 }
 
 bool ArenaTeam::Create(uint64 captainGuid, uint32 type, std::string ArenaTeamName)

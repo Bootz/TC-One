@@ -29,8 +29,6 @@
 class Database;
 class SqlOperation;
 
-
-
 class SqlDelayThread : public ZThread::Runnable
 {
 typedef ZThread::MonitoredQueue<SqlOperation*, ZThread::FastMutex> SqlQueue;

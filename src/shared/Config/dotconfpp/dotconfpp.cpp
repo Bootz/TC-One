@@ -1,4 +1,3 @@
-
 #include "Common.h"
 
 #include "dotconfpp.h"
@@ -83,7 +82,6 @@ int DOTCONFDocument::cleanupLine(char * line)
         if((*line == '#' || *line == ';') && !quoted){
             *bg = 0;
             if(strlen(start)){
-
                 if(concat){
                     word = (char*)mempool->alloc(strlen(words.back())+strlen(start)+1);
                     strcpy(word, words.back());
@@ -119,7 +117,6 @@ int DOTCONFDocument::cleanupLine(char * line)
         if(*line == '\\' && (*(line+1) == '\n' || *(line+1) == '\r')){
             *bg = 0;
             if(strlen(start)){
-
                 if(concat){
                     word = (char*)mempool->alloc(strlen(words.back())+strlen(start)+1);
                     strcpy(word, words.back());
@@ -141,7 +138,6 @@ int DOTCONFDocument::cleanupLine(char * line)
         if(isspace(*line) && !quoted){
             *bg++ = 0;
             if(strlen(start)){
-
                 if(concat){
                     word = (char*)mempool->alloc(strlen(words.back())+strlen(start)+1);
                     strcpy(word, words.back());
@@ -230,11 +226,9 @@ int DOTCONFDocument::parseLine()
             if(!nodeTree.empty()){
                 DOTCONFDocumentNode * prev = nodeTree.back();
                 if(prev->closed){
-
                     curPrev->nextNode = tagNode;
                     tagNode->previousNode = curPrev;
                     tagNode->parentNode = curParent;
-
                 } else {
                     prev->childNode = tagNode;
                     tagNode->parentNode = prev;
@@ -304,7 +298,6 @@ int DOTCONFDocument::checkConfig(const std::list<DOTCONFDocumentNode*>::iterator
         }
         vi = 0;
         while( vi < tagNode->valuesCount ){
-
             if(strstr(tagNode->values[vi], "${") && strchr(tagNode->values[vi], '}') ){
                 ret = macroSubstitute(tagNode, vi );
                 mempool->free();
@@ -351,7 +344,6 @@ int DOTCONFDocument::setContent(const char * _fileName)
     (void) fclose(file);
 
     if(!ret){
-
         if( (ret = checkConfig(nodeTree.begin())) == -1){
             return -1;
         }
@@ -406,7 +398,6 @@ int DOTCONFDocument::setContent(const char * _fileName)
                 }
             }
         }
-
 
         if(!requiredOptions.empty())
             ret = checkRequiredOptions();
@@ -553,8 +544,6 @@ const DOTCONFDocumentNode * DOTCONFDocument::getFirstNode() const
 
 const DOTCONFDocumentNode * DOTCONFDocument::findNode(const char * nodeName, const DOTCONFDocumentNode * parentNode, const DOTCONFDocumentNode * startNode) const
 {
-
-
     std::list<DOTCONFDocumentNode*>::const_iterator i = nodeTree.begin();
 
     if(startNode == NULL)
@@ -568,7 +557,6 @@ const DOTCONFDocumentNode * DOTCONFDocument::findNode(const char * nodeName, con
     }
 
     for(; i!=nodeTree.end(); i++){
-
     if((*i)->parentNode != parentNode){
             continue;
         }

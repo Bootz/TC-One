@@ -16,7 +16,6 @@
  */
 //=============================================================================
 
-
 #ifndef ACE_ARRAY_MAP_H
 #define ACE_ARRAY_MAP_H
 
@@ -264,7 +263,6 @@ private:
 
   /// Underlying array containing keys and data.
   value_type * nodes_;
-
 };
 
 // --------------------------------------------------------------

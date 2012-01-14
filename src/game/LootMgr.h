@@ -278,7 +278,6 @@ struct Loot
 
         // All rolls are registered here. They need to know, when the loot is not valid anymore
         LootValidatorRefManager i_LootValidatorRefManager;
-
 };
 
 struct LootView

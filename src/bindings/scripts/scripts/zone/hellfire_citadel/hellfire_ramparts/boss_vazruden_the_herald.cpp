@@ -453,7 +453,6 @@ CreatureAI* GetAI_boss_vazruden(Creature *_Creature)
     return new boss_vazrudenAI (_Creature);
 }
 
-
 CreatureAI* GetAI_boss_nazan(Creature *_Creature)
 {
     return new boss_nazanAI (_Creature);

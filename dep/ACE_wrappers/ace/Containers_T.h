@@ -40,7 +40,6 @@ ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 class ACE_Allocator;
 
-
 /**
  * @class ACE_Bounded_Stack
  *
@@ -172,7 +171,6 @@ private:
 };
 
 //----------------------------------------
-
 
 /**
  * @class ACE_Fixed_Stack
@@ -333,8 +331,6 @@ private:
   T item_;
 };
 
-
-
 /**
  * @class ACE_Unbounded_Stack
  *
@@ -407,7 +403,6 @@ public:
   ~ACE_Unbounded_Stack (void);
 
   // = Classic Stack operations.
-
 
   ///Push an element onto the top of stack.
   /**
@@ -774,7 +769,6 @@ public:
   ACE_ALLOC_HOOK_DECLARE;
 };
 
-
 /**
  * @class ACE_Double_Linked_List
  *
@@ -992,7 +986,6 @@ protected:
   ACE_Allocator *allocator_;
 };
 
-
 template <class T> class ACE_DLList;
 template <class T> class ACE_DLList_Iterator;
 template <class T> class ACE_DLList_Reverse_Iterator;
@@ -1044,7 +1037,6 @@ public:
    * @name Queue-like insert and delete methods
    */
   //@{
-
   /**
    * Insert pointer for a new item at the tail of the list.
    *
@@ -1135,7 +1127,6 @@ public:
 template <class T>
 class ACE_DLList_Iterator : public ACE_Double_Linked_List_Iterator <ACE_DLList_Node>
 {
-
   friend class ACE_DLList<T>;
   friend class ACE_DLList_Node;
 
@@ -1198,7 +1189,6 @@ private:
 template <class T>
 class ACE_DLList_Reverse_Iterator : public ACE_Double_Linked_List_Reverse_Iterator <ACE_DLList_Node>
 {
-
   friend class ACE_DLList<T>;
   friend class ACE_DLList_Node;
 
@@ -1553,7 +1543,6 @@ private:
   ssize_t next_;
 };
 
-
 /**
  * @class ACE_Bounded_Set
  *
@@ -1775,7 +1764,6 @@ private:
   /// Pointer to the set we're iterating over.
   ACE_Ordered_MultiSet<T> &set_;
 };
-
 
 /**
  * @class ACE_Ordered_MultiSet

@@ -61,14 +61,10 @@ private:
     bool m_ready;
 };
 
-
-
-
 #ifdef SOCKETS_NAMESPACE
 }
 #endif
 
 #endif // ENABLE_RESOLVER
 #endif // _SOCKETS_ResolvServer_H
-
 

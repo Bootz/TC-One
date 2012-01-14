@@ -350,7 +350,6 @@ struct TRINITY_DLL_DECL boss_aranAI : public ScriptedAI
         {
             switch (rand()%2)
             {
-
                 case 0:
                     DoCast(m_creature, SPELL_AOE_CS);
                     break;

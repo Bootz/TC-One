@@ -66,7 +66,6 @@ bool GossipSelect_npc_braug_dimspirit(Player *player, Creature *_Creature, uint3
     {
         player->CLOSE_GOSSIP_MENU();
         _Creature->CastSpell(player,6766,false);
-
     }
     if (action == GOSSIP_ACTION_INFO_DEF+2)
     {

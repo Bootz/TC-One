@@ -458,7 +458,6 @@ void AuctionHouseMgr::LoadAuctions()
         }
 
         GetAuctionsMap( auctioneerInfo->faction_A )->AddAuction(aItem);
-
     } while (result->NextRow());
     delete result;
 

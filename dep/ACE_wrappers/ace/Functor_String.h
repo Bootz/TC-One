@@ -51,7 +51,6 @@ public:
                    const ACE_CString &rhs) const;
 };
 
-
 /**
  * @brief Function object for hashing a ACE_CString
  */
@@ -62,7 +61,6 @@ public:
   /// Calls ACE::hash_pjw
   unsigned long operator () (const ACE_CString &lhs) const;
 };
-
 
 /**
  * @brief Function object for determining whether the first const string
@@ -77,7 +75,6 @@ public:
                    const ACE_CString &rhs) const;
 };
 
-
 #if defined (ACE_USES_WCHAR)
 
 /**
@@ -91,7 +88,6 @@ public:
   int operator () (const ACE_WString &lhs,
                    const ACE_WString &rhs) const;
 };
-
 
 /**
  * @brief Function object for hashing a ACE_WString

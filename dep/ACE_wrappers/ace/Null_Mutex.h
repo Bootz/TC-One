@@ -25,7 +25,6 @@
 #include "ace/Global_Macros.h"
 #include "ace/OS_Memory.h"
 
-
 ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 class ACE_Time_Value;
@@ -121,7 +120,6 @@ private:
   // Disallow copying and assignment.
   ACE_Guard (const ACE_Guard<ACE_Null_Mutex> &);
   void operator= (const ACE_Guard<ACE_Null_Mutex> &);
-
 };
 
 template <class ACE_LOCK>

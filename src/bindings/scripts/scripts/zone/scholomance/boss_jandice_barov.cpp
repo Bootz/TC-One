@@ -109,7 +109,6 @@ struct TRINITY_DLL_DECL boss_jandicebarovAI : public ScriptedAI
         //Illusion_Timer
         if (!Invisible && Illusion_Timer < diff)
         {
-
             //Inturrupt any spell casting
             m_creature->InterruptNonMeleeSpells(false);
             m_creature->setFaction(35);
@@ -131,7 +130,6 @@ struct TRINITY_DLL_DECL boss_jandicebarovAI : public ScriptedAI
             //25 seconds until we should cast this agian
             Illusion_Timer = 25000;
         }else Illusion_Timer -= diff;
-
 
         //            //Illusion_Timer
         //            if (Illusion_Timer < diff)
@@ -195,7 +193,6 @@ struct TRINITY_DLL_DECL mob_illusionofjandicebarovAI : public ScriptedAI
     }
 };
 
-
 CreatureAI* GetAI_boss_jandicebarov(Creature *_Creature)
 {
     return new boss_jandicebarovAI (_Creature);
@@ -205,7 +202,6 @@ CreatureAI* GetAI_mob_illusionofjandicebarov(Creature *_Creature)
 {
     return new mob_illusionofjandicebarovAI (_Creature);
 }
-
 
 void AddSC_boss_jandicebarov()
 {

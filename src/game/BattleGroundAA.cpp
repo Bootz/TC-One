@@ -24,12 +24,10 @@
 
 BattleGroundAA::BattleGroundAA()
 {
-
 }
 
 BattleGroundAA::~BattleGroundAA()
 {
-
 }
 
 void BattleGroundAA::Update(time_t diff)

@@ -311,9 +311,7 @@ struct TRINITY_DLL_DECL mob_headAI : public ScriptedAI
                     speaker->CastSpell(speaker,SPELL_HEAD_SPEAKS,false);
                 DoTextEmote("laughs",NULL);
             } else laugh -= diff;
-
         } else {
-
             if (die) {
                 if (wait < diff)
                 {
@@ -444,7 +442,7 @@ struct TRINITY_DLL_DECL boss_headless_horsemanAI : public ScriptedAI
             break;
         case 19:
             m_creature->RemoveUnitMovementFlag(MOVEMENTFLAG_FLYING2);break;
-        case 20: 
+        case 20:
             {
                 Phase = 1;
                 IsFlying = false;
@@ -692,9 +690,7 @@ struct TRINITY_DLL_DECL boss_headless_horsemanAI : public ScriptedAI
                 cleave = 2000*(1 + rand()%3);       //1 cleave per 2.0-6.0sec
                 } else cleave -= diff;
             }
-
         } else {
-
             if (regen < diff)
             {
                 regen = 1000;                   //"body calls head"
@@ -850,7 +846,7 @@ bool GOReward_go_loosely_turned_soil(Player *plr, GameObject* soil, Quest const*
         {
             ((boss_headless_horsemanAI*)horseman->AI())->playerGUID = plr->GetGUID();
             ((boss_headless_horsemanAI*)horseman->AI())->FlyMode();
-            soil->SetUInt32Value(GAMEOBJECT_FACTION,14); 
+            soil->SetUInt32Value(GAMEOBJECT_FACTION,14);
         }
     }
     return true;

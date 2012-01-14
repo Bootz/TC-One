@@ -579,7 +579,6 @@ struct TRINITY_DLL_DECL mob_felkael_phoenix_eggAI : public Scripted_NoMovementAI
     void MoveInLineOfSight(Unit* who) {}
     void UpdateAI(const uint32 diff)
     {
-
         if(HatchTimer < diff)
         {
             Creature *bird = DoSpawnCreature(CREATURE_PHOENIX, 0, 0, 0, 0, TEMPSUMMON_CORPSE_DESPAWN, 60000);

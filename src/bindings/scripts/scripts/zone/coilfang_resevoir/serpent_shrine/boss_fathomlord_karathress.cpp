@@ -119,8 +119,6 @@ struct TRINITY_DLL_DECL boss_fathomlord_karathressAI : public ScriptedAI
 
         BlessingOfTides = false;
 
-
-
         if(pInstance)
         {
             uint64 RAdvisors[3];
@@ -143,8 +141,6 @@ struct TRINITY_DLL_DECL boss_fathomlord_karathressAI : public ScriptedAI
             }
             pInstance->SetData(DATA_KARATHRESSEVENT, NOT_STARTED);
         }
-
-
     }
 
     void EventSharkkisDeath()
@@ -318,7 +314,6 @@ struct TRINITY_DLL_DECL boss_fathomguard_sharkkisAI : public ScriptedAI
     bool pet;
 
     uint64 SummonedPet;
-
 
     void Reset()
     {

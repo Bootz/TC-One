@@ -47,7 +47,6 @@ LootStore LootTemplates_QuestMail(    "quest_mail_loot_template",   "quest id");
 LootStore LootTemplates_Reference(    "reference_loot_template",    "reference id");
 LootStore LootTemplates_Skinning(     "skinning_loot_template",     "creature skinning id");
 
-
 class LootTemplate::LootGroup                               // A set of loot definitions for items (refs are not allowed)
 {
     public:
@@ -151,7 +150,6 @@ void LootStore::LoadLootTable()
             // Adds current row to the template
             tab->second->AddEntry(storeitem);
             ++count;
-
         } while (result->NextRow());
 
         delete result;

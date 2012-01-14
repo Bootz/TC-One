@@ -1,7 +1,6 @@
 /**
   @file CollisionDetection.h
 
-
   Moving collision detection for simple primitives.
 
   @author Morgan McGuire, matrix@graphics3d.com
@@ -31,8 +30,6 @@
 #include "G3D/Line.h"
 
 namespace G3D {
-
-
 /**
   Collision detection primitives and tools for building
   higher order collision detection schemes.
@@ -108,7 +105,6 @@ private:
      */
     static Array<Vector3> ignoreArray;
 
-
     // Static class!
     CollisionDetection() {}
     virtual ~CollisionDetection() {}
@@ -182,7 +178,6 @@ public:
             const double*       ca,
             const double*       ad,
             const double*       bd);
-
 
     /**
       Creates a set of standard information about two boxes in order to
@@ -549,7 +544,6 @@ public:
         const Triangle& tri,
         Vector3&        location = ignore,
         Vector3&        normal   = ignore) {
-
         float t = collisionTimeForMovingPointFixedTriangle(
             orig, dir, tri.vertex(0), tri.vertex(1), tri.vertex(2));
 
@@ -1151,7 +1145,6 @@ public:
         const Vector3&          v3,
         const Vector3&          point);
 };
-
 } // namespace
 
 #endif // G3D_COLLISIONDETECTION_H

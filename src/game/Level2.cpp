@@ -75,7 +75,7 @@ bool ChatHandler::HandleMuteCommand(const char* args)
         mutereasonstr = "No reason.";
     else
         mutereasonstr = mutereason;
-        
+
     uint32 notspeaktime = (uint32) atoi(timetonotspeak);
 
     if(!normalizePlayerName(cname))
@@ -855,7 +855,6 @@ bool ChatHandler::HandleSubNameCommand(const char* /*args*/)
 
     if(strlen((char*)args)>75)
     {
-
         PSendSysMessage(LANG_TOO_LONG_SUBNAME, strlen((char*)args)-75);
         return true;
     }
@@ -1364,7 +1363,6 @@ bool ChatHandler::HandleDelVendorItemCommand(const char* args)
     }
     uint32 itemId = atol(pitem);
 
-
     if(!objmgr.RemoveVendorItem(vendor->GetEntry(),itemId))
     {
         PSendSysMessage(LANG_ITEM_NOT_IN_LIST,itemId);
@@ -1756,12 +1754,10 @@ bool ChatHandler::HandleKickPlayerCommand(const char *args)
 
         if(sWorld.getConfig(CONFIG_SHOW_KICK_IN_WORLD) == 1)
         {
-
             sWorld.SendWorldText(LANG_COMMAND_KICKMESSAGE, player->GetName(), kicker.c_str(), reason.c_str());
         }
         else
         {
-
             PSendSysMessage(LANG_COMMAND_KICKMESSAGE, player->GetName(), kicker.c_str(), reason.c_str());
         }
 
@@ -1803,7 +1799,6 @@ bool ChatHandler::HandleKickPlayerCommand(const char *args)
         {
             if(sWorld.getConfig(CONFIG_SHOW_KICK_IN_WORLD) == 1)
             {
-
                 sWorld.SendWorldText(LANG_COMMAND_KICKMESSAGE, name.c_str(), kicker.c_str(), reason.c_str());
             }
             else
@@ -2137,7 +2132,6 @@ bool ChatHandler::HandleWpLoadPathCommand(const char *args)
     if(*args)
         path_number = strtok((char*)args, " ");
 
-
     uint32 pathid = 0;
     uint32 guidlow = 0;
     Creature* target = getSelectedCreature();
@@ -2188,7 +2182,6 @@ bool ChatHandler::HandleWpLoadPathCommand(const char *args)
 
     return true;
 }
-
 
 bool ChatHandler::HandleReloadAllPaths(const char* args)
 {
@@ -2249,7 +2242,6 @@ if(!*args)
     // Check
     if( (show != "add") && (show != "mod") && (show != "del") && (show != "listid")) return false;
 
-
     if(show == "add")
     {
     uint32 id = 0;
@@ -2283,7 +2275,6 @@ if(!*args)
 
     return true;
     }
-
 
     if(show == "listid")
     {
@@ -2334,7 +2325,6 @@ if(!*args)
 
     if(show == "del")
     {
-
     char* arg_id = strtok(NULL, " ");
     uint32 id = atoi(arg_id);
 
@@ -2342,7 +2332,6 @@ if(!*args)
 
     if( result )
     {
-
        WorldDatabase.PExecuteLog("DELETE FROM waypoint_scripts WHERE guid = %u", id);
        PSendSysMessage("%s%s%u|r","|cff00ff00","Wp Event: Waypoint script removed: ", id);
        delete result;
@@ -2352,7 +2341,6 @@ if(!*args)
 
     return true;
     }
-
 
     if(show == "mod")
     {
@@ -2378,16 +2366,13 @@ if(!*args)
         {   SendSysMessage("|cffff33ffERROR: No argument present.|r");
     return true;}
 
-
     std::string arg_string  = arg_2;
-
 
 if( (arg_string != "setid") && (arg_string != "delay") && (arg_string != "command")
 && (arg_string != "datalong") && (arg_string != "datalong2") && (arg_string != "dataint") && (arg_string != "posx")
 && (arg_string != "posy") && (arg_string != "posz") && (arg_string != "orientation")
 ) { SendSysMessage("|cffff33ffERROR: No valid argument present.|r");
     return true;}
-
 
 char* arg_3;
 std::string arg_str_2 = arg_2;
@@ -2408,7 +2393,6 @@ float coord;
     }
     else
     {
-
     QueryResult *result = WorldDatabase.PQuery("SELECT id FROM waypoint_scripts WHERE guid='%u'",id);
 
     if(!result)
@@ -2649,7 +2633,6 @@ bool ChatHandler::HandleWpModifyCommand(const char* args)
         return true;
     }                                                       // move
 
-
     const char *text = arg_str;
 
     if( text == 0 )
@@ -2671,7 +2654,6 @@ bool ChatHandler::HandleWpModifyCommand(const char* args)
 
     return true;
 }
-
 
 bool ChatHandler::HandleWpShowCommand(const char* args)
 {
@@ -2725,10 +2707,7 @@ bool ChatHandler::HandleWpShowCommand(const char* args)
         pathid = atoi((char*)guid_str);
     }
 
-
     sLog.outDebug("DEBUG: HandleWpShowCommand: danach");
-
-
 
     std::string show = show_str;
     uint32 Maxpoint;
@@ -2741,7 +2720,6 @@ bool ChatHandler::HandleWpShowCommand(const char* args)
     if(show == "info")
 
     {
-
         // Check if the user did specify a visual waypoint
         if( target->GetEntry() != VISUAL_WAYPOINT )
 
@@ -2750,7 +2728,6 @@ bool ChatHandler::HandleWpShowCommand(const char* args)
             SetSentErrorMessage(true);
             return false;
         }
-
 
         QueryResult *result = WorldDatabase.PQuery( "SELECT id, point, delay, move_flag, action, action_chance FROM waypoint_data WHERE wpguid = %u", target->GetGUIDLow());
 
@@ -2822,7 +2799,6 @@ bool ChatHandler::HandleWpShowCommand(const char* args)
                     pCreature->DeleteFromDB();
                     pCreature->AddObjectToRemoveList();
                 }
-
             }while( result2->NextRow() );
 
             delete result2;
@@ -3624,7 +3600,6 @@ bool ChatHandler::HandleLearnAllRecipesCommand(const char* args)
 
 bool ChatHandler::HandleLookupPlayerIpCommand(const char* args)
 {
-
     if (!*args)
         return false;
 
@@ -3660,7 +3635,6 @@ bool ChatHandler::HandleLookupPlayerAccountCommand(const char* args)
 
 bool ChatHandler::HandleLookupPlayerEmailCommand(const char* args)
 {
-
     if (!*args)
         return false;
 
@@ -3707,7 +3681,6 @@ bool ChatHandler::LookupPlayerSearchCommand(QueryResult* result, int32 limit)
 
                 PSendSysMessage(LANG_LOOKUP_PLAYER_CHARACTER,name.c_str(),guid);
                 ++i;
-
             } while( chars->NextRow() && ( limit == -1 || i < limit ) );
 
             delete chars;
@@ -3835,7 +3808,7 @@ bool ChatHandler::HandleCreatePetCommand(const char* args)
 
     if(!pet)
       return false;
-    
+
     if(!pet->CreateBaseAtCreature(creatureTarget))
     {
         delete pet;

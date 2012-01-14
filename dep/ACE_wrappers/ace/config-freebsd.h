@@ -50,7 +50,6 @@
 # endif /* _THREAD_SAFE */
 #endif
 
-
 #define ACE_HAS_3_PARAM_READDIR_R
 #define ACE_HAS_3_PARAM_WCSTOK
 #define ACE_HAS_4_4BSD_SENDMSG_RECVMSG

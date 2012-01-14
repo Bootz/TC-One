@@ -130,7 +130,6 @@ void BattleGroundAB::Update(time_t diff)
                 if(Player* plr = objmgr.GetPlayer(itr->first))
                     plr->RemoveAurasDueToSpell(SPELL_PREPARATION);
         }
-
     }
     else if( GetStatus() == STATUS_IN_PROGRESS )
     {
@@ -246,7 +245,6 @@ void BattleGroundAB::AddPlayer(Player *plr)
 
 void BattleGroundAB::RemovePlayer(Player * /*plr*/, uint64 /*guid*/)
 {
-
 }
 
 void BattleGroundAB::HandleAreaTrigger(Player *Source, uint32 Trigger)

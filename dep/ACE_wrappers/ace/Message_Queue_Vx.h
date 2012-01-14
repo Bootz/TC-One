@@ -211,7 +211,6 @@ private:
 
   /// Native message queue options.
   int options_;
-
 };
 
 ACE_END_VERSIONED_NAMESPACE_DECL

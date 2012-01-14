@@ -19,14 +19,10 @@
 #include "G3D/Plane.h"
 #include "G3D/Sphere.h"
 
-
 namespace G3D {
-
 Box AABox::toBox() const {
     return Box(lo, hi);
 }
-
-
 
 void AABox::split(const Vector3::Axis& axis, float location, AABox& low, AABox& high) const {
     // Low, medium, and high along the chosen axis
@@ -82,7 +78,6 @@ Vector3 AABox::randomSurfacePoint() const {
     }
 }
 
-
 Vector3 AABox::randomInteriorPoint() const {
     return Vector3(
         (float)random(lo.x, hi.x),
@@ -91,13 +86,11 @@ Vector3 AABox::randomInteriorPoint() const {
 }
 #endif
 
-
 bool AABox::intersects(const AABox& other) const {
     // Must be overlap along all three axes.
     // Try to find a separating axis.
 
     for (int a = 0; a < 3; ++a) {
-
         //     |--------|
         // |------|
 
@@ -110,28 +103,22 @@ bool AABox::intersects(const AABox& other) const {
     return true;
 }
 
-
 bool AABox::culledBy(
     const Array<Plane>&     plane,
     int&                    cullingPlaneIndex,
     const uint32            inMask,
     uint32&                 outMask) const {
-
     return culledBy(plane.getCArray(), plane.size(), cullingPlaneIndex, inMask, outMask);
 }
-
 
 bool AABox::culledBy(
     const Array<Plane>&     plane,
     int&                    cullingPlaneIndex,
     const uint32            inMask) const {
-
     return culledBy(plane.getCArray(), plane.size(), cullingPlaneIndex, inMask);
 }
 
-
 int AABox::dummy = 0;
-
 
 bool AABox::culledBy(
     const class Plane*  plane,
@@ -139,7 +126,6 @@ bool AABox::culledBy(
     int&                cullingPlane,
     const uint32        _inMask,
     uint32&             childMask) const {
-
     uint32 inMask = _inMask;
     assert(numPlanes < 31);
 
@@ -156,10 +142,8 @@ bool AABox::culledBy(
     // See if there is one plane for which all of the
     // vertices are in the negative half space.
     for (int p = 0; p < numPlanes; p++) {
-
         // Only test planes that are not masked
         if ((inMask & 1) != 0) {
-
             Vector3 corner;
 
             int numContained = 0;
@@ -196,7 +180,6 @@ bool AABox::culledBy(
                 // will immediately cull the volume.
                 childMask = 1 << p;
                 return true;
-
             } else if (numContained < v) {
                 // The bounding volume straddled the plane; we have
                 // to keep testing against this plane
@@ -213,13 +196,11 @@ bool AABox::culledBy(
     return false;
 }
 
-
 bool AABox::culledBy(
     const class Plane*  plane,
     int                 numPlanes,
     int&                cullingPlane,
     const uint32        _inMask) const {
-
     uint32 inMask = _inMask;
     assert(numPlanes < 31);
 
@@ -234,10 +215,8 @@ bool AABox::culledBy(
     // See if there is one plane for which all of the
     // vertices are in the negative half space.
     for (int p = 0; p < numPlanes; p++) {
-
         // Only test planes that are not masked
         if ((inMask & 1) != 0) {
-
             bool culled = true;
             Vector3 corner;
 
@@ -247,7 +226,6 @@ bool AABox::culledBy(
             // not culled by the plane... early out when at least one point
             // is in the positive half space.
             for (v = 0; (v < 8) && culled; ++v) {
-
                 // Unrolling these 3 if's into a switch decreases performance
                 // by about 2x
                 corner.x = (v & 1) ? hi.x : lo.x;
@@ -278,7 +256,6 @@ bool AABox::culledBy(
     return false;
 }
 
-
 bool AABox::intersects(const class Sphere& sphere) const {
     double d = 0;
 
@@ -294,7 +271,5 @@ bool AABox::intersects(const class Sphere& sphere) const {
 
     return d <= square(sphere.radius);
 }
-
-
 } // namespace
 

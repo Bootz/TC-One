@@ -53,11 +53,10 @@ struct TRINITY_DLL_DECL instance_shadowfang_keep : public ScriptedInstance
         {
         case 18895: DoorCourtyardGUID = go->GetGUID();
             if(Encounters[0] == DONE) HandleGameObject(NULL,true,go); break;
-        case 18972: DoorSorcererGUID = go->GetGUID(); 
+        case 18972: DoorSorcererGUID = go->GetGUID();
             if(Encounters[2] == DONE) HandleGameObject(NULL,true,go); break;
-        case 18971: DoorArugalGUID = go->GetGUID(); 
+        case 18971: DoorArugalGUID = go->GetGUID();
             if(Encounters[3] == DONE) HandleGameObject(NULL,true,go); break;
-
         }
     }
 
@@ -137,7 +136,6 @@ struct TRINITY_DLL_DECL instance_shadowfang_keep : public ScriptedInstance
         {
             if (Encounters[i] == IN_PROGRESS)
                 Encounters[i] = NOT_STARTED;
-
         }
 
         OUT_LOAD_INST_DATA_COMPLETE;

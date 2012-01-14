@@ -365,11 +365,9 @@ struct TRINITY_DLL_DECL npc_commander_dawnforgeAI : public ScriptedAI
 {
     npc_commander_dawnforgeAI(Creature *c) : ScriptedAI(c) { Reset (); }
 
-
     uint64 playerGUID;
     uint64 ardonisGUID;
     uint64 pathaleonGUID;
-
 
     uint32 Phase;
     uint32 PhaseSubphase;
@@ -789,7 +787,6 @@ bool GossipSelect_npc_veronia(Player *player, Creature *_Creature, uint32 sender
 
 struct TRINITY_DLL_DECL mob_phase_hunterAI : public ScriptedAI
 {
-
     mob_phase_hunterAI(Creature *c) : ScriptedAI(c) {}
 
     bool Weak;
@@ -906,7 +903,6 @@ CreatureAI* GetAI_mob_phase_hunter(Creature *_Creature)
 
 struct TRINITY_DLL_DECL npc_bessyAI : public npc_escortAI
 {
-
     npc_bessyAI(Creature *c) : npc_escortAI(c) {}
 
     void JustDied(Unit* killer)
@@ -957,7 +953,6 @@ struct TRINITY_DLL_DECL npc_bessyAI : public npc_escortAI
     {
         me->RestoreFaction();
     }
-
 };
 
 bool QuestAccept_npc_bessy(Player* pPlayer, Creature* pCreature, Quest const* quest)

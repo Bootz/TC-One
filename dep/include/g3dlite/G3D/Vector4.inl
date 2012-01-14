@@ -1,4 +1,4 @@
-/** 
+/**
   @file Vector4.inl
 
   @maintainer Morgan McGuire, matrix@graphics3d.com
@@ -14,7 +14,6 @@ inline unsigned int hashCode(const G3D::Vector4& v) {
 }
 
 namespace G3D {
-
 //----------------------------------------------------------------------------
 inline Vector4::Vector4() {
     x = y = z = w = 0;
@@ -131,9 +130,8 @@ inline Vector4& Vector4::operator-= (const Vector4& rkVector) {
 //----------------------------------------------------------------------------
 
 inline Vector4 Vector4::lerp(const Vector4& v, float alpha) const {
-    return (*this) + (v - *this) * alpha; 
+    return (*this) + (v - *this) * alpha;
 }
-
 
 //----------------------------------------------------------------------------
 inline Vector4& Vector4::operator*= (float fScalar) {
@@ -143,7 +141,6 @@ inline Vector4& Vector4::operator*= (float fScalar) {
     w *= fScalar;
     return *this;
 }
-
 
 //----------------------------------------------------------------------------
 inline float Vector4::dot(const Vector4& rkVector) const {
@@ -188,6 +185,5 @@ inline float Vector4::length() const {
 inline float Vector4::squaredLength() const {
     return x * x + y * y + z * z + w * w;
 }
-
 }
 

@@ -145,7 +145,6 @@ struct TRINITY_DLL_DECL npc_deathstalker_erlandAI : public npc_escortAI
                     DoScriptText(SAY_QUINN, Quinn);
                 break;}
         case 26: DoScriptText(SAY_ON_BYE, m_creature, NULL); break;
-
         }
     }
 
@@ -227,12 +226,10 @@ static float SpawnPoints[3][4] =
 
 struct TRINITY_DLL_DECL pyrewood_ambushAI : public ScriptedAI
 {
-
     pyrewood_ambushAI(Creature *c) : ScriptedAI(c), Summons(m_creature)
     {
        QuestInProgress = false;
     }
-
 
     uint32 Phase;
     int KillCount;
@@ -301,12 +298,10 @@ struct TRINITY_DLL_DECL pyrewood_ambushAI : public ScriptedAI
             if (pPlayer && ((Player*)pPlayer)->GetQuestStatus(QUEST_PYREWOOD_AMBUSH) == QUEST_STATUS_INCOMPLETE)
                 ((Player*)pPlayer)->FailQuest(QUEST_PYREWOOD_AMBUSH);
         }
-
     }
 
     void UpdateAI(const uint32 diff)
     {
-
         //sLog.outString("DEBUG: p(%i) k(%i) d(%u) W(%i)", Phase, KillCount, diff, WaitTimer);
 
         if(!QuestInProgress)
@@ -320,7 +315,6 @@ struct TRINITY_DLL_DECL pyrewood_ambushAI : public ScriptedAI
             DoMeleeAttackIfReady();
             return;
         }
-
 
         switch(Phase){
             case 0:
@@ -366,7 +360,6 @@ struct TRINITY_DLL_DECL pyrewood_ambushAI : public ScriptedAI
          }
 
          Phase++; //prepare next phase
-
     }
 };
 

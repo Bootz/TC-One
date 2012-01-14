@@ -771,7 +771,6 @@ inline bool IsProfessionSkill(uint32 skill)
 #define SPELL_ATTR_CU_MOVEMENT_IMPAIR   0x00004000
 #define SPELL_ATTR_CU_IGNORE_ARMOR      0x00008000
 
-
 typedef std::vector<uint32> SpellCustomAttribute;
 
 typedef std::map<int32, std::vector<int32> > SpellLinkedMap;

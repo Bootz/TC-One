@@ -79,7 +79,6 @@ struct TRINITY_DLL_DECL boss_archaedasAI : public ScriptedAI
         m_creature->setFaction(35);
         m_creature->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_SELECTABLE);
         m_creature->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_DISABLE_MOVE);
-
     }
 
     void ActivateMinion (uint64 guid, bool flag)
@@ -92,7 +91,6 @@ struct TRINITY_DLL_DECL boss_archaedasAI : public ScriptedAI
             minion->CastSpell(minion, SPELL_ARCHAEDAS_AWAKEN,true);
         }
     }
-
 
     void EnterCombat(Unit *who)
     {
@@ -136,7 +134,6 @@ struct TRINITY_DLL_DECL boss_archaedasAI : public ScriptedAI
         if (!UpdateVictim())
             return;
 
-
         // wake a wall minion
         if (WallMinionTimer < diff) {
             pInstance->SetData (DATA_MINIONS, IN_PROGRESS);
@@ -168,7 +165,6 @@ struct TRINITY_DLL_DECL boss_archaedasAI : public ScriptedAI
             vaultWalkersAwake = true;
         }
 
-
         if (Tremor_Timer < diff)
         {
             //Cast
@@ -188,7 +184,6 @@ struct TRINITY_DLL_DECL boss_archaedasAI : public ScriptedAI
             pInstance->SetData(DATA_MINIONS, SPECIAL);        // deactivate his minions
         }
     }
-
 };
 
 CreatureAI* GetAI_boss_archaedas(Creature *_Creature)
@@ -202,7 +197,6 @@ SD%Complete: 100
 SDComment: These mobs are initially frozen until Archaedas awakens them
 one at a time.
 EndScriptData */
-
 
 #define SPELL_ARCHAEDAS_AWAKEN        10347
 
@@ -276,7 +270,6 @@ struct TRINITY_DLL_DECL mob_archaedas_minionsAI : public ScriptedAI
         if (!UpdateVictim())
             return;
 
-
         DoMeleeAttackIfReady();
     }
 };
@@ -293,7 +286,6 @@ SDComment: Needs 3 people to activate the Archaedas script
 SDCategory: Uldaman
 EndScriptData */
 
-
 #define OBJECT_ALTAR_OF_ARCHAEDAS   133234
 
 #define NUMBER_NEEDED_TO_ACTIVATE 3
@@ -302,7 +294,6 @@ EndScriptData */
 
 uint64 altarOfArchaedasCount[5];
 int32 altarOfArchaedasCounter=0;
-
 
 bool GOHello_go_altar_of_archaedas(Player *player, GameObject* go)
 {
@@ -382,7 +373,6 @@ struct TRINITY_DLL_DECL mob_stonekeepersAI : public ScriptedAI
 
     void UpdateAI(const uint32 diff)
     {
-
         //Return since we have no target
         if (!UpdateVictim())
             return;
@@ -395,7 +385,6 @@ struct TRINITY_DLL_DECL mob_stonekeepersAI : public ScriptedAI
         if(pInstance)
             pInstance->SetData(DATA_STONE_KEEPERS, IN_PROGRESS);    // activate next stonekeeper
     }
-
 };
 
 CreatureAI* GetAI_mob_stonekeepers(Creature *_Creature)
@@ -409,7 +398,6 @@ SD%Complete: 100
 SDComment: Need 3 people to activate to open the altar.  One by one the StoneKeepers will activate.  After all four are dead than the door will open.
 SDCategory: Uldaman
 EndScriptData */
-
 
 #define SPELL_BOSS_OBJECT_VISUAL    11206
 

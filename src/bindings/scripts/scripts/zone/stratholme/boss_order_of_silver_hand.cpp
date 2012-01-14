@@ -138,7 +138,6 @@ struct TRINITY_DLL_DECL boss_silver_hand_bossesAI : public ScriptedAI
 
         DoMeleeAttackIfReady();
     }
-
 };
 CreatureAI* GetAI_boss_silver_hand_bossesAI(Creature *_Creature)
 {

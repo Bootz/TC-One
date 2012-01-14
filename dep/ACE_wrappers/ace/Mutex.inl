@@ -2,7 +2,6 @@
 //
 // $Id: Mutex.inl 91626 2010-09-07 10:59:20Z johnnyw $
 
-
 #include "ace/OS_NS_sys_mman.h"
 
 ACE_BEGIN_VERSIONED_NAMESPACE_DECL

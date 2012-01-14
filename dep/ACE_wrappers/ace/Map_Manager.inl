@@ -306,7 +306,6 @@ ACE_Map_Iterator_Base<EXT_ID, INT_ID, ACE_LOCK>::done (void) const
 template <class EXT_ID, class INT_ID, class ACE_LOCK> ACE_INLINE int
 ACE_Map_Iterator_Base<EXT_ID, INT_ID, ACE_LOCK>::forward_i (void)
 {
-
 #if defined (ACE_HAS_LAZY_MAP_MANAGER)
 
   while (1)
@@ -337,7 +336,6 @@ ACE_Map_Iterator_Base<EXT_ID, INT_ID, ACE_LOCK>::forward_i (void)
 template <class EXT_ID, class INT_ID, class ACE_LOCK> ACE_INLINE int
 ACE_Map_Iterator_Base<EXT_ID, INT_ID, ACE_LOCK>::reverse_i (void)
 {
-
 #if defined (ACE_HAS_LAZY_MAP_MANAGER)
 
   while (1)
@@ -413,7 +411,6 @@ ACE_Map_Const_Iterator_Base<EXT_ID, INT_ID, ACE_LOCK>::done (void) const
 template <class EXT_ID, class INT_ID, class ACE_LOCK> ACE_INLINE int
 ACE_Map_Const_Iterator_Base<EXT_ID, INT_ID, ACE_LOCK>::forward_i (void)
 {
-
 #if defined (ACE_HAS_LAZY_MAP_MANAGER)
 
   while (1)
@@ -444,7 +441,6 @@ ACE_Map_Const_Iterator_Base<EXT_ID, INT_ID, ACE_LOCK>::forward_i (void)
 template <class EXT_ID, class INT_ID, class ACE_LOCK> ACE_INLINE int
 ACE_Map_Const_Iterator_Base<EXT_ID, INT_ID, ACE_LOCK>::reverse_i (void)
 {
-
 #if defined (ACE_HAS_LAZY_MAP_MANAGER)
 
   while (1)
@@ -499,7 +495,6 @@ ACE_Map_Iterator<EXT_ID, INT_ID, ACE_LOCK>::ACE_Map_Iterator (ACE_Map_Manager<EX
 {
   if (!pass_end)
     {
-
 #if defined (ACE_HAS_LAZY_MAP_MANAGER)
 
       // Start here.
@@ -526,7 +521,6 @@ ACE_Map_Iterator<EXT_ID, INT_ID, ACE_LOCK>::ACE_Map_Iterator (ACE_Map_Manager<EX
       this->next_ = this->map_man_->occupied_list_.next ();
 
 #endif /* ACE_HAS_LAZY_MAP_MANAGER */
-
     }
 }
 
@@ -577,7 +571,6 @@ ACE_Map_Const_Iterator<EXT_ID, INT_ID, ACE_LOCK>::ACE_Map_Const_Iterator (const 
 {
   if (!pass_end)
     {
-
 #if defined (ACE_HAS_LAZY_MAP_MANAGER)
 
       // Start here.
@@ -604,7 +597,6 @@ ACE_Map_Const_Iterator<EXT_ID, INT_ID, ACE_LOCK>::ACE_Map_Const_Iterator (const 
       this->next_ = this->map_man_->occupied_list_.next ();
 
 #endif /* ACE_HAS_LAZY_MAP_MANAGER */
-
     }
 }
 
@@ -655,7 +647,6 @@ ACE_Map_Reverse_Iterator<EXT_ID, INT_ID, ACE_LOCK>::ACE_Map_Reverse_Iterator (AC
 {
   if (!pass_end)
     {
-
 #if defined (ACE_HAS_LAZY_MAP_MANAGER)
 
       // Start here.
@@ -682,7 +673,6 @@ ACE_Map_Reverse_Iterator<EXT_ID, INT_ID, ACE_LOCK>::ACE_Map_Reverse_Iterator (AC
       this->next_ = this->map_man_->occupied_list_.prev ();
 
 #endif /* ACE_HAS_LAZY_MAP_MANAGER */
-
 }
 }
 
@@ -751,6 +741,5 @@ ACE_Map_Const_Iterator_Base<EXT_ID, INT_ID, ACE_LOCK>::operator* (void) const
 
   return *retv;
 }
-
 
 ACE_END_VERSIONED_NAMESPACE_DECL

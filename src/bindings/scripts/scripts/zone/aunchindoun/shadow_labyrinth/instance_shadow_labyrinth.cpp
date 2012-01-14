@@ -175,8 +175,6 @@ struct TRINITY_DLL_DECL instance_shadow_labyrinth : public ScriptedInstance
             if (type == TYPE_OVERSEER && FelOverseerCount != 0)
                 return;
 
-
-
             SaveToDB();
             OUT_SAVE_INST_DATA_COMPLETE;
         }

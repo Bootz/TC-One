@@ -306,7 +306,6 @@ struct TRINITY_DLL_DECL eye_of_cthunAI : public Scripted_NoMovementAI
                     //Darkbeam for 35 seconds
                     PhaseTimer = 35000;
                 }else PhaseTimer -= diff;
-
             }
             break;
             case 1:
@@ -644,7 +643,6 @@ struct TRINITY_DLL_DECL cthunAI : public Scripted_NoMovementAI
 
                     PhaseTimer = 0;
                 }else PhaseTimer -= diff;
-
             }break;
 
             //Body Phase
@@ -790,7 +788,6 @@ struct TRINITY_DLL_DECL cthunAI : public Scripted_NoMovementAI
                     target = SelectRandomNotStomach();
                     if (target)
                     {
-
                         Creature* Spawned = NULL;
 
                         //Spawn claw tentacle on the random target
@@ -821,7 +818,6 @@ struct TRINITY_DLL_DECL cthunAI : public Scripted_NoMovementAI
                     //These spawn at every 30 seconds
                     EyeTentacleTimer = 30000;
                 }else EyeTentacleTimer -= diff;
-
             }break;
 
             //Weakened state
@@ -1045,7 +1041,6 @@ struct TRINITY_DLL_DECL claw_tentacleAI : public Scripted_NoMovementAI
             }
 
             m_creature->SetVisibility(VISIBILITY_ON);
-
         }else EvadeTimer -= diff;
 
         //GroundRuptureTimer
@@ -1142,7 +1137,6 @@ struct TRINITY_DLL_DECL giant_claw_tentacleAI : public Scripted_NoMovementAI
             }
 
             m_creature->SetVisibility(VISIBILITY_ON);
-
         }else EvadeTimer -= diff;
 
         //GroundRuptureTimer

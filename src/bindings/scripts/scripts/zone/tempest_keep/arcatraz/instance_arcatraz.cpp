@@ -38,7 +38,6 @@ EndScriptData */
 
 #define MELLICHAR   20904                                   //skyriss will kill this unit
 
-
 /* Arcatraz encounters:
 1 - Zereketh the Unbound event
 2 - Dalliah the Doomsayer event

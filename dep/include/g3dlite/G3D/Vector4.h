@@ -22,7 +22,6 @@
 #include <string>
 
 namespace G3D {
-
 class Vector2;
 class Vector3;
 class Vector4;
@@ -508,9 +507,7 @@ public:
     Vector4 ywww() const;
     Vector4 zwww() const;
     Vector4 wwww() const;
-
 };
-
 }
 
 inline G3D::Vector4 operator* (float s, const G3D::Vector4& v) {

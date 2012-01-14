@@ -34,7 +34,6 @@ This is a box and a triangle Class using ShortVectors. Each vector has 16 bit an
 
 namespace VMAP
 {
-
     class ShortBox
     {
         private:
@@ -85,7 +84,6 @@ namespace VMAP
                 _vertex[0] = pV1;
                 _vertex[1] = pV2;
                 _vertex[2] = pV3;
-
             }
             inline const ShortVector& vertex (int n) const
             {
@@ -145,7 +143,6 @@ namespace VMAP
                 }
             }
     };
-
 }
 #endif
 

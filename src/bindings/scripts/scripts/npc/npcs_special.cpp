@@ -915,7 +915,6 @@ struct TRINITY_DLL_DECL npc_steam_tonkAI : public ScriptedAI
         else
             m_creature->SetReactState(REACT_AGGRESSIVE);
     }
-
 };
 
 CreatureAI* GetAI_npc_steam_tonk(Creature *_Creature)
@@ -1027,7 +1026,6 @@ struct TRINITY_DLL_DECL npc_snake_trap_serpentsAI : public ScriptedAI
         uint32 delta = (rand() % 7) *100;
         m_creature->SetStatFloatValue(UNIT_FIELD_BASEATTACKTIME, Info->baseattacktime + delta);
         m_creature->SetStatFloatValue(UNIT_FIELD_RANGED_ATTACK_POWER , Info->attackpower);
-
     }
 
     //Redefined for random target selection:

@@ -1076,8 +1076,8 @@ void WorldObject::SetWorldObject(bool on)
 {
     if(!IsInWorld())
         return;
-    
-    GetMap()->AddObjectToSwitchList(this, on); 
+
+    GetMap()->AddObjectToSwitchList(this, on);
 }
 
 void WorldObject::setActive( bool on )
@@ -1319,8 +1319,6 @@ bool WorldObject::IsInRange3d(float x, float y, float z, float minRange, float m
     float maxdist = maxRange + sizefactor;
     return distsq < maxdist * maxdist;
 }
-
-
 
 float WorldObject::GetAngle(const WorldObject* obj) const
 {
@@ -1920,6 +1918,4 @@ void WorldObject::GetGroundPoint(float &x, float &y, float &z, float dist, float
     Trinity::NormalizeMapCoord(y);
     UpdateGroundPositionZ(x, y, z);
 }
-
-
 

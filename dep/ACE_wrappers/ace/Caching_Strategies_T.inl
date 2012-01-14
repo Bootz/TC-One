@@ -228,7 +228,6 @@ template<class ATTRIBUTES, class CACHING_UTILITY> ACE_INLINE int
 ACE_LFU_Caching_Strategy<ATTRIBUTES, CACHING_UTILITY>::notify_bind (int result,
                                                                     const ATTRIBUTES & /* attr */)
 {
-
   return result;
 }
 

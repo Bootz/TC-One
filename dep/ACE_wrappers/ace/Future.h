@@ -225,7 +225,6 @@ private:
 protected:
 
   ~ACE_Future_Rep (void);
-
 };
 
 /**

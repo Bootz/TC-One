@@ -10,7 +10,6 @@
  */
 //==========================================================================
 
-
 #ifndef ACE_STATS_H
 #define ACE_STATS_H
 
@@ -97,7 +96,6 @@ private:
    * is via the assignment operator.
    */
   u_int precision_;
-
 };
 
 /**

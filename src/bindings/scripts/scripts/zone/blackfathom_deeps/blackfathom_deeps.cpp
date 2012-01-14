@@ -46,7 +46,6 @@ void SummonCreatureWithRandomTarget(uint32 creatureId, int position, float mod, 
     Creature *pSummoned = pGO->SummonCreature(creatureId, SpawnPoints[position][0], SpawnPoints[position][1] + mod, SpawnPoints[position][2], SpawnPoints[position][3], TEMPSUMMON_CORPSE_TIMED_DESPAWN, 250000);
     if(pSummoned)
     {
-
         if(pTarget)
         {
             pSummoned->AddThreat(pTarget, 32.0f);
@@ -54,21 +53,20 @@ void SummonCreatureWithRandomTarget(uint32 creatureId, int position, float mod, 
         }
 
         //TODO: instance group random player...
-
     }
 }
 
 bool GOHello_go_fire_akumai(Player *player, GameObject* pGO)
 {
     uint32 candlesNumber;
-    
+
     ScriptedInstance *pInstance = (player->GetInstanceData()) ? ((ScriptedInstance*)player->GetInstanceData()) : NULL;
 
     if(!pInstance)
     {
         player->GetSession()->SendNotification("Instance script not initialized.");
         return true;
-    }    
+    }
     candlesNumber = pInstance->GetData(DATA_CANDLES);
     candlesNumber++;
 
@@ -113,11 +111,10 @@ bool GOHello_go_fire_akumai(Player *player, GameObject* pGO)
 void AddSC_blackfathom_deeps()
 {
     Script *newscript;
-    
+
     newscript = new Script;
     newscript->Name="go_fire_akumai";
     newscript->pGOHello = &GOHello_go_fire_akumai;
     newscript->RegisterSelf();
-
 }
 

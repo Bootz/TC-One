@@ -24,7 +24,6 @@ EndScriptData */
 #include "precompiled.h"
 #include "def_razorfen_kraul.h"
 
-
 #define WARD_KEEPERS_NR 2
 
 struct TRINITY_DLL_DECL instance_razorfen_kraul : public ScriptedInstance
@@ -89,7 +88,7 @@ struct TRINITY_DLL_DECL instance_razorfen_kraul : public ScriptedInstance
             WardCheck_Timer = 4000;
         }else
             WardCheck_Timer -= diff;
-    }     
+    }
 
     void SetData(uint32 type, uint32 data)
     {
@@ -101,7 +100,6 @@ struct TRINITY_DLL_DECL instance_razorfen_kraul : public ScriptedInstance
                 break;
         }
     }
-
 };
 
 InstanceData* GetInstanceData_instance_razorfen_kraul(Map* map)

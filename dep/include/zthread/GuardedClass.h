@@ -27,32 +27,30 @@
 #include "zthread/Mutex.h"
 
 namespace ZThread {
-
   /**
    * @class GuardedClass
    * @author Eric Crahen <http://www.code-foo.com>
    * @date <2003-07-20T20:17:34-0400>
    * @version 2.3.0
    *
-   * A simple wrapper template that uses Guard's to provide 
+   * A simple wrapper template that uses Guard's to provide
    * serialized access to an objects member functions.
    */
   template <class T, class LockType = Mutex>
     class GuardedClass {
-      
       LockType _lock;
       T* _ptr;
-      
+
       class TransferedScope {
       public:
-        
+
         template <class LockType1, class LockType2>
           static void shareScope(LockHolder<LockType1>& l1,
                                  LockHolder<LockType2>& l2) {
           l1.disable();
           l2.getLock().acquire();
         }
-        
+
         template <class LockType1>
           static void createScope(LockHolder<LockType1>& l) {
           // Don't acquire the lock when scope the Guard is created
@@ -62,11 +60,9 @@ namespace ZThread {
           static void destroyScope(LockHolder<LockType1>& l) {
           l.getLock().release();
         }
-
       };
 
       class Proxy : Guard<LockType, TransferedScope> {
-
         T* _object;
 
       public:
@@ -77,14 +73,13 @@ namespace ZThread {
         T* operator->() {
           return _object;
         }
-
       };
 
       GuardedClass();
       GuardedClass& operator=(const GuardedClass&);
-      
+
       public:
-      
+
       GuardedClass(T* ptr) : _ptr(ptr) {}
       ~GuardedClass() {
         if(_ptr)
@@ -95,9 +90,7 @@ namespace ZThread {
         Proxy p(_lock, _ptr);
         return p;
       }
-      
     };
-  
 } // namespace ZThread
 
 #endif // __ZTGUARDEDCLASS_H__

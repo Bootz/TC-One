@@ -40,7 +40,6 @@ namespace Trinity
             }
 
             DECLSPEC_NORETURN static void OnDeadReference(void) ATTR_NORETURN;
-
     };
 
     template <class T>

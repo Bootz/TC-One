@@ -1,4 +1,3 @@
-
 #ifndef G3D_LITE_DEBUG_H
 #define G3D_LITE_DEBUG_H
 
@@ -8,5 +7,4 @@
 #define alwaysAssertM(x, y)
 
 #endif
-
 

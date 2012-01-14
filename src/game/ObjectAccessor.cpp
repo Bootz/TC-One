@@ -99,7 +99,7 @@ ObjectAccessor::GetNPCIfCanInteractWith(Player const &player, uint64 guid, uint3
 
     if(player.IsHostileTo(unit))
         return NULL;
-    
+
     // appropriate npc type
     if(npcflagmask && !unit->HasFlag( UNIT_NPC_FLAGS, npcflagmask ))
         return NULL;

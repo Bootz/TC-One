@@ -12,7 +12,6 @@
  */
 // =========================================================================
 
-
 #ifndef ACE_DEV_POLL_REACTOR_H
 #define ACE_DEV_POLL_REACTOR_H
 
@@ -52,7 +51,6 @@ ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 // Forward declarations
 class ACE_Sig_Handler;
 class ACE_Dev_Poll_Reactor;
-
 
 // ---------------------------------------------------------------------
 
@@ -254,7 +252,6 @@ typedef ACE_Reactor_Token_T<ACE_DEV_POLL_TOKEN> ACE_Dev_Poll_Reactor_Token;
 
 class ACE_Export ACE_Dev_Poll_Reactor : public ACE_Reactor_Impl
 {
-
   /**
    * @struct Event_Tuple
    *
@@ -294,7 +291,6 @@ class ACE_Export ACE_Dev_Poll_Reactor : public ACE_Reactor_Impl
     bool controlled;
   };
 
-
   // ---------------------------------------------------------------------
 
   /**
@@ -333,11 +329,9 @@ class ACE_Export ACE_Dev_Poll_Reactor : public ACE_Reactor_Impl
      * Methods used to search and modify the handler repository.
      */
     //@{
-
     /// Return a pointer to the Event_Tuple associated with @a handle.
     /// If there is none associated, returns 0 and sets errno.
     Event_Tuple *find (ACE_HANDLE handle);
-
 
     /// Bind the ACE_Event_Handler to the @c ACE_HANDLE with the
     /// appropriate ACE_Reactor_Mask settings.
@@ -361,7 +355,6 @@ class ACE_Export ACE_Dev_Poll_Reactor : public ACE_Reactor_Impl
      * underlying handler array.
      */
     //@{
-
     // Check the @a handle to make sure it's a valid @c ACE_HANDLE that
     // within the range of legal handles (i.e., greater than or equal to
     // zero and less than @c max_size_).
@@ -400,7 +393,6 @@ class ACE_Export ACE_Dev_Poll_Reactor : public ACE_Reactor_Impl
      * an @c ACE_HANDLE value.  This is Unix-specific.
      */
     Event_Tuple *handlers_;
-
   };
 
 public:
@@ -868,7 +860,6 @@ public:
    * manipulated with these methods.
    */
   //@{
-
   /// GET/SET/ADD/CLR the dispatch mask "bit" bound with the
   /// event_handler and mask.
   /**
@@ -895,7 +886,6 @@ public:
    * These methods are unimplemented.
    */
   //@{
-
   /// GET/SET/ADD/CLR the ready "bit" bound with the event_handler
   /// and mask.
   virtual int ready_ops (ACE_Event_Handler *event_handler,
@@ -1030,7 +1020,6 @@ protected:
   /// The pollfd array that `/dev/poll' will feed its results to.
   struct pollfd *dp_fds_;
 
-
   /// Pointer to the next pollfd array element that contains the next
   /// event to be dispatched.
   struct pollfd *start_pfds_;
@@ -1145,11 +1134,8 @@ protected:
     /// hasn't got the token (and hence the thread) and a value of 1
     /// vice-versa.
     int owner_;
-
   };
-
 };
-
 
 /**
  * @class ACE_Dev_Poll_Handler_Guard
@@ -1195,7 +1181,6 @@ private:
 
   /// true if eh_ is a reference-counted handler.
   bool refcounted_;
-
 };
 
 ACE_END_VERSIONED_NAMESPACE_DECL

@@ -49,7 +49,6 @@ void ParseCommand(CliCommandHolder::Print*, char*command);
 /// RASocket constructor
 RASocket::RASocket(ISocketHandler &h): TcpSocket(h)
 {
-
     ///- Increment the session number
     iSess =iSession++ ;
 
@@ -134,7 +133,6 @@ void RASocket::OnRead()
     delete [] inp;
     if(gotenter)
     {
-
         buff[iInputLength]=0;
         iInputLength=0;
         switch(stage)
@@ -232,7 +230,6 @@ void RASocket::OnRead()
                 break;
                 ///</ul>
         };
-
     }
 }
 

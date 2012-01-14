@@ -24,16 +24,12 @@
 #define __ZTPRIORITY_H__
 
 namespace ZThread {
-
   //! Priorities
   typedef enum {
-
     Low,
     Medium = Low + 1,
     High   = Low + 2
-
   } Priority;
-
 }
 
 #endif // __ZTPRIORITY_H__

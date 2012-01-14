@@ -33,9 +33,7 @@
 #   pragma warning( disable : 4786)
 #endif
 
-
 namespace G3D {
-
 /**
  Constant for passing to Array::resize
  */
@@ -59,7 +57,6 @@ const int SORT_DECREASING = -1;
 
  If SSE is defined Arrays allocate the first element aligned to
  16 bytes.
-
 
  Array is highly optimized compared to std::vector.
  Array operations are less expensive than on std::vector and for large
@@ -120,12 +117,10 @@ private:
         return (address >= data) && (address < data + num);
     }
 
-
     /** Only compiled if you use the sort procedure. */
     static bool __cdecl compareGT(const T& a, const T& b) {
         return a > b;
     }
-
 
     /**
      Allocates a new array of size numAllocated (not a parameter to the method)
@@ -147,7 +142,6 @@ private:
           const T* end = data + N;
           T* oldPtr = oldData;
           for (T* ptr = data; ptr < end; ++ptr, ++oldPtr) {
-
              // Use placement new to invoke the constructor at the location
              // that we determined.  Use the copy constructor to make the assignment.
              const T* constructed = new (ptr) T(*oldPtr);
@@ -162,7 +156,6 @@ private:
           for (T* ptr = oldData; ptr < end; ++ptr) {
               ptr->~T();
          }}
-
 
          System::alignedFree(oldData);
     }
@@ -255,7 +248,6 @@ public:
        numAllocated = 0;
    }
 
-
    /**
     Removes all elements.  Use resize(0, false) or fastClear if you want to
     remove all elements without deallocating the underlying array
@@ -329,7 +321,6 @@ public:
       resize(n, false);
    }
 
-
    /**
     Inserts at the specified index and shifts all other elements up by one.
     */
@@ -367,13 +358,10 @@ public:
               debugAssert(oldNum == 0);
               realloc(oldNum);
           } else {
-
               if (num < minSize) {
                   // Grow to at least the minimum size
                   numAllocated = minSize;
-
               } else {
-
                   // Increase the underlying size of the array.  Grow aggressively
                   // up to 64k, less aggressively up to 400k, and then grow relatively
                   // slowly (1.5x per resize) to avoid excessive space consumption.
@@ -400,14 +388,12 @@ public:
 
               realloc(oldNum);
           }
-
       } else if ((num <= numAllocated / 3) && shrinkIfNecessary && (num > minSize)) {
           // Shrink the underlying array
 
           // Only copy over old elements that still remain after resizing
           // (destructors were called for others if we're shrinking)
           realloc(iMin(num, oldNum));
-
       }
 
       // Call the constructors on newly revealed elements.
@@ -424,7 +410,6 @@ public:
      in the array.
      */
     inline void append(const T& value) {
-
         if (num < numAllocated) {
             // This is a simple situation; just stick it in the next free slot using
             // the copy constructor.
@@ -444,7 +429,6 @@ public:
         }
     }
 
-
     inline void append(const T& v1, const T& v2) {
         if (inArray(&v1) || inArray(&v2)) {
             T t1 = v1;
@@ -462,7 +446,6 @@ public:
             data[num - 1] = v2;
         }
     }
-
 
     inline void append(const T& v1, const T& v2, const T& v3) {
         if (inArray(&v1) || inArray(&v2) || inArray(&v3)) {
@@ -484,7 +467,6 @@ public:
             data[num - 1] = v3;
         }
     }
-
 
     inline void append(const T& v1, const T& v2, const T& v3, const T& v4) {
         if (inArray(&v1) || inArray(&v2) || inArray(&v3) || inArray(&v4)) {
@@ -614,7 +596,6 @@ public:
        resize(num - 1, shrinkUnderlyingArrayIfNecessary);
    }
 
-
    /**
     "The member function swaps the controlled sequences between *this and str."
     Note that this is slower than the optimal std implementation.
@@ -626,7 +607,6 @@ public:
        str = *this;
        *this = temp;
    }
-
 
    /**
     Performs bounds checks in debug mode
@@ -832,7 +812,6 @@ public:
         std::sort(data, data + num, lessThan);
     }
 
-
     /**
      Sorts the array in increasing order using the > or < operator.  To
      invoke this method on Array<T>, T must override those operator.
@@ -918,7 +897,6 @@ public:
         Array<T>& eqArray,
         Array<T>& gtArray,
         const Comparator& comparator) const {
-
         // Make sure all arrays are independent
         debugAssert(&ltArray != this);
         debugAssert(&eqArray != this);
@@ -952,7 +930,6 @@ public:
         Array<T>& ltArray,
         Array<T>& eqArray,
         Array<T>& gtArray) const {
-
         partition(partitionElement, ltArray, eqArray, gtArray, typename Array<T>::DefaultComparator());
     }
 
@@ -971,7 +948,6 @@ public:
         Array<T>&           gtMedian,
         Array<T>&           tempArray,
         const Comparator&   comparator) const {
-
         ltMedian.fastClear();
         eqMedian.fastClear();
         gtMedian.fastClear();
@@ -1061,12 +1037,9 @@ public:
             int U = gt->size() + gtBoost + eq->size();
             if ((L >= lowerHalfSize) &&
                 (U >= upperHalfSize)) {
-
                 // x must be the partition median
                 break;
-
             } else if (L < lowerHalfSize) {
-
                 // x must be smaller than the median.  Recurse into the 'gt' array.
                 ltBoost += lt->size() + eq->size();
 
@@ -1078,9 +1051,7 @@ public:
                 // Now set up the gt array as the new source
                 source = gt;
                 gt = newGt;
-
             } else {
-
                 // x must be bigger than the median.  Recurse into the 'lt' array.
                 gtBoost += gt->size() + eq->size();
 
@@ -1113,11 +1084,9 @@ public:
         Array<T>&           ltMedian,
         Array<T>&           eqMedian,
         Array<T>&           gtMedian) const {
-
         Array<T> temp;
         medianPartition(ltMedian, eqMedian, gtMedian, temp, DefaultComparator());
     }
-
 
     /** Redistributes the elements so that the new order is statistically independent
         of the original order. O(n) time.*/
@@ -1132,10 +1101,7 @@ public:
             data[x] = temp;
         }
     }
-
-
 };
-
 
 /** Array::contains for C-arrays */
 template<class T> bool contains(const T* array, int len, const T& e) {
@@ -1146,7 +1112,6 @@ template<class T> bool contains(const T* array, int len, const T& e) {
     }
     return false;
 }
-
 } // namespace
 
 #endif

@@ -155,7 +155,6 @@ private:
 
   /// Allocation strategy of the message blocks.
   ACE_Allocator *data_block_allocator_;
-
 };
 
 ACE_END_VERSIONED_NAMESPACE_DECL

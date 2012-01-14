@@ -47,7 +47,6 @@ typedef enum
     LOG_LEVEL_INFO
 } loglevel_t;
 
-
 class ISocketHandler;
 class Socket;
 
@@ -66,11 +65,9 @@ public:
         loglevel_t = LOG_LEVEL_WARNING) = 0;
 };
 
-
 #ifdef SOCKETS_NAMESPACE
 }
 #endif
 
 #endif // _SOCKETS_StdLog_H
-
 

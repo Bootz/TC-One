@@ -446,7 +446,7 @@ Unit *caster, Item* castItem) : Aura(spellproto, eff, currentBasePoints, target,
         m_radius = GetSpellRadius(spellproto,m_effIndex,false);
     else
         m_radius = GetSpellRadius(spellproto,m_effIndex,true);
-    
+
     if(Player* modOwner = caster_ptr->GetSpellModOwner())
         modOwner->ApplySpellMod(GetId(), SPELLMOD_RADIUS, m_radius);
 
@@ -555,7 +555,6 @@ void Aura::Update(uint32 diff)
                          sSpellStore.LookupEntry(GetSpellProto()->EffectTriggerSpell[m_effIndex]) &&
                          !IsAreaOfEffectSpell(sSpellStore.LookupEntry(GetSpellProto()->EffectTriggerSpell[m_effIndex])) &&
                          GetTriggerTarget()) ? GetTriggerTarget() : m_target;
-
 
     if(IsChanneledSpell(m_spellProto) && !pRealTarget->isPossessed() && pRealTarget->GetGUID() != GetCasterGUID())
     {
@@ -3848,10 +3847,10 @@ void Aura::HandleAuraModDispelImmunity(bool apply, bool Real)
     m_target->ApplySpellDispelImmunity(m_spellProto, DispelType(m_modifier.m_miscvalue), apply);
 
     if(GetId()==20594)   //stoneform
-    {   
+    {
         //handle diseases
         m_target->ApplySpellDispelImmunity(m_spellProto,DISPEL_DISEASE,apply);
-  
+
         //remove bleed auras
         const uint32 mechanic = 1 << MECHANIC_BLEED;
 
@@ -4540,11 +4539,10 @@ void Aura::HandleModPowerRegen(bool apply, bool Real)       // drinking
 
     if(apply && m_periodicTimer <= 0)
     {
-
         Powers pt = m_target->getPowerType();
         if (pt == POWER_RAGE)
             m_periodicTimer = 3000;
-        else 
+        else
             m_periodicTimer = 2000;
 
         if(int32(pt) != m_modifier.m_miscvalue)
@@ -4563,7 +4561,7 @@ void Aura::HandleModPowerRegen(bool apply, bool Real)       // drinking
 
         // Warrior talent, gain 1 rage every 3 seconds while in combat
         // Anger Menagement
-        // amount = 1+ 16 = 17 = 3,4*5 = 10,2*5/3 
+        // amount = 1+ 16 = 17 = 3,4*5 = 10,2*5/3
         // so 17 is rounded amount for 5 sec tick grow ~ 1 range grow in 3 sec
         if(pt == POWER_RAGE)
         {
@@ -5260,8 +5258,7 @@ void Aura::HandleAuraModPacify(bool apply, bool Real)
         m_target->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_PACIFIED);
     else
         m_target->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_PACIFIED);
-		
-	
+
  	if(m_spellProto->Id == 45839){
 		if(apply){
             m_target->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE);
@@ -5776,7 +5773,6 @@ void Aura::PeriodicTick()
 
             pCaster->SendSpellNonMeleeDamageLog(m_target, GetId(), pdamage, GetSpellSchoolMask(GetSpellProto()), absorb, resist, false, 0);
 
-
             Unit* target = m_target;                        // aura can be deleted in DealDamage
             SpellEntry const* spellProto = GetSpellProto();
             float multiplier = spellProto->EffectMultipleValue[GetEffIndex()] > 0 ? spellProto->EffectMultipleValue[GetEffIndex()] : 1;
@@ -5799,7 +5795,6 @@ void Aura::PeriodicTick()
                         pCaster->m_currentSpells[i]->cancel();
                 }
             }
-
 
             if(Player *modOwner = pCaster->GetSpellModOwner())
                 modOwner->ApplySpellMod(spellProto->Id, SPELLMOD_MULTIPLE_VALUE, multiplier);

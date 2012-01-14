@@ -30,20 +30,18 @@
 #include <deque>
 
 namespace ZThread {
- 
   /**
    * @class BlockingQueue
    * @author Eric Crahen <http://www.code-foo.com>
    * @date <2003-07-16T12:01:43-0400>
    * @version 2.3.0
    *
-   * Like a LockedQueue, a BlockingQueue is a Queue implementation that provides 
+   * Like a LockedQueue, a BlockingQueue is a Queue implementation that provides
    * serialized access to the items added to it. It differs by causing threads
    * accessing the next() methods to block until a value becomes available.
    */
   template <class T, class LockType, typename StorageType = std::deque<T> >
     class BlockingQueue : public Queue<T>, public Lockable {
-
       //! Serialize access
       LockType _lock;
 
@@ -68,45 +66,39 @@ namespace ZThread {
        * @see Queue::add(const T& item)
        */
       virtual void add(const T& item) {
-
         Guard<LockType> g(_lock);
-    
+
         if(_canceled)
           throw Cancellation_Exception();
-        
-        _queue.push_back(item);
-        
-        _notEmpty.signal();
 
+        _queue.push_back(item);
+
+        _notEmpty.signal();
       }
 
       /**
        * @see Queue::add(const T& item, unsigned long timeout)
        */
       virtual bool add(T item, unsigned long timeout) {
-
         try {
-
           Guard<LockType> g(_lock, timeout);
-      
+
           if(_canceled)
             throw Cancellation_Exception();
-      
+
           _queue.push_back(item);
 
           _notEmpty.signal();
-
         } catch(Timeout_Exception&) { return false; }
- 
-        return true;    
 
+        return true;
       }
 
       /**
        * Get a value from this Queue. The calling thread may block indefinitely.
        *
        * @return <em>T</em> next available value
-       * 
+       *
        * @exception Cancellation_Exception thrown if this Queue has been canceled.
        *
        * @exception Interrupted_Exception thrown if the calling thread is interrupted
@@ -118,7 +110,6 @@ namespace ZThread {
        * @see Queue::next()
        */
       virtual T next() {
-
         Guard<LockType> g(_lock);
 
         while(_queue.size() == 0 && !_canceled)
@@ -126,14 +117,12 @@ namespace ZThread {
 
         if( _queue.size() == 0 )
           throw Cancellation_Exception();
-        
+
         T item = _queue.front();
         _queue.pop_front();
-    
+
         return item;
-
       }
-
 
       /**
        * Get a value from this Queue. The calling thread may block indefinitely.
@@ -142,7 +131,7 @@ namespace ZThread {
        *        the calling thread.
        *
        * @return <em>T</em> next available value
-       * 
+       *
        * @exception Cancellation_Exception thrown if this Queue has been canceled.
        * @exception Timeout_Exception thrown if the timeout expires before a value
        *            can be retrieved.
@@ -155,7 +144,6 @@ namespace ZThread {
        * @see Queue::next(unsigned long timeout)
        */
       virtual T next(unsigned long timeout) {
-
         Guard<LockType> g(_lock, timeout);
 
         while(_queue.size() == 0 && !_canceled) {
@@ -165,63 +153,53 @@ namespace ZThread {
 
         if(_queue.size() == 0 )
           throw Cancellation_Exception();
-  
+
         T item = _queue.front();
         _queue.pop_front();
-    
+
         return item;
-
       }
-
 
       /**
        * @see Queue::cancel()
        *
-       * @post If threads are blocked on one of the next() functions then 
+       * @post If threads are blocked on one of the next() functions then
        *       they will be awakened with a Cancellation_Exception.
        */
       virtual void cancel() {
-
         Guard<LockType> g(_lock);
 
         _notEmpty.broadcast();
         _canceled = true;
-
       }
 
       /**
        * @see Queue::isCanceled()
        */
       virtual bool isCanceled() {
-
         // Faster check since the queue will not become un-canceled
         if(_canceled)
           return true;
-        
+
         Guard<LockType> g(_lock);
 
         return _canceled;
-
       }
 
       /**
        * @see Queue::size()
        */
       virtual size_t size() {
-
         Guard<LockType> g(_lock);
         return _queue.size();
-
       }
 
       /**
        * @see Queue::size(unsigned long timeout)
        */
       virtual size_t size(unsigned long timeout) {
-
         Guard<LockType> g(_lock, timeout);
         return _queue.size();
-
       }
 
       public:
@@ -237,9 +215,7 @@ namespace ZThread {
       virtual void release() {
         _lock.release();
       }
-
     }; /* BlockingQueue */
-
 } // namespace ZThread
 
 #endif // __ZTBLOCKINGQUEUE_H__

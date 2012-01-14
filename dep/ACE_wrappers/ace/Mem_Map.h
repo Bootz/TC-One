@@ -218,7 +218,6 @@ private:
   /// Keeps track of whether we need to close the handle.  This is set
   /// if we opened the file.
   bool close_handle_;
-
 };
 
 ACE_END_VERSIONED_NAMESPACE_DECL

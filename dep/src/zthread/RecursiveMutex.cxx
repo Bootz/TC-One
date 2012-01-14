@@ -24,38 +24,24 @@
 #include "RecursiveMutexImpl.h"
 
 namespace ZThread {
-
   RecursiveMutex::RecursiveMutex() {
-  
     _impl = new RecursiveMutexImpl();
-  
   }
 
   RecursiveMutex::~RecursiveMutex() {
-
-    if(_impl != (RecursiveMutexImpl*)0 ) 
+    if(_impl != (RecursiveMutexImpl*)0 )
       delete _impl;
-
   }
-
 
   void RecursiveMutex::acquire() {
-
-    _impl->acquire(); 
-
+    _impl->acquire();
   }
 
-
   bool RecursiveMutex::tryAcquire(unsigned long ms) {
-
-    return _impl->tryAcquire(ms); 
-
+    return _impl->tryAcquire(ms);
   }
 
   void RecursiveMutex::release() {
-
-    _impl->release(); 
-
+    _impl->release();
   }
-
 } // namespace ZThread

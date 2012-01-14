@@ -98,7 +98,6 @@ EndScriptData */
 
 #define SPELL_BERSERK 45078
 
-
 #define PHASE_BEAR 0
 #define PHASE_EAGLE 1
 #define PHASE_LYNX 2

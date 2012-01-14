@@ -156,7 +156,6 @@ void WorldSession::HandleCreatureQueryOpcode( WorldPacket & recv_data )
     CreatureInfo const *ci = objmgr.GetCreatureTemplate(entry);
     if (ci)
     {
-
         std::string Name, SubName;
         Name = ci->Name;
         SubName = ci->SubName;
@@ -222,7 +221,6 @@ void WorldSession::HandleGameObjectQueryOpcode( WorldPacket & recv_data )
     const GameObjectInfo *info = objmgr.GetGameObjectInfo(entryID);
     if(info)
     {
-
         std::string Name;
         std::string CastBarCaption;
 
@@ -257,7 +255,6 @@ void WorldSession::HandleGameObjectQueryOpcode( WorldPacket & recv_data )
     }
     else
     {
-
         uint64 guid;
         recv_data >> guid;
 

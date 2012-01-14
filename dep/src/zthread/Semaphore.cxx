@@ -24,7 +24,6 @@
 #include "SemaphoreImpl.h"
 
 namespace ZThread {
-
   /**
    * Create a new semaphore of a given size with a given count
    *
@@ -32,41 +31,28 @@ namespace ZThread {
    * @param maxCount maximum size of the semaphore count
    */
   Semaphore::Semaphore(int count, unsigned int maxCount) {
-  
     _impl = new FifoSemaphoreImpl(count, maxCount, true);
-  
   }
 
   Semaphore::~Semaphore() {
-
     if(_impl != 0)
       delete _impl;
-
   }
 
   void Semaphore::wait() {
-
     _impl->acquire();
-
   }
 
-
   bool Semaphore::tryWait(unsigned long ms) {
-
     return _impl->tryAcquire(ms);
-
   }
 
   void Semaphore::post() {
-
     _impl->release();
-
   }
 
   int Semaphore::count() {
-
     return _impl->count();
-
   }
 
   ///////////////////////////////////////////////////////////////////////////////
@@ -74,28 +60,15 @@ namespace ZThread {
   //
 
   void Semaphore::acquire() {
-
     _impl->acquire();
-
   }
 
   bool Semaphore::tryAcquire(unsigned long ms) {
-
     return _impl->tryAcquire(ms);
-
-
   }
 
   void Semaphore::release() {
-
     _impl->release();
-
   }
-
 } // namespace ZThread
-
-
-
-
-
 

@@ -38,7 +38,6 @@
 ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 namespace ACE_OS {
-
   ACE_NAMESPACE_INLINE_FUNCTION
   int fcntl (ACE_HANDLE handle,
              int cmd,
@@ -62,7 +61,6 @@ namespace ACE_OS {
                    mode_t perms = ACE_DEFAULT_OPEN_PERMS,
                    LPSECURITY_ATTRIBUTES sa = 0);
 #endif /* ACE_HAS_WCHAR */
-
 } /* namespace ACE_OS */
 
 ACE_END_VERSIONED_NAMESPACE_DECL

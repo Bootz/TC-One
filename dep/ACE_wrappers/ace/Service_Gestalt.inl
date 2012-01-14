@@ -2,9 +2,7 @@
 //
 // $Id: Service_Gestalt.inl 91158 2010-07-21 15:54:12Z mesnier_p $
 
-
 ACE_BEGIN_VERSIONED_NAMESPACE_DECL
-
 
 // This is the primary entry point into the ACE_Service_Config (the
 // constructor just handles simple initializations).

@@ -93,7 +93,6 @@ protected:
 template <class KEY, class VALUE, class CONTAINER, class ITERATOR, class ATTRIBUTES>
 class ACE_Recyclable_Handler_Caching_Utility : private ACE_Copy_Disabled
 {
-
 public:
 
   typedef ACE_Recyclable_Handler_Cleanup_Strategy<KEY, VALUE, CONTAINER> CLEANUP_STRATEGY;

@@ -36,7 +36,6 @@
 ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 namespace ACE_OS {
-
   ACE_NAMESPACE_INLINE_FUNCTION
   unsigned long inet_addr (const char *name);
 
@@ -57,7 +56,6 @@ namespace ACE_OS {
   int inet_pton (int family,
                  const char *strptr,
                  void *addrptr);
-
 } /* namespace ACE_OS */
 
 ACE_END_VERSIONED_NAMESPACE_DECL

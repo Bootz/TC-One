@@ -50,7 +50,6 @@
 #undef max
 
 namespace G3D {
-
 #if defined(_MSC_VER)
 
 #if !defined(_WIN64)
@@ -100,11 +99,9 @@ __inline long int lrintf(float flt) {
         return (long int)floorf(flt+0.5f);
     }
 
-
 #endif
 
 #endif
-
 
 const double fuzzyEpsilon = 0.00001;
 
@@ -112,7 +109,6 @@ const double fuzzyEpsilon = 0.00001;
     This value should not be tested against directly, instead
     G3D::isNan() and G3D::isFinite() will return reliable results. */
 inline const double& inf() {
-
 // We already have <limits> included but
 // not using it in older gcc for safe compilations
 #if (__GNUC__ == 2)
@@ -128,7 +124,6 @@ inline const double& inf() {
     This value should not be tested against directly, instead
     G3D::isNan() and G3D::isFinite() will return reliable results. */
 inline const double& nan() {
-
 // We already have <limits> included but
 // not using it in older gcc for safe compilations
 #if (__GNUC__ == 2)
@@ -224,7 +219,6 @@ int iSign(double fValue);
 inline int iSign(float f) {
     return iSign((double)f);
 }
-
 
 /**
     Fast round to integer using the lrint routine.
@@ -400,7 +394,6 @@ inline float rsq(float x) {
  @cite Nick nicolas@capens.net
  */
 inline float SSErsq(float x) {
-
     #if defined(SSE) && defined(G3D_WIN32) && !defined(_WIN64)
         __asm {
            movss xmm0, x
@@ -459,7 +452,6 @@ inline float dot(float a, float b) {
     return a * b;
 }
 
-
 /**
  a * b (for DirectX/Cg support)
  */
@@ -477,7 +469,6 @@ inline double exp2(double x) {
 inline double rsqrt(double x) {
     return 1.0 / sqrt(x);
 }
-
 
 /**
  sin(x)/x
@@ -505,14 +496,11 @@ inline double wrap(double t, double lo, double hi) {
     double interval = hi - lo;
 
     return t - interval * iFloor((t - lo) / interval);
-
 }
 
 inline double wrap(double t, double hi) {
     return wrap(t, 0, hi);
 }
-
-
 } // namespace
 
 #ifdef _MSC_VER
@@ -522,5 +510,4 @@ inline double wrap(double t, double hi) {
 #include "g3dmath.inl"
 
 #endif
-
 

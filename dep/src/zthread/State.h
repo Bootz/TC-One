@@ -24,9 +24,8 @@
 #define __ZTSTATE_H__
 
 namespace ZThread {
-
 /**
- * @class State 
+ * @class State
  * @author Eric Crahen <http://www.code-foo.com>
  * @date <2003-07-16T20:04:01-0400>
  * @version 2.2.1
@@ -52,7 +51,7 @@ class State {
   }
 
   /**
-   * Test for the JOINED state. A task has completed and 
+   * Test for the JOINED state. A task has completed and
    * the thread is join()ed.
    *
    * @return bool
@@ -86,13 +85,11 @@ class State {
    * @return bool true if successful
    */
   bool setIdle() {
-
     if(_state != RUNNING)
       return false;
 
     _state = IDLE;
     return true;
-
   }
 
   /**
@@ -101,13 +98,11 @@ class State {
    * @return bool true if successful
    */
   bool setRunning() {
-
     if(_state != IDLE)
       return false;
 
     _state = RUNNING;
     return true;
-
   }
 
   /**
@@ -116,15 +111,12 @@ class State {
    * @return bool true if successful
    */
   bool setReference() {
-
     if(_state != IDLE)
       return false;
 
     _state = REFERENCE;
     return true;
-
   }
-
 
   /**
    * Transition to the JOINED state.
@@ -132,20 +124,15 @@ class State {
    * @return bool true if successful
    */
   bool setJoined() {
-
     _state = JOINED;
     return true;
-
   }
 
  private:
 
   //! Current state
   STATE _state;
-
 };
-
-
 };
 
 #endif

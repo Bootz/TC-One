@@ -119,7 +119,6 @@ namespace Trinity
         private:
             static MUTEX si_mtx;
     };
-
 }
 
 template<class T, class MUTEX> MUTEX Trinity::ClassLevelLockable<T, MUTEX>::si_mtx;

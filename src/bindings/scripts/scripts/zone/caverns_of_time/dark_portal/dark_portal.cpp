@@ -252,7 +252,6 @@ struct TRINITY_DLL_DECL npc_time_riftAI : public ScriptedAI
 
     void Reset()
     {
-
         TimeRiftWave_Timer = 15000;
         mRiftWaveCount = 0;
 
@@ -266,7 +265,6 @@ struct TRINITY_DLL_DECL npc_time_riftAI : public ScriptedAI
         else if (mPortalCount > 12)
             mWaveId = 2;
         else mWaveId = 1;
-
     }
     void EnterCombat(Unit *who) {}
 

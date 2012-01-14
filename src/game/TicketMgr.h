@@ -71,12 +71,10 @@ class TicketMgr
         GM_Ticket* GetGMTicketByPlayer(uint64 playerGuid);
         GM_Ticket* GetGMTicketByName(const char *name);
 
-
     protected:
         uint64 m_ticketid;
 };
 
 #endif
 #define ticketmgr Trinity::Singleton<TicketMgr>::Instance()
-
 

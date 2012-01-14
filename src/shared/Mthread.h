@@ -38,7 +38,6 @@ class MThread: public Base
     #else
         pthread_t tid;
     #endif
-
 };
 
 class MMutex :  public Base

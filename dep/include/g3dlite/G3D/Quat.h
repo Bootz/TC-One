@@ -19,7 +19,6 @@
 #include <string>
 
 namespace G3D {
-
 /**
   Unit quaternions are used in computer graphics to represent
   rotation about an axis.  Any 3x3 rotation matrix can
@@ -209,12 +208,10 @@ public:
         return (*this) * other.inverse();
     }
 
-
     /** Is the magnitude nearly 1.0? */
     inline bool isUnit(float tolerance = 1e-5) const {
         return abs(dot(*this) - 1.0f) < tolerance;
     }
-
 
     inline float magnitude() const {
         return sqrtf(dot(*this));
@@ -268,7 +265,6 @@ public:
         return Quat(sinf(A) * v, cosf(A));
     }
 
-
     /**
      Raise this quaternion to a power.  For a rotation, this is
      the effect of rotating x times as much as the original
@@ -280,7 +276,6 @@ public:
     inline Quat pow(float x) const {
         return (log() * x).exp();
     }
-
 
     /**
      @deprecated
@@ -687,15 +682,12 @@ inline G3D::Quat operator*(double s, const G3D::Quat& q) {
 inline G3D::Quat operator*(float s, const G3D::Quat& q) {
     return q * s;
 }
-
 } // Namespace G3D
 
 // Outside the namespace to avoid overloading confusion for C++
 inline G3D::Quat pow(const G3D::Quat& q, double x) {
     return q.pow((float)x);
 }
-
-
 
 #include "Quat.inl"
 

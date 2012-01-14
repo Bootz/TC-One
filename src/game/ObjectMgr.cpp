@@ -839,7 +839,7 @@ bool ObjectMgr::CheckCreatureLinkedRespawn(uint32 guid, uint32 linkedGuid) const
 {
     const CreatureData* const slave = GetCreatureData(guid);
     const CreatureData* const master = GetCreatureData(linkedGuid);
-    
+
     if(!slave || !master) // they must have a corresponding entry in db
     {
         sLog.outError("LinkedRespawn: Creature '%u' linking to '%u' which doesn't exist",guid,linkedGuid);
@@ -847,7 +847,7 @@ bool ObjectMgr::CheckCreatureLinkedRespawn(uint32 guid, uint32 linkedGuid) const
     }
 
     const MapEntry* const map = sMapStore.LookupEntry(master->mapid);
-        
+
     if(master->mapid != slave->mapid        // link only to same map
         && (!map || map->Instanceable()))   // or to unistanced world
     {
@@ -893,7 +893,6 @@ void ObjectMgr::LoadCreatureLinkedRespawn()
 
         if(CheckCreatureLinkedRespawn(guid,linkedGuid))
             mCreatureLinkedRespawnMap[guid] = linkedGuid;
-
     } while (result->NextRow());
 
     delete result;
@@ -1040,7 +1039,6 @@ void ObjectMgr::LoadCreatures()
         if (gameEvent==0)                                   // if not this is to be managed by GameEvent System
             AddCreatureToGrid(guid, &data);
         ++count;
-
     } while (result->NextRow());
 
     delete result;
@@ -1140,7 +1138,6 @@ void ObjectMgr::LoadGameobjects()
         if (gameEvent==0)                                   // if not this is to be managed by GameEvent System
             AddGameobjectToGrid(guid, &data);
         ++count;
-
     } while (result->NextRow());
 
     delete result;
@@ -2000,7 +1997,6 @@ void ObjectMgr::LoadPlayerInfo()
 
     // Load playercreate spells
     {
-
         QueryResult *result = NULL;
         if(sWorld.getConfig(CONFIG_START_ALL_SPELLS))
             result = WorldDatabase.Query("SELECT race, class, Spell, Active FROM playercreateinfo_spell_custom");
@@ -2426,7 +2422,6 @@ void ObjectMgr::LoadGuilds()
 
     if( !result )
     {
-
         barGoLink bar( 1 );
 
         bar.step();
@@ -2453,7 +2448,6 @@ void ObjectMgr::LoadGuilds()
             continue;
         }
         AddGuild(newguild);
-
     }while( result->NextRow() );
 
     delete result;
@@ -2470,7 +2464,6 @@ void ObjectMgr::LoadArenaTeams()
 
     if( !result )
     {
-
         barGoLink bar( 1 );
 
         bar.step();
@@ -3224,7 +3217,6 @@ void ObjectMgr::LoadQuests()
                     qinfo->GetQuestId(),qinfo->RewSpell,qinfo->RewSpell);
                 qinfo->RewSpell = 0;                        // no spell reward will display for this quest
             }
-
         }
 
         if(qinfo->RewSpellCast)
@@ -3244,7 +3236,6 @@ void ObjectMgr::LoadQuests()
                     qinfo->GetQuestId(),qinfo->RewSpellCast,qinfo->RewSpellCast);
                 qinfo->RewSpellCast = 0;                    // no spell will be casted on player
             }
-
         }
 
         if(qinfo->RewMailTemplateId)
@@ -3919,7 +3910,6 @@ void ObjectMgr::LoadItemTexts()
         mItemTexts[ fields[0].GetUInt32() ] = fields[1].GetCppString();
 
         ++count;
-
     } while ( result->NextRow() );
 
     delete result;
@@ -4015,7 +4005,6 @@ void ObjectMgr::LoadPageTextLocales()
                 data.Text[idx] = str;
             }
         }
-
     } while (result->NextRow());
 
     delete result;
@@ -4146,7 +4135,6 @@ void ObjectMgr::LoadGossipText()
         }
 
         AddGossipText( pGText );
-
     } while( result->NextRow() );
 
     sLog.outString();
@@ -4373,7 +4361,6 @@ void ObjectMgr::LoadQuestAreaTriggers()
         }
 
         mQuestAreaTriggerMap[trigger_ID] = quest_ID;
-
     } while( result->NextRow() );
 
     delete result;
@@ -4864,18 +4851,16 @@ void ObjectMgr::RemoveGraveYardLink(uint32 id, uint32 zoneId, uint32 team, bool 
     return;
 }
 
-
 void ObjectMgr::LoadAreaTriggerTeleports()
 {
     mAreaTriggers.clear();                                  // need for reload case
 
     uint32 count = 0;
 
-    //                                                0       1           2              3               4                   5                   6  
+    //                                                0       1           2              3               4                   5                   6
     QueryResult *result = WorldDatabase.Query("SELECT id, access_id, target_map, target_position_x, target_position_y, target_position_z, target_orientation FROM areatrigger_teleport");
     if( !result )
     {
-
         barGoLink bar( 1 );
 
         bar.step();
@@ -4912,7 +4897,7 @@ void ObjectMgr::LoadAreaTriggerTeleports()
             sLog.outErrorDb("Area trigger (ID:%u) does not exist in `AreaTrigger.dbc`.",Trigger_ID);
             continue;
         }
-        
+
         MapEntry const* mapEntry = sMapStore.LookupEntry(at.target_mapId);
         if(!mapEntry)
         {
@@ -4927,7 +4912,6 @@ void ObjectMgr::LoadAreaTriggerTeleports()
         }
 
         mAreaTriggers[Trigger_ID] = at;
-
     } while( result->NextRow() );
 
     delete result;
@@ -4946,7 +4930,6 @@ void ObjectMgr::LoadAccessRequirements()
     QueryResult *result = WorldDatabase.Query("SELECT id, level_min, level_max, item, item2, heroic_key, heroic_key2, quest_done, quest_failed_text, heroic_quest_done, heroic_quest_failed_text FROM access_requirement");
     if( !result )
     {
-
         barGoLink bar( 1 );
 
         bar.step();
@@ -5040,7 +5023,6 @@ void ObjectMgr::LoadAccessRequirements()
         }
 
         mAccessRequirements[requiremt_ID] = ar;
-
     } while( result->NextRow() );
 
     delete result;
@@ -5351,7 +5333,6 @@ void ObjectMgr::LoadGameObjectLocales()
                 }
             }
         }
-
     } while (result->NextRow());
 
     delete result;
@@ -6246,7 +6227,6 @@ void ObjectMgr::LoadBattleMastersEntry()
         uint32 bgTypeId  = fields[1].GetUInt32();
 
         mBattleMastersMap[entry] = bgTypeId;
-
     } while( result->NextRow() );
 
     delete result;
@@ -7016,7 +6996,6 @@ void ObjectMgr::LoadTrainerSpell()
         if(!pTrainerSpell->reqlevel)
             pTrainerSpell->reqlevel = spellinfo->spellLevel;
 
-
         TrainerSpellData& data = m_mCacheTrainerSpellMap[entry];
 
         if(SpellMgr::IsProfessionSpell(spell))
@@ -7024,7 +7003,6 @@ void ObjectMgr::LoadTrainerSpell()
 
         data.spellList.push_back(pTrainerSpell);
         ++count;
-
     } while (result->NextRow());
     delete result;
 
@@ -7074,7 +7052,6 @@ void ObjectMgr::LoadVendors()
 
         vList.AddItem(item_id,maxcount,incrtime,ExtendedCost);
         ++count;
-
     } while (result->NextRow());
     delete result;
 
@@ -7084,7 +7061,6 @@ void ObjectMgr::LoadVendors()
 
 void ObjectMgr::LoadNpcTextId()
 {
-
     m_mCacheNpcTextIdMap.clear();
 
     QueryResult* result = WorldDatabase.Query("SELECT npc_guid, textid FROM npc_gossip");
@@ -7125,7 +7101,6 @@ void ObjectMgr::LoadNpcTextId()
 
         m_mCacheNpcTextIdMap[guid] = textid ;
         ++count;
-
     } while (result->NextRow());
     delete result;
 
@@ -7177,7 +7152,6 @@ void ObjectMgr::LoadNpcOptions()
         m_mCacheNpcOptionList.push_back(go);
 
         ++count;
-
     } while (result->NextRow());
     delete result;
 
@@ -7421,7 +7395,6 @@ Quest const* GetQuestTemplateStore(uint32 entry)
 
 void ObjectMgr::LoadTransportEvents()
 {
-
     QueryResult *result = WorldDatabase.Query("SELECT entry, waypoint_id, event_id FROM transport_events");
 
     if( !result )

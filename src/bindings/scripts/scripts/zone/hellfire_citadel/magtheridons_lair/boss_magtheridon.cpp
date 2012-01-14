@@ -557,6 +557,5 @@ void AddSC_boss_magtheridon()
     newscript->Name="mob_abyssal";
     newscript->GetAI = &GetAI_mob_abyssalAI;
     newscript->RegisterSelf();
-
 }
 

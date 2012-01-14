@@ -87,7 +87,6 @@ inline ACE_INT64 ace_strtoull_helper (const char *s, char **ptr, int base)
 ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 namespace ACE_OS {
-
   /** @name Non-standard functions
    *
    *  These functions aren't in the standard.
@@ -436,7 +435,6 @@ namespace ACE_OS {
   extern ACE_Export
   void setprogname_emulation (const char* name);
 #endif /* !ACE_HAS_SETPROGNAME */
-
 } /* namespace ACE_OS */
 
 ACE_END_VERSIONED_NAMESPACE_DECL

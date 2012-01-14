@@ -42,7 +42,6 @@ EndContentData */
 #define ENTRY_TARLORD1 6519
 #define ENTRY_STOMPER 6513
 
-
 struct TRINITY_DLL_DECL npc_ameAI : public npc_escortAI
 {
     npc_ameAI(Creature *c) : npc_escortAI(c) {}
@@ -58,7 +57,6 @@ struct TRINITY_DLL_DECL npc_ameAI : public npc_escortAI
 
         switch (i)
         {
-
          case 19:
             m_creature->SummonCreature(ENTRY_STOMPER, -6391.69, -1730.49, -272.83, 4.96, TEMPSUMMON_TIMED_DESPAWN_OUT_OF_COMBAT, 25000);
             DoScriptText(SAY_AGGRO1, m_creature, pPlayer);
@@ -79,7 +77,6 @@ struct TRINITY_DLL_DECL npc_ameAI : public npc_escortAI
             if (pPlayer)
                 pPlayer->GroupEventHappens(QUEST_CHASING_AME,m_creature);
             break;
-
         }
     }
 
@@ -110,7 +107,6 @@ struct TRINITY_DLL_DECL npc_ameAI : public npc_escortAI
             DoCast(m_creature->getVictim(),SPELL_DEMORALIZINGSHOUT);
             DEMORALIZINGSHOUT_Timer = 70000;
         }else DEMORALIZINGSHOUT_Timer -= diff;
-
     }
 };
 

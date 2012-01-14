@@ -301,7 +301,6 @@ struct TRINITY_DLL_DECL mob_doomfire_targettingAI : public ScriptedAI
             ChangeTargetTimer = 5000;
         }else ChangeTargetTimer -= diff;
     }
-
 };
 
 /* Finally, Archimonde's script. His script isn't extremely complex, most are simply spells on timers.
@@ -665,7 +664,6 @@ struct TRINITY_DLL_DECL boss_archimondeAI : public hyjal_trashAI
                 DoScriptText(SAY_AIR_BURST1, m_creature);
             else
                 DoScriptText(SAY_AIR_BURST2, m_creature);
-
 
             DoCast(SelectUnit(SELECT_TARGET_RANDOM, 1), SPELL_AIR_BURST);//not on tank
             AirBurstTimer = 25000 + rand()%15000;

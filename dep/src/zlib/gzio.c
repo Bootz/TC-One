@@ -72,7 +72,6 @@ typedef struct gz_stream {
     int      last;    /* true if push-back is last character */
 } gz_stream;
 
-
 local gzFile gz_open      OF((const char *path, const char *mode, int  fd));
 local int do_flush        OF((gzFile file, int flush));
 local int    get_byte     OF((gz_stream *s));
@@ -242,7 +241,6 @@ int ZEXPORT gzsetparams (file, level, strategy)
 
     /* Make room to allow flushing */
     if (s->stream.avail_out == 0) {
-
         s->stream.next_out = s->outbuf;
         if (fwrite(s->outbuf, 1, Z_BUFSIZE, s->file) != Z_BUFSIZE) {
             s->z_err = Z_ERRNO;
@@ -423,7 +421,6 @@ int ZEXPORT gzread (file, buf, len)
     }
 
     while (s->stream.avail_out != 0) {
-
         if (s->transparent) {
             /* Copy first the lookahead bytes: */
             uInt n = s->stream.avail_in;
@@ -447,7 +444,6 @@ int ZEXPORT gzread (file, buf, len)
             return (int)len;
         }
         if (s->stream.avail_in == 0 && !s->z_eof) {
-
             errno = 0;
             s->stream.avail_in = (uInt)fread(s->inbuf, 1, Z_BUFSIZE, s->file);
             if (s->stream.avail_in == 0) {
@@ -495,7 +491,6 @@ int ZEXPORT gzread (file, buf, len)
     return (int)(len - s->stream.avail_out);
 }
 
-
 /* ===========================================================================
       Reads one byte from the compressed file. gzgetc returns this byte
    or -1 in case of end of file or error.
@@ -507,7 +502,6 @@ int ZEXPORT gzgetc(file)
 
     return gzread(file, &c, 1) == 1 ? c : -1;
 }
-
 
 /* ===========================================================================
       Push one byte back onto the stream.
@@ -526,7 +520,6 @@ int ZEXPORT gzungetc(c, file)
     s->z_eof = 0;
     return c;
 }
-
 
 /* ===========================================================================
       Reads bytes from the compressed file until len-1 characters are
@@ -550,7 +543,6 @@ char * ZEXPORT gzgets(file, buf, len)
     return b == buf && len > 0 ? Z_NULL : b;
 }
 
-
 #ifndef NO_GZCOMPRESS
 /* ===========================================================================
      Writes the given number of uncompressed bytes into the compressed file.
@@ -569,9 +561,7 @@ int ZEXPORT gzwrite (file, buf, len)
     s->stream.avail_in = len;
 
     while (s->stream.avail_in != 0) {
-
         if (s->stream.avail_out == 0) {
-
             s->stream.next_out = s->outbuf;
             if (fwrite(s->outbuf, 1, Z_BUFSIZE, s->file) != Z_BUFSIZE) {
                 s->z_err = Z_ERRNO;
@@ -590,7 +580,6 @@ int ZEXPORT gzwrite (file, buf, len)
 
     return (int)(len - s->stream.avail_in);
 }
-
 
 /* ===========================================================================
      Converts, formats, and writes the args to the compressed file under
@@ -684,7 +673,6 @@ int ZEXPORT gzputc(file, c)
     return gzwrite(file, &cc, 1) == 1 ? (int)cc : -1;
 }
 
-
 /* ===========================================================================
       Writes the given null-terminated string to the compressed file, excluding
    the terminating null character.
@@ -696,7 +684,6 @@ int ZEXPORT gzputs(file, s)
 {
     return gzwrite(file, (char*)s, (unsigned)strlen(s));
 }
-
 
 /* ===========================================================================
      Flushes all pending output into the compressed file. The parameter

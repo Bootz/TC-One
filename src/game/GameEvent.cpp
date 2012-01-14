@@ -228,7 +228,6 @@ void GameEvent::LoadFromDB()
             sLog.outErrorDb("`game_event` game event id (%i) isn't a world event and has length = 0, thus it can't be used.",event_id);
             continue;
         }
-
     } while( result->NextRow() );
 
     sLog.outString();
@@ -250,7 +249,6 @@ void GameEvent::LoadFromDB()
     }
     else
     {
-
         barGoLink bar2( result->GetRowCount() );
         do
         {
@@ -278,7 +276,6 @@ void GameEvent::LoadFromDB()
             }
 
             ++count;
-
         } while( result->NextRow() );
         sLog.outString();
         sLog.outString( ">> Loaded %u game event saves in game events", count );
@@ -297,7 +294,6 @@ void GameEvent::LoadFromDB()
     }
     else
     {
-
         barGoLink bar2( result->GetRowCount() );
         do
         {
@@ -312,7 +308,6 @@ void GameEvent::LoadFromDB()
                 sLog.outErrorDb("`game_event_prerequisite` game event id (%i) is out of range compared to max event id in `game_event`",event_id);
                 continue;
             }
-
 
             if(mGameEvent[event_id].state != GAMEEVENT_NORMAL)
             {
@@ -331,7 +326,6 @@ void GameEvent::LoadFromDB()
             }
 
             ++count;
-
         } while( result->NextRow() );
         sLog.outString();
         sLog.outString( ">> Loaded %u game event prerequisites in game events", count );
@@ -354,7 +348,6 @@ void GameEvent::LoadFromDB()
     }
     else
     {
-
         barGoLink bar2( result->GetRowCount() );
         do
         {
@@ -376,7 +369,6 @@ void GameEvent::LoadFromDB()
             ++count;
             GuidList& crelist = mGameEventCreatureGuids[internal_event_id];
             crelist.push_back(guid);
-
         } while( result->NextRow() );
         sLog.outString();
         sLog.outString( ">> Loaded %u creatures in game events", count );
@@ -399,7 +391,6 @@ void GameEvent::LoadFromDB()
     }
     else
     {
-
         barGoLink bar3( result->GetRowCount() );
         do
         {
@@ -421,7 +412,6 @@ void GameEvent::LoadFromDB()
             ++count;
             GuidList& golist = mGameEventGameobjectGuids[internal_event_id];
             golist.push_back(guid);
-
         } while( result->NextRow() );
         sLog.outString();
         sLog.outString( ">> Loaded %u gameobjects in game events", count );
@@ -447,7 +437,6 @@ void GameEvent::LoadFromDB()
     }
     else
     {
-
         barGoLink bar3( result->GetRowCount() );
         do
         {
@@ -481,7 +470,6 @@ void GameEvent::LoadFromDB()
             }
 
             equiplist.push_back(std::pair<uint32, ModelEquip>(guid, newModelEquipSet));
-
         } while( result->NextRow() );
         sLog.outString();
         sLog.outString( ">> Loaded %u model/equipment changes in game events", count );
@@ -504,7 +492,6 @@ void GameEvent::LoadFromDB()
     }
     else
     {
-
         barGoLink bar3( result->GetRowCount() );
         do
         {
@@ -524,7 +511,6 @@ void GameEvent::LoadFromDB()
             ++count;
             QuestRelList& questlist = mGameEventCreatureQuests[event_id];
             questlist.push_back(QuestRelation(id, quest));
-
         } while( result->NextRow() );
         sLog.outString();
         sLog.outString( ">> Loaded %u quests additions in game events", count );
@@ -547,7 +533,6 @@ void GameEvent::LoadFromDB()
     }
     else
     {
-
         barGoLink bar3( result->GetRowCount() );
         do
         {
@@ -567,7 +552,6 @@ void GameEvent::LoadFromDB()
             ++count;
             QuestRelList& questlist = mGameEventGameObjectQuests[event_id];
             questlist.push_back(QuestRelation(id, quest));
-
         } while( result->NextRow() );
         sLog.outString();
         sLog.outString( ">> Loaded %u quests additions in game events", count );
@@ -590,7 +574,6 @@ void GameEvent::LoadFromDB()
     }
     else
     {
-
         barGoLink bar3( result->GetRowCount() );
         do
         {
@@ -612,7 +595,6 @@ void GameEvent::LoadFromDB()
             mQuestToEventConditions[quest].event_id = event_id;
             mQuestToEventConditions[quest].condition = condition;
             mQuestToEventConditions[quest].num = num;
-
         } while( result->NextRow() );
         sLog.outString();
         sLog.outString( ">> Loaded %u quest event conditions in game events", count );
@@ -635,7 +617,6 @@ void GameEvent::LoadFromDB()
     }
     else
     {
-
         barGoLink bar3( result->GetRowCount() );
         do
         {
@@ -657,7 +638,6 @@ void GameEvent::LoadFromDB()
             mGameEvent[event_id].conditions[condition].done_world_state = fields[4].GetUInt32();
 
             ++count;
-
         } while( result->NextRow() );
         sLog.outString();
         sLog.outString( ">> Loaded %u conditions in game events", count );
@@ -680,7 +660,6 @@ void GameEvent::LoadFromDB()
     }
     else
     {
-
         barGoLink bar3( result->GetRowCount() );
         do
         {
@@ -708,7 +687,6 @@ void GameEvent::LoadFromDB()
             }
 
             ++count;
-
         } while( result->NextRow() );
         sLog.outString();
         sLog.outString( ">> Loaded %u condition saves in game events", count );
@@ -732,7 +710,6 @@ void GameEvent::LoadFromDB()
     }
     else
     {
-
         barGoLink bar3( result->GetRowCount() );
         do
         {
@@ -752,7 +729,6 @@ void GameEvent::LoadFromDB()
             mGameEventNPCFlags[event_id].push_back(GuidNPCFlagPair(guid,npcflag));
 
             ++count;
-
         } while( result->NextRow() );
         sLog.outString();
         sLog.outString( ">> Loaded %u npcflags in game events", count );
@@ -775,7 +751,6 @@ void GameEvent::LoadFromDB()
     }
     else
     {
-
         barGoLink bar3( result->GetRowCount() );
         do
         {
@@ -819,7 +794,6 @@ void GameEvent::LoadFromDB()
                 continue;
             ++count;
             vendors.push_back(newEntry);
-
         } while( result->NextRow() );
         sLog.outString();
         sLog.outString( ">> Loaded %u vendor additions in game events", count );
@@ -842,7 +816,6 @@ void GameEvent::LoadFromDB()
     }
     else
     {
-
         barGoLink bar3( result->GetRowCount() );
         do
         {
@@ -862,7 +835,6 @@ void GameEvent::LoadFromDB()
             mNPCGossipIds[guid]=EventNPCGossipIdPair(event_id, textid);
 
             ++count;
-
         } while( result->NextRow() );
         sLog.outString();
         sLog.outString( ">> Loaded %u npc gossip textids in game events", count );
@@ -887,7 +859,6 @@ void GameEvent::LoadFromDB()
     }
     else
     {
-
         barGoLink bar3( result->GetRowCount() );
         do
         {
@@ -906,7 +877,6 @@ void GameEvent::LoadFromDB()
             ++count;
 
             mGameEventBattleGroundHolidays[event_id] = fields[1].GetUInt32();
-
         } while( result->NextRow() );
         sLog.outString();
         sLog.outString( ">> Loaded %u battleground holidays in game events", count );
@@ -1540,7 +1510,7 @@ TRINITY_DLL_SPEC bool isGameEventActive(uint16 event_id)
     for(GameEvent::ActiveEvents::const_iterator itr = ae.begin(); itr != ae.end(); ++itr)
         if(*itr == event_id)
 	    return true;
-	    
+
     return false;
 }
 

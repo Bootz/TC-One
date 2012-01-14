@@ -374,7 +374,6 @@ struct TRINITY_DLL_DECL boss_spiritlynxAI : public ScriptedAI
 
         DoMeleeAttackIfReady();
     }
-
 };
 
 CreatureAI* GetAI_boss_halazziAI(Creature *_Creature)

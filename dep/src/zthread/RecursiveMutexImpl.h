@@ -30,7 +30,6 @@
 #include <vector>
 
 namespace ZThread {
-
   class Monitor;
 
   /**
@@ -39,14 +38,13 @@ namespace ZThread {
    * @date <2003-07-16T19:58:26-0400>
    * @version 2.1.6
    *
-   * This synchronization object provides serialized access 
-   * through an acquire/release protocol. 
+   * This synchronization object provides serialized access
+   * through an acquire/release protocol.
    */
   class ZTHREAD_API RecursiveMutexImpl {
-  
-    typedef std::vector<Monitor*> List;  
+    typedef std::vector<Monitor*> List;
 
-    //! List of Events that are waiting for notification 
+    //! List of Events that are waiting for notification
     List _waiters;
 
     //! Serialize access to this Mutex
@@ -55,24 +53,21 @@ namespace ZThread {
     //! Current owning Event object
     Monitor* _owner;
 
-    //! Entry count 
+    //! Entry count
     size_t _count;
 
   public:
-   
-    RecursiveMutexImpl(); 
+
+    RecursiveMutexImpl();
 
     virtual ~RecursiveMutexImpl();
-  
+
     void acquire();
-  
+
     bool tryAcquire(unsigned long);
-  
-    void release(); 
 
+    void release();
   }; /* RecursiveMutexImpl */
-
-
-}; 
+};
 
 #endif

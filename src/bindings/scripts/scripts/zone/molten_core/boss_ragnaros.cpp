@@ -236,7 +236,6 @@ struct TRINITY_DLL_DECL boss_ragnarosAI : public Scripted_NoMovementAI
                 WasBanished = true;
                 DoCast(m_creature,SPELL_RAGSUBMERGE);
                 Attack_Timer = 90000;
-
             }else
             {
                 DoScriptText(SAY_REINFORCEMENTS2, m_creature);

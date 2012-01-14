@@ -42,7 +42,6 @@ inline void getBounds(const G3D::Vector3& v, G3D::AABox& out) {
     out = G3D::AABox(v);
 }
 
-
 inline void getBounds(const G3D::AABox& a, G3D::AABox& out) {
     out = a;
 }
@@ -51,22 +50,17 @@ inline void getBounds(const G3D::Sphere& s, G3D::AABox& out) {
     s.getBounds(out);
 }
 
-
 inline void getBounds(const G3D::Box& b, G3D::AABox& out) {
     b.getBounds(out);
 }
-
 
 inline void getBounds(const G3D::Triangle& t, G3D::AABox& out) {
     t.getBounds(out);
 }
 
-
-
 inline void getBounds(const G3D::Vector3* v, G3D::AABox& out) {
     out = G3D::AABox(*v);
 }
-
 
 inline void getBounds(const G3D::AABox* a, G3D::AABox& out) {
     getBounds(*a, out);
@@ -75,7 +69,6 @@ inline void getBounds(const G3D::AABox* a, G3D::AABox& out) {
 inline void getBounds(const G3D::Sphere* s, G3D::AABox& out) {
     s->getBounds(out);
 }
-
 
 inline void getBounds(const G3D::Box* b, G3D::AABox& out) {
     b->getBounds(out);
@@ -86,7 +79,6 @@ inline void getBounds(const G3D::Triangle* t, G3D::AABox& out) {
 }
 namespace G3D {
     namespace _internal {
-
     /**
      Wraps a pointer value so that it can be treated as the instance itself;
      convenient for inserting pointers into a Table but using the
@@ -124,7 +116,6 @@ struct GHashCode< G3D::_internal::Indirector<Handle> >
 };
 
 namespace G3D {
-
 /**
  A set that supports spatial queries using an axis-aligned
  BSP tree for speed.
@@ -165,7 +156,6 @@ namespace G3D {
  you can use the AABSPTree::update method as a shortcut to
  insert/remove an object in one step after it has moved.
 
-
  Note: Do not mutate any value once it has been inserted into AABSPTree. Values
  are copied interally. All AABSPTree iterators convert to pointers to constant
  values to reinforce this.
@@ -184,7 +174,6 @@ namespace G3D {
 
 */
 namespace _AABSPTree {
-
     /** Wrapper for a value that includes a cache of its bounds.
         Except for the test value used in a set-query operation, there
         is only ever one instance of the handle associated with any
@@ -258,13 +247,11 @@ template<class T> class AABSPTree {
 protected:
 public:
 
-
     /** Returns the bounds of the sub array. Used by makeNode. */
     static AABox computeBounds(
     const Array<_AABSPTree::Handle<T>*>& point,
         int                   beginIndex,
         int                   endIndex) {
-
         Vector3 lo = Vector3::inf();
         Vector3 hi = -lo;
 
@@ -297,7 +284,6 @@ public:
         }
     };
 
-
     /** Compares bounds for strict >, <, or overlap*/
     class BoundsComparator {
     public:
@@ -318,7 +304,6 @@ public:
             }
         }
     };
-
 
     /** Compares bounds to the sort location */
     class Comparator {
@@ -436,7 +421,6 @@ public:
             return (child[0] == NULL) && (child[1] == NULL);
         }
 
-
         /**
          Recursively appends all handles and children's handles
          to the array.
@@ -524,7 +508,6 @@ public:
 #endif
         /** Returns the deepest node that completely contains bounds. */
         Node* findDeepestContainingNode(const AABox& bounds) {
-
             // See which side of the splitting plane the bounds are on
             if (bounds.high()[splitAxis] < splitLocation) {
                 // Bounds are on the low side.  Recurse into the child
@@ -545,7 +528,6 @@ public:
             return this;
         }
 
-
         /** Appends all members that intersect the box.
             If useSphere is true, members that pass the box test
             face a second test against the sphere. */
@@ -554,7 +536,6 @@ public:
             const Sphere&       sphere,
             Array<T>&           members,
             bool                useSphere) const {
-
             // Test all values at this node
             for (int v = 0; v < boundsArray.size(); ++v) {
                 const AABox& bounds = boundsArray[v];
@@ -666,7 +647,6 @@ public:
             int secondChild = NONE;
 
             if (ray.origin[splitAxis] < splitLocation) {
-
                 // The ray starts on the small side
                 firstChild = 0;
 
@@ -674,9 +654,7 @@ public:
                     // The ray will eventually reach the other side
                     secondChild = 1;
                 }
-
             } else if (ray.origin[splitAxis] > splitLocation) {
-
                 // The ray starts on the large side
                 firstChild = 1;
 
@@ -717,10 +695,8 @@ public:
             if ((secondChild != NONE) && child[secondChild]) {
                 child[secondChild]->intersectRay(ray, intersectCallback, distance, pStopAtFirstHit, intersectCallbackIsFast);
             }
-
         }
     };
-
 
     /**
      Recursively subdivides the subarray.
@@ -734,7 +710,6 @@ public:
         int valuesPerNode,
         int numMeanSplits,
         Array<_AABSPTree::Handle<T> * >& temp)  {
-
         Node* node = NULL;
 
         if (source.size() <= valuesPerNode) {
@@ -746,7 +721,6 @@ public:
                 memberTable.set(Member(source[i]), node);
             }
             source.clear();
-
         } else {
             // Make a new internal node
             node = new Node();
@@ -762,7 +736,6 @@ public:
             Array<_AABSPTree::Handle<T> * > lt, gt;
 
             if (numMeanSplits <= 0) {
-
                 source.medianPartition(lt, node->valueArray, gt, temp, CenterComparator(splitAxis));
 
                 // Choose the split location to be the center of whatever fell in the center
@@ -813,7 +786,6 @@ public:
                 // The Comparator ensures that elements are strictly on the correct side of the split
             }
 
-
 #           if defined(G3D_DEBUG) && defined(VERIFY_TREE)
                 debugAssert(lt.size() + node->valueArray.size() + gt.size() == source.size());
                 // Verify that all objects ended up on the correct side of the split.
@@ -856,7 +828,6 @@ public:
             if (gt.size() > 0) {
                 node->child[1] = makeNode(gt, valuesPerNode, numMeanSplits - 1, temp);
             }
-
         }
 
         return node;
@@ -904,11 +875,9 @@ public:
       AABSPTree::balance(). */
     AABSPTree() : root(NULL) {}
 
-
     AABSPTree(const AABSPTree& src) : root(NULL) {
         *this = src;
     }
-
 
     AABSPTree& operator=(const AABSPTree& src) {
         delete root;
@@ -916,7 +885,6 @@ public:
         root = cloneTree(src.root);
         return *this;
     }
-
 
     ~AABSPTree() {
         clear();
@@ -998,7 +966,6 @@ public:
                 root->boundsArray[j] = h->bounds;
                 memberTable.set(Member(h), root);
             }
-
         } else {
             // Insert at appropriate tree depth.
             for (int i = 0; i < valueArray.size(); ++i) {
@@ -1006,7 +973,6 @@ public:
             }
         }
     }
-
 
     /**
      Returns true if this object is in the set, otherwise
@@ -1017,7 +983,6 @@ public:
         _AABSPTree::Handle<T> h(value);
         return memberTable.containsKey(Member(&h));
     }
-
 
     /**
      Removes an object from the set in O(1) time.
@@ -1066,7 +1031,6 @@ public:
         ptr = NULL;
     }
 
-
     /**
      If the element is in the set, it is removed.
      The element is then inserted.
@@ -1084,7 +1048,6 @@ public:
         }
         insert(value);
     }
-
 
     /**
      Rebalances the tree (slow).  Call when objects
@@ -1155,7 +1118,6 @@ protected:
         Array<T>&                   members,
         Node*                       node,
         uint32                      parentMask) {
-
         int dummy;
 
         if (parentMask == 0) {
@@ -1171,7 +1133,6 @@ protected:
                 }
             }
         } else {
-
             // Test values at this node against remaining planes
             for (int v = node->boundsArray.size() - 1; v >= 0; --v) {
                 if (! node->boundsArray[v].culledBy(plane, dummy, parentMask)) {
@@ -1269,7 +1230,6 @@ public:
         BoxIntersectionIterator(const AABox& b, const Node* root) :
            isEnd(root == NULL), box(b),
            node(const_cast<Node*>(root)), nextValueArrayIndex(-1) {
-
            // We intentionally start at the "-1" index of the current
            // node so we can use the preincrement operator to move
            // ourselves to element 0 instead of repeating all of the
@@ -1319,7 +1279,6 @@ public:
 
             bool foundIntersection = false;
             while (! isEnd && ! foundIntersection) {
-
                 // Search for the next node if we've exhausted this one
                 while ((! isEnd) &&  (nextValueArrayIndex >= node->valueArray.length())) {
                     // If we entered this loop, then the iterator has exhausted the elements at
@@ -1402,7 +1361,6 @@ public:
         }
     };
 
-
     /**
      Iterates through the members that intersect the box
      */
@@ -1425,7 +1383,6 @@ public:
         }
         root->getIntersectingMembers(box, Sphere(Vector3::zero(), 0), members, false);
     }
-
 
     /**
      Invoke a callback for every member along a ray until the closest intersection is found.
@@ -1473,7 +1430,6 @@ public:
             scene.intersectRay(camera.worldRay(x, y), intersection, distance);
           </pre>
 
-
      @param distance When the method is invoked, this is the maximum distance that the tree should search for an intersection.
      On return, this is set to the distance to the first intersection encountered.
 
@@ -1487,11 +1443,8 @@ public:
         float& distance,
         bool pStopAtFirstHit,
         bool intersectCallbackIsFast = false) const {
-
         root->intersectRay(ray, intersectCallback, distance, pStopAtFirstHit, intersectCallbackIsFast);
-
     }
-
 
     /**
       @param members The results are appended to this array.
@@ -1504,7 +1457,6 @@ public:
         AABox box;
         sphere.getBounds(box);
         root->getIntersectingMembers(box, sphere, members, true);
-
     }
 #if 0
     /**
@@ -1532,7 +1484,6 @@ public:
             members.append(temp[i].handle->value);
         }
     }
-
 
     /**
      C++ STL style iterator variable.  See begin().
@@ -1591,7 +1542,6 @@ public:
         }
     };
 
-
     /**
      C++ STL style iterator method.  Returns the first member.
      Use preincrement (++entry) to get to the next element (iteration
@@ -1602,7 +1552,6 @@ public:
         return Iterator(memberTable.begin());
     }
 
-
     /**
      C++ STL style iterator method.  Returns one after the last iterator
      element.
@@ -1611,11 +1560,7 @@ public:
         return Iterator(memberTable.end());
     }
 };
-
 }
 
 #endif
-
-
-
 

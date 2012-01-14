@@ -62,7 +62,6 @@ namespace __gnu_cxx
     {
         size_t operator()(T * const &__x) const { return (size_t)__x; }
     };
-
 };
 
 #else

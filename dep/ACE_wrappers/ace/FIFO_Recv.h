@@ -10,7 +10,6 @@
  */
 //==========================================================================
 
-
 #ifndef ACE_FIFO_RECV_H
 #define ACE_FIFO_RECV_H
 
@@ -46,7 +45,6 @@ public:
   /// reading."  This ensures that the fifo never gets EOF, even if there
   /// aren't any writers at the moment!
   //@{
-
   /// Default constructor.
   ACE_FIFO_Recv (void);
 

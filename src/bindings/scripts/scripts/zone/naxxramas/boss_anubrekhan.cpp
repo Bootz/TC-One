@@ -83,7 +83,6 @@ struct TRINITY_DLL_DECL boss_anubrekhanAI : public ScriptedAI
 
     void MoveInLineOfSight(Unit *who)
     {
-
             if (!HasTaunted && m_creature->IsWithinDistInMap(who, 60.0f))
             {
                 switch(rand()%5)

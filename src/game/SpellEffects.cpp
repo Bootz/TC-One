@@ -1135,7 +1135,7 @@ void Spell::EffectDummy(uint32 i)
                 {
                     if(unitTarget->GetTypeId() != TYPEID_PLAYER)
                         return;
-                    
+
                     m_caster->CastSpell(unitTarget,40932,true);
                     break;
                 }
@@ -1822,7 +1822,6 @@ void Spell::EffectTriggerRitualOfSummoning(uint32 i)
 
     m_caster->SetCurrentCastedSpell(spell);
     spell->m_selfContainer = &(m_caster->m_currentSpells[spell->GetCurrentContainer()]);
-
 }
 
 void Spell::EffectForceCast(uint32 i)
@@ -5365,23 +5364,23 @@ void Spell::EffectSummonTotem(uint32 i)
     float angle = slot < MAX_TOTEM ? M_PI/MAX_TOTEM - (slot*2*M_PI/MAX_TOTEM) : 0;
 
     float x,y,z;
-    
+
     //totem size is 0, take care.
     m_caster->GetClosePoint(x,y,z,pTotem->GetObjectSize(),2.0f,angle);
-    
+
     if(sWorld.getConfig(CONFIG_VMAP_TOTEM))
     {
         VMAP::IVMapManager* vmgr = VMAP::VMapFactory::createOrGetVMapManager();
         if(vmgr->isHeightCalcEnabled() && vmgr->isLineOfSightCalcEnabled() )
-        {   
+        {
             float cx, cy, cz;
             m_caster->GetPosition(cx,cy,cz);
-            
+
             //TODO: sometimes the HitPos fails getting LOS of the caster/totem, but almost allways works and do it quickly.
             //      maybe vmaps files needs a more detail level?
-            
+
             //checks for collision between two points, and writes resulting collision into last three floats
-            if(vmgr->getObjectHitPos(m_caster->GetMapId(), cx, cy, cz, x, y, z, x, y, z, 0) ) 
+            if(vmgr->getObjectHitPos(m_caster->GetMapId(), cx, cy, cz, x, y, z, x, y, z, 0) )
             {
                 //sLog.outDebug("TOTEM HIT! c(%.2f,%.2f,%.2f)=>(%.2f,%.2f,%.2f) \n",cx,cy,cz, x,y,z);
                 //Collision occured
@@ -5754,7 +5753,6 @@ void Spell::EffectMomentMove(uint32 i)
       ((Player*)unitTarget)->TeleportTo(mapid, destx, desty, destz+0.07531f, unitTarget->GetOrientation(), TELE_TO_NOT_LEAVE_COMBAT | TELE_TO_NOT_UNSUMMON_PET | (unitTarget==m_caster ? TELE_TO_SPELL : 0));
     else
         unitTarget->GetMap()->CreatureRelocation((Creature*)unitTarget, destx, desty, destz,unitTarget->GetOrientation());
-
 }
 
 void Spell::EffectReputation(uint32 i)
@@ -6033,7 +6031,6 @@ void Spell::EffectSendTaxi(uint32 i)
     }
 
     ((Player*)unitTarget)->ActivateTaxiPathTo(nodes,mountid);
-
 }
 
 void Spell::EffectPlayerPull(uint32 i)

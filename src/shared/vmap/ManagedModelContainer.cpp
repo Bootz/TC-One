@@ -24,7 +24,6 @@ using namespace G3D;
 
 namespace VMAP
 {
-
     ManagedModelContainer::ManagedModelContainer(void) : ModelContainer()
     {
         refCount = 0;
@@ -33,6 +32,5 @@ namespace VMAP
     ManagedModelContainer::~ManagedModelContainer(void)
     {
     }
-
 }
 

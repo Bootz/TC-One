@@ -49,7 +49,6 @@
 
 /***** End Stack Defines *****/
 
-
 /* SCA STUFF */
 #if defined(INTEGRITY_VERSION) && (INTEGRITY_VERSION >= 40108)
 #define ACE_HAS_SIG_ATOMIC_T
@@ -212,7 +211,6 @@ int unlink(const char *);
 #define ACE_LACKS_TELLDIR
 #define ACE_LACKS_SEEKDIR
 #define ACE_LACKS_GETHOSTENT
-
 
 /* end MIKEC Addtions */
 

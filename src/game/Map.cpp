@@ -459,7 +459,7 @@ Map::EnsureGridLoaded(const Cell &cell, Player *player)
         ResetGridExpiry(*getNGrid(cell.GridX(), cell.GridY()), 0.1f);
         grid->SetGridState(GRID_STATE_ACTIVE);
     }
-    
+
     if(player)
         AddToGrid(player,grid,cell);
 }
@@ -517,7 +517,7 @@ Map::Add(T *obj)
 
     AddToGrid(obj,grid,cell);
     obj->AddToWorld();
-    
+
     if(obj->isActiveObject())
         AddToActive(obj);
 
@@ -1350,7 +1350,6 @@ float Map::GetHeight(float x, float y, float z, bool pUseVmaps) const
                 return vmapHeight;
             else
                 return mapHeight;                           // better use .map surface height
-
         }
         else
             return vmapHeight;                              // we have only vmapHeight (if have)

@@ -571,7 +571,6 @@ struct CreatureEventAIHolder
 
 class TRINITY_DLL_SPEC CreatureEventAI : public CreatureAI
 {
-
     public:
         explicit CreatureEventAI(Creature *c);
         ~CreatureEventAI()

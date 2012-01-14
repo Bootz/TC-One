@@ -280,7 +280,6 @@ public:
    * lock atomically over a number of calls to ACE_Log_Msg.
    */
   //@{
-
   /// Acquire the internal lock.
   int acquire (void);
 
@@ -735,7 +734,6 @@ ACE_END_VERSIONED_NAMESPACE_DECL
 #else
 # define ACE_TSS_CLEANUP_NAME ACE_TSS_cleanup
 #endif  /* ACE_HAS_VERSIONED_NAMESPACE == 1 */
-
 
 LOCAL_EXTERN_PREFIX
 void

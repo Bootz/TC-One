@@ -99,7 +99,6 @@ void TicketMgr::DeleteGMTicketPermanently(uint64 ticketGuid)
     CharacterDatabase.PExecute("DELETE FROM `gm_tickets` WHERE guid= '%u'", ticketGuid);
 }
 
-
 void TicketMgr::LoadGMTickets()
 {
     // Delete all out of object holder
@@ -130,7 +129,6 @@ void TicketMgr::LoadGMTickets()
         ticket->comment = fields[12].GetString();
 
         AddGMTicket(ticket, true);
-
     } while( result->NextRow() );
 
     sWorld.SendGMText(LANG_COMMAND_TICKETRELOAD, result->GetRowCount());
@@ -150,7 +148,6 @@ void TicketMgr::RemoveGMTicket(uint64 ticketGuid, uint64 GMguid)
         ++i;
     }
 }
-
 
 void TicketMgr::RemoveGMTicketByPlayer(uint64 playerGuid, uint64 GMguid)
 {
@@ -187,7 +184,6 @@ void TicketMgr::SaveGMTicket(GM_Ticket* ticket)
     CharacterDatabase.BeginTransaction();
     CharacterDatabase.Execute(ss.str().c_str());
     CharacterDatabase.CommitTransaction();
-
 }
 
 void TicketMgr::UpdateGMTicket(GM_Ticket *ticket)

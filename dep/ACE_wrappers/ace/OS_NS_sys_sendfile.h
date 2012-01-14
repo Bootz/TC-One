@@ -29,7 +29,6 @@
 #endif
 #define ACE_EXPORT_MACRO ACE_Export
 
-
 ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 namespace ACE_OS
@@ -48,7 +47,6 @@ namespace ACE_OS
                               off_t * offset,
                               size_t count);
 #endif  /* ACE_HAS_SENDFILE==0 */
-
 }
 
 ACE_END_VERSIONED_NAMESPACE_DECL

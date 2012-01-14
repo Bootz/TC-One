@@ -32,7 +32,6 @@ class Transport;
 
 class TRINITY_DLL_DECL MapManager : public Trinity::Singleton<MapManager, Trinity::ClassLevelLockable<MapManager, ZThread::Mutex> >
 {
-
     friend class Trinity::OperatorNew<MapManager>;
     typedef UNORDERED_MAP<uint32, Map*> MapMapType;
     typedef std::pair<UNORDERED_MAP<uint32, Map*>::iterator, bool>  MapMapPair;

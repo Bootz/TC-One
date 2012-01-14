@@ -72,7 +72,6 @@ struct TRINITY_DLL_DECL boss_faerlinaAI : public ScriptedAI
          {
                 DoScriptText(SAY_GREET, m_creature);
                 HasTaunted = true;
-
         }
          ScriptedAI::MoveInLineOfSight(who);
     }

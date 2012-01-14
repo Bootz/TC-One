@@ -25,7 +25,6 @@ using namespace G3D;
 
 namespace VMAP
 {
-
     //=========================================================
 
     VMapManager::VMapManager()

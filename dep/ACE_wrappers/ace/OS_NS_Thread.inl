@@ -572,7 +572,6 @@ ACE_OS::recursive_mutex_cond_unlock (ACE_recursive_thread_mutex_t *m,
 #endif /* ACE_HAS_THREADS */
 }
 
-
 // This method is called after waiting on a condition variable when a
 // recursive mutex must be reacquired. If the platform doesn't natively
 // integrate recursive mutexes and condition variables, it's taken care
@@ -3562,7 +3561,6 @@ ACE_OS_Recursive_Thread_Mutex_Guard::~ACE_OS_Recursive_Thread_Mutex_Guard ()
 }
 
 #endif /* ACE_MT_SAFE && ACE_MT_SAFE != 0 */
-
 
 /*****************************************************************************/
 

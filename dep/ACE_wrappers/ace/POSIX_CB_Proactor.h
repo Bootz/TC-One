@@ -27,7 +27,6 @@
 
 #include "ace/POSIX_Proactor.h"
 
-
 ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 /**
@@ -38,7 +37,6 @@ ACE_BEGIN_VERSIONED_NAMESPACE_DECL
  */
 class ACE_Export ACE_POSIX_CB_Proactor : public ACE_POSIX_AIOCB_Proactor
 {
-
 public:
   virtual Proactor_Type get_impl_type (void);
 

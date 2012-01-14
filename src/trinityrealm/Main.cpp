@@ -267,7 +267,6 @@ extern int main(int argc, char **argv)
     ///- Wait for termination signal
     while (!stopEvent)
     {
-
         h.Select(0, 100000);
 
         if( (++loopCounter) == numLoops )

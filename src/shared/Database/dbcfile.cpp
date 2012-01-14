@@ -32,7 +32,6 @@ DBCFile::DBCFile()
 
 bool DBCFile::Load(const char *filename, const char *fmt)
 {
-
     uint32 header;
     if(data)
     {

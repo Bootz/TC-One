@@ -25,22 +25,16 @@
 #include "ThreadImpl.h"
 
 namespace ZThread {
-
-
-  Thread::Thread() 
-    : _impl( ThreadImpl::current() ) { 
-
-    // ThreadImpl's start out life with a reference count 
+  Thread::Thread()
+    : _impl( ThreadImpl::current() ) {
+    // ThreadImpl's start out life with a reference count
     // of one, and the they are added to the ThreadQueue.
     _impl->addReference();
-    
   }
 
   Thread::Thread(const Task& task, bool autoCancel)
-    : _impl( new ThreadImpl(task, autoCancel) ) { 
-    
+    : _impl( new ThreadImpl(task, autoCancel) ) {
     _impl->addReference();
-    
   }
 
   bool Thread::operator==(const Thread& t) const {
@@ -48,9 +42,7 @@ namespace ZThread {
   }
 
   Thread::~Thread() {
-
     _impl->delReference();
-
   }
 
   void Thread::wait() {
@@ -58,70 +50,45 @@ namespace ZThread {
   }
 
   bool Thread::wait(unsigned long timeout) {
-
     return _impl->join(timeout == 0 ? 1 : timeout);
-
   }
 
   bool Thread::interrupted() {
-
     return ThreadImpl::current()->isInterrupted();
-
   }
 
-
   bool Thread::canceled() {
-
     return ThreadImpl::current()->isCanceled();
-
   }
 
   void Thread::setPriority(Priority n) {
-
     _impl->setPriority(n);
-
   }
 
-
   Priority Thread::getPriority() {
-
     return _impl->getPriority();
-
   }
 
   bool Thread::interrupt() {
-
     return _impl->interrupt();
-
   }
-  
-  void Thread::cancel() {
 
+  void Thread::cancel() {
     if(ThreadImpl::current() == _impl)
       throw InvalidOp_Exception();
 
     _impl->cancel();
-
-  } 
+  }
 
   bool Thread::isCanceled() {
-
     return _impl->isCanceled();
-
   }
-
 
   void Thread::sleep(unsigned long ms) {
-
     ThreadImpl::sleep(ms);
-
   }
-
 
   void Thread::yield() {
-
     ThreadImpl::yield();
-
   }
-
-} // namespace ZThread 
+} // namespace ZThread

@@ -7,7 +7,6 @@
 ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 namespace ACE_OS {
-
 ACE_INLINE int
 t_accept (ACE_HANDLE handle, ACE_HANDLE reshandle, struct t_call *call)
 {
@@ -384,7 +383,6 @@ t_unbind (ACE_HANDLE handle)
   ACE_NOTSUP_RETURN (-1);
 #endif /* ACE_HAS_TLI */
 }
-
 }  /* end namespace ACE_OS */
 
 ACE_END_VERSIONED_NAMESPACE_DECL

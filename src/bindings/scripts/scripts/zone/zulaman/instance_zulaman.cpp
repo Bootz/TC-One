@@ -46,7 +46,6 @@ static SHostageInfo HostageInfo[] =
     {23999, 187021, 400, 1414, 74.36, 3.3}, // eagle
     {24001, 186672, -35, 1134, 18.71, 1.9}, // dragonhawk
     {24024, 186667, 413, 1117,  6.32, 3.1}  // lynx
-
 };
 
 struct TRINITY_DLL_DECL instance_zulaman : public ScriptedInstance
@@ -132,7 +131,6 @@ struct TRINITY_DLL_DECL instance_zulaman : public ScriptedInstance
         case 186672: AshlisBagGUID = go->GetGUID(); break;
         case 186667: KrazsPackageGUID  = go->GetGUID(); break;
         default: break;
-
         }
         CheckInstanceStatus();
     }

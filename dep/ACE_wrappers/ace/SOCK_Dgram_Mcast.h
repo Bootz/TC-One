@@ -257,7 +257,6 @@ public:
             int reuse_addr = 1,               // (see above)
             const ACE_TCHAR *net_if = 0);
 
-
   /// Leave a multicast group on a given interface (or all interfaces, if
   /// supported).
   /**
@@ -370,7 +369,6 @@ private:
  mutable ACE_SDM_LOCK subscription_list_lock_;
      // (Lock type does not need to support recursive locking.)
 #endif /* ACE_SOCK_DGRAM_MCAST_DUMPABLE */
-
 };
 
 ACE_END_VERSIONED_NAMESPACE_DECL

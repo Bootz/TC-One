@@ -501,7 +501,6 @@ struct TRINITY_DLL_DECL boss_kaelthasAI : public ScriptedAI
 
     void UpdateAI(const uint32 diff)
     {
-
         if(pInstance && Phase)
         {
             if(pInstance->GetData(DATA_KAELTHASEVENT) == IN_PROGRESS && m_creature->getThreatManager().getThreatList().empty())
@@ -815,7 +814,6 @@ struct TRINITY_DLL_DECL boss_kaelthasAI : public ScriptedAI
                         if (m_creature->getThreatManager().getThreatList().size() >= 2)
                         for (uint32 i = 0; i < 3; i++)
                         {
-
                             Unit* target =SelectUnit(SELECT_TARGET_RANDOM, 1, 70, true);
                             if(!target) target = m_creature->getVictim();
                             debug_log("TSCR: Kael'Thas mind control not supported.");
@@ -906,7 +904,6 @@ struct TRINITY_DLL_DECL boss_kaelthasAI : public ScriptedAI
                 //Phase 5
                 if(Phase == 6)
                 {
-
                     //GravityLapse_Timer
                     if(GravityLapse_Timer < diff)
                     {
@@ -1425,7 +1422,6 @@ struct TRINITY_DLL_DECL mob_phoenix_tkAI : public ScriptedAI
         }
     }
 
-
     void Reset()
     {
         m_creature->AddUnitMovementFlag(MOVEMENTFLAG_ONTRANSPORT + MOVEMENTFLAG_LEVITATING);//birds can fly! :)
@@ -1438,7 +1434,6 @@ struct TRINITY_DLL_DECL mob_phoenix_tkAI : public ScriptedAI
 
     void DamageTaken(Unit* pKiller, uint32 &damage)
     {
-
     }
 
     void UpdateAI(const uint32 diff)

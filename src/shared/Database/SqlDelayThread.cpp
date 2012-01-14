@@ -24,10 +24,8 @@
 
 SqlDelayThread::SqlDelayThread(Database* db, const char* infoString) :m_running(true)
 {
-
   m_dbEngine = new DatabaseType;
   ((DatabaseType*)m_dbEngine)->Initialize(infoString, false);
-
 }
 
 void SqlDelayThread::run()
@@ -49,7 +47,6 @@ void SqlDelayThread::run()
 	continue;
       s->Execute(m_dbEngine);
       delete s;
-      
     }
 
     #ifndef DO_POSTGRESQL

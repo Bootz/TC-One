@@ -241,7 +241,6 @@ struct TRINITY_DLL_DECL boss_selin_fireheartAI : public ScriptedAI
         GameObject* ContinueDoor = GameObject::GetGameObject(*m_creature, pInstance->GetData64(DATA_SELIN_DOOR));
         if( ContinueDoor )
             ContinueDoor->SetGoState(0);                    // Open the door leading further in
-
     }
 
     void UpdateAI(const uint32 diff)
@@ -291,7 +290,6 @@ struct TRINITY_DLL_DECL boss_selin_fireheartAI : public ScriptedAI
                     else         DrainCrystalTimer = 20000 + rand()%5000;
                 }else DrainCrystalTimer -= diff;
             }
-
         }else
         {
             if( IsDraining )

@@ -51,7 +51,6 @@ protected:
 
   /// Pre-computed hash-value.
   mutable unsigned long hash_value_;
-
 };
 
 ACE_END_VERSIONED_NAMESPACE_DECL

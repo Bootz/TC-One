@@ -367,7 +367,6 @@ public:
 
         if (Event_onWait && Event_Timer < diff)
         {
-
             Player* pPlayer = Unit::GetPlayer(PlayerGUID);
             if (!pPlayer || (pPlayer && pPlayer->GetQuestStatus(10965) == QUEST_STATUS_NONE))
             {
@@ -506,7 +505,6 @@ public:
                     Event_onWait = false;
                     break;
             }
-
         } else if (Event_onWait) Event_Timer -= diff;
     }
 

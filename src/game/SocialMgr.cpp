@@ -174,12 +174,10 @@ bool PlayerSocial::HasIgnore(uint32 ignore_guid)
 
 SocialMgr::SocialMgr()
 {
-
 }
 
 SocialMgr::~SocialMgr()
 {
-
 }
 
 void SocialMgr::RemovePlayerSocial(uint32 guid)

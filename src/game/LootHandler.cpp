@@ -500,7 +500,6 @@ void WorldSession::HandleLootMasterGiveOpcode( WorldPacket & recv_data )
     item.count=0;
     item.is_looted=true;
 
-
     pLoot->NotifyItemRemoved(slotid);
     --pLoot->unlootedCount;
 }

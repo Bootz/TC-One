@@ -183,7 +183,6 @@ struct TRINITY_DLL_DECL boss_exarch_maladaarAI : public ScriptedAI
         ScriptedAI::MoveInLineOfSight(who);
     }
 
-
     void EnterCombat(Unit *who)
     {
         switch (rand()%3)
@@ -205,7 +204,6 @@ struct TRINITY_DLL_DECL boss_exarch_maladaarAI : public ScriptedAI
 
             if (Unit *target = Unit::GetUnit(*m_creature,soulholder))
             {
-
             ((mob_stolen_soulAI*)summoned->AI())->SetMyClass(soulclass);
              summoned->AI()->AttackStart(target);
             }

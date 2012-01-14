@@ -16,7 +16,6 @@
 #include "G3D/g3dmath.h"
 
 namespace G3D {
-
 /**
  A Vector3 that packs its fields into uint16s.
  */
@@ -50,7 +49,6 @@ public:
 #ifdef G3D_WIN32
     #pragma pack(pop)
 #endif
-
 }
 #endif
 

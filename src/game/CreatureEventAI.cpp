@@ -65,7 +65,6 @@ CreatureEventAI::CreatureEventAI(Creature *c ) : CreatureAI(c)
         std::vector<CreatureEventAI_Event>::const_iterator i;
         for (i = (*CreatureEvents).second.begin(); i != (*CreatureEvents).second.end(); ++i)
         {
-
             //Debug check
             #ifndef TRINITY_DEBUG
             if ((*i).event_flags & EFLAG_DEBUG_ONLY)
@@ -485,7 +484,6 @@ void CreatureEventAI::ProcessAction(CreatureEventAI_Action const& action, uint32
                                 m_creature->GetMotionMaster()->MoveChase(m_creature->getVictim(), AttackDistance, AttackAngle);
                             }
                         }
-
                     }
                     else
                     {
@@ -495,7 +493,6 @@ void CreatureEventAI::ProcessAction(CreatureEventAI_Action const& action, uint32
 
                         caster->CastSpell(target, action.cast.spellId, (action.cast.castFlags & CAST_TRIGGERED));
                     }
-
                 }
                 else
                     sLog.outErrorDb("CreatureEventAI: event %d creature %d attempt to cast spell that doesn't exist %d", EventId, m_creature->GetEntry(), action.cast.spellId);
@@ -726,7 +723,6 @@ void CreatureEventAI::ProcessAction(CreatureEventAI_Action const& action, uint32
         case ACTION_T_UPDATE_TEMPLATE:
             if (m_creature->GetEntry() == action.update_template.creatureId)
             {
-
                 sLog.outErrorDb("CreatureEventAI: Event %d ACTION_T_UPDATE_TEMPLATE call with param1 == current entry. Creature %d", EventId, m_creature->GetEntry());
                 return;
             }
@@ -736,7 +732,6 @@ void CreatureEventAI::ProcessAction(CreatureEventAI_Action const& action, uint32
         case ACTION_T_DIE:
             if (m_creature->isDead())
             {
-
                 sLog.outErrorDb("CreatureEventAI: Event %d ACTION_T_DIE on dead creature. Creature %d", EventId, m_creature->GetEntry());
                 return;
             }
@@ -997,7 +992,6 @@ void CreatureEventAI::MoveInLineOfSight(Unit *who)
 
 void CreatureEventAI::SpellHit(Unit* pUnit, const SpellEntry* pSpell)
 {
-
     if (bEmptyList)
         return;
 

@@ -91,7 +91,6 @@
 #define ACE_LACKS_SETEGID
 #define ACE_LACKS_SETEUID
 
-
 #define ACE_PAGE_SIZE 4096
 #define ACE_SIZEOF_LONG_LONG 8
 #define ACE_USES_STD_NAMESPACE_FOR_STDCPP_LIB 1
@@ -119,7 +118,6 @@
 // however while many test programs that use TSS pass the TSS_Test program fails.
 #define ACE_HAS_THREAD_SPECIFIC_STORAGE    // We need thread specific storage even though...
 #define ACE_HAS_TSS_EMULATION              // It would appear to be broken in Interix!
-
 
 #include /**/ "ace/post.h"
 

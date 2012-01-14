@@ -10,7 +10,6 @@
  */
 //=============================================================================
 
-
 #ifndef ACE_RB_TREE_H
 #define ACE_RB_TREE_H
 #include /**/ "ace/pre.h"
@@ -184,7 +183,6 @@ protected:
 template <class EXT_ID, class INT_ID, class COMPARE_KEYS, class ACE_LOCK>
 class ACE_RB_Tree : public ACE_RB_Tree_Base
 {
-
 public:
   friend class ACE_RB_Tree_Iterator_Base<EXT_ID, INT_ID, COMPARE_KEYS, ACE_LOCK>;
   friend class ACE_RB_Tree_Iterator<EXT_ID, INT_ID, COMPARE_KEYS, ACE_LOCK>;
@@ -207,7 +205,6 @@ public:
 
   /// Constructor.
   ACE_RB_Tree (ACE_Allocator *alloc = 0);
-
 
   /// Copy constructor.
   ACE_RB_Tree (const ACE_RB_Tree<EXT_ID, INT_ID, COMPARE_KEYS, ACE_LOCK> &rbt);
@@ -241,7 +238,6 @@ public:
   int bind (const EXT_ID &ext_id,
             const INT_ID &int_id,
             ACE_RB_Tree_Node<EXT_ID, INT_ID> *&entry);
-
 
   /**
    * Associate @a ext_id with @a int_id if and only if @a ext_id is not
@@ -591,7 +587,6 @@ private:
 template <class EXT_ID, class INT_ID, class COMPARE_KEYS, class ACE_LOCK>
 class ACE_RB_Tree_Iterator_Base
 {
-
 public:
 
   /// Copy constructor.
@@ -679,7 +674,6 @@ protected:
 
   /// Pointer to the node currently under the iterator.
   ACE_RB_Tree_Node <EXT_ID, INT_ID> *node_;
-
 };
 
 /**
@@ -690,7 +684,6 @@ protected:
 template <class EXT_ID, class INT_ID, class COMPARE_KEYS, class ACE_LOCK>
 class ACE_RB_Tree_Iterator : public ACE_RB_Tree_Iterator_Base<EXT_ID, INT_ID, COMPARE_KEYS, ACE_LOCK>
 {
-
 public:
 
   // = Initialization and termination methods.
@@ -797,7 +790,6 @@ public:
    * node, returns 1 if not.
    */
   int is_done (void);
-
 };
 
 /**
@@ -808,7 +800,6 @@ public:
 template <class EXT_ID, class INT_ID, class COMPARE_KEYS, class ACE_LOCK>
 class ACE_RB_Tree_Reverse_Iterator : public ACE_RB_Tree_Iterator_Base<EXT_ID, INT_ID, COMPARE_KEYS, ACE_LOCK>
 {
-
 public:
 
   // = Initialization and termination methods.
@@ -883,7 +874,6 @@ public:
    * from the derived classes and placed in the base class.
    */
   int next (ACE_RB_Tree_Node<EXT_ID, INT_ID> *&next_entry) const;
-
 };
 
 ACE_END_VERSIONED_NAMESPACE_DECL

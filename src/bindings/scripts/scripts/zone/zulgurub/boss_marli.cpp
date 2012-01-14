@@ -196,7 +196,6 @@ struct TRINITY_DLL_DECL boss_marliAI : public ScriptedAI
                     PhaseTwo = false;
                     TransformBack_Timer = 25000 + rand()%15000;
                 }else TransformBack_Timer -= diff;
-
             }
 
             DoMeleeAttackIfReady();

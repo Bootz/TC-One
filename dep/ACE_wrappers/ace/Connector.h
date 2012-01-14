@@ -383,7 +383,6 @@ private:
 
   /// Handle set representing the non-blocking connects in progress.
   ACE_Unbounded_Set<ACE_HANDLE> non_blocking_handles_;
-
 };
 
 /**

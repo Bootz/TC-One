@@ -575,6 +575,5 @@ void AddSC_terokkar_forest()
     newscript->pGOHello  = &GossipHello_go_skull_pile;
     newscript->pGOSelect = &GossipSelect_go_skull_pile;
     newscript->RegisterSelf();
-
 }
 

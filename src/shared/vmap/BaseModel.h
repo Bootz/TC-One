@@ -39,7 +39,6 @@ The vectors are relative to a base position.
 
 namespace VMAP
 {
-
     class BaseModel
     {
         protected:
@@ -96,7 +95,6 @@ namespace VMAP
             void intersect(const G3D::AABox& pBox, const G3D::Ray& pRay, float& pMaxDist, G3D::Vector3& pOutLocation, G3D::Vector3& pOutNormal) const;
             bool intersect(const G3D::AABox& pBox, const G3D::Ray& pRay, float& pMaxDist) const;
     };
-
 }
 #endif                                                      /*BASEMODEL_H_*/
 

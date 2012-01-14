@@ -45,7 +45,6 @@
 #   undef ACE_DONT_INCLUDE_ACE_SIGNAL_H
 # endif /* ACE_HAS_PTHREADS */
 
-
 #if !defined (ACE_LACKS_PTHREAD_H)
    extern "C" {
 #   if defined (ACE_TANDEM_T1248_PTHREADS)

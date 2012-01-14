@@ -10,7 +10,6 @@
  */
 //=============================================================================
 
-
 #ifndef ACE_THREAD_HOOK_H
 #define ACE_THREAD_HOOK_H
 #include /**/ "ace/pre.h"
@@ -34,7 +33,6 @@ ACE_BEGIN_VERSIONED_NAMESPACE_DECL
  */
 class ACE_Export ACE_Thread_Hook
 {
-
 public:
 
   /// Destructor.

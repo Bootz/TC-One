@@ -130,7 +130,6 @@ namespace VMAP
             {
                 return !(iX == v.iX && iY == v.iY && iZ == v.iZ);
             }
-
     };
 }
 #endif

@@ -1,4 +1,3 @@
-
 #include "precompiled.h"
 #include "def_hyjal.h"
 #include "hyjal_trash.h"
@@ -212,12 +211,10 @@ struct TRINITY_DLL_DECL mob_lesser_doomguardAI : public hyjal_trashAI
 
     void KilledUnit(Unit *victim)
     {
-
     }
 
     void WaypointReached(uint32 i)
     {
-
     }
 
     void MoveInLineOfSight(Unit *who)
@@ -231,7 +228,6 @@ struct TRINITY_DLL_DECL mob_lesser_doomguardAI : public hyjal_trashAI
 
     void JustDied(Unit *victim)
     {
-
     }
 
     void UpdateAI(const uint32 diff)

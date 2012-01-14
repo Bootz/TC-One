@@ -127,7 +127,6 @@ struct TRINITY_DLL_DECL mob_inner_demonAI : public ScriptedAI
             Link_Timer = 1000;
         }else Link_Timer -= diff;
 
-
         if(!m_creature->HasAura(AURA_DEMONIC_ALIGNMENT, 0))
             DoCast(m_creature, AURA_DEMONIC_ALIGNMENT,true);
 
@@ -224,7 +223,6 @@ struct TRINITY_DLL_DECL boss_leotheras_the_blindAI : public ScriptedAI
             Creature* binder = m_creature->SummonCreature(MOB_SPELLBINDER,nx,ny,z,o,TEMPSUMMON_DEAD_DESPAWN,0);
             if (binder)
                 SpellBinderGUID[i] = binder->GetGUID();
-
         }
     }
     void MoveInLineOfSight(Unit *who)

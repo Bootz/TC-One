@@ -49,7 +49,6 @@ Guild::Guild()
 
 Guild::~Guild()
 {
-
 }
 
 bool Guild::create(uint64 lGuid, std::string gname)
@@ -334,7 +333,6 @@ bool Guild::LoadMembersFromDB(uint32 GuildId)
         }
         newmember.logout_time           = fields[18].GetUInt64();
         members[GUID_LOPART(guid)]      = newmember;
-
     }while( result->NextRow() );
     delete result;
 
@@ -874,7 +872,6 @@ void Guild::LoadGuildEventLogFromDB()
         NewEvent->TimeStamp = fields[5].GetUInt64();
         // Add entry to map
         m_GuildEventlog.push_front(NewEvent);
-
     } while( result->NextRow() );
     delete result;
 
@@ -1492,7 +1489,6 @@ void Guild::LoadBankRightsFromDB(uint32 GuildId)
         uint16 SlotPerDay = fields[3].GetUInt16();
 
         SetBankRightsAndSlots(rankId, TabId, right, SlotPerDay, false);
-
     }while( result->NextRow() );
     delete result;
 
@@ -1540,7 +1536,6 @@ void Guild::LoadGuildBankEventLogFromDB()
             m_GuildBankEventLog_Money.push_front(NewEvent);
         else
             m_GuildBankEventLog_Item[TabId].push_front(NewEvent);
-
     }while( result->NextRow() );
     delete result;
 

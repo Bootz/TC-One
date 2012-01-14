@@ -11,7 +11,6 @@
  */
 //=============================================================================
 
-
 #ifndef ACE_PROACTOR_IMPL_H
 #define ACE_PROACTOR_IMPL_H
 #include /**/ "ace/pre.h"
@@ -41,7 +40,6 @@ ACE_BEGIN_VERSIONED_NAMESPACE_DECL
  */
 class ACE_Export ACE_Proactor_Impl : public ACE_Event_Handler
 {
-
 public:
   /// Virtual destruction.
   virtual ~ACE_Proactor_Impl (void);

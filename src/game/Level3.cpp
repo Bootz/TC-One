@@ -3600,7 +3600,6 @@ bool ChatHandler::HandleLookupObjectCommand(const char* args)
  */
 bool ChatHandler::HandleGuildCreateCommand(const char* args)
 {
-
     if (!*args)
         return false;
 
@@ -4365,7 +4364,6 @@ bool ChatHandler::HandleWaterwalkCommand(const char* args)
     if(needReportToTarget(player))
         ChatHandler(player).PSendSysMessage(LANG_YOUR_WATERWALK_SET, args, GetName());
     return true;
-
 }
 
 bool ChatHandler::HandleLevelUpCommand(const char* args)

@@ -22,7 +22,7 @@
 #include "CreatureAI.h"
 #include "Creature.h"
 #include "CreatureAI.h"
- 
+
 IdleMovementGenerator si_idleMovement;
 
 // StopMoving is needed to make unit stop if its last movement generator expires
@@ -50,7 +50,7 @@ void RotateMovementGenerator::Initialize(Unit& owner)
 
     owner.addUnitState(UNIT_STAT_ROTATING);
 
-    owner.AttackStop(); 
+    owner.AttackStop();
 }
 
 bool RotateMovementGenerator::Update(Unit& owner, const uint32& diff)
@@ -83,7 +83,6 @@ void RotateMovementGenerator::Finalize(Unit &unit)
     if(unit.GetTypeId() == TYPEID_UNIT)
         ((Creature*)&unit)->AI()->MovementInform(ROTATE_MOTION_TYPE, 0);
 }
-
 
 void
 DistractMovementGenerator::Initialize(Unit& owner)

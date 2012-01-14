@@ -11,7 +11,6 @@
  */
 //=============================================================================
 
-
 #ifndef ACE_METHOD_REQUEST_H
 #define ACE_METHOD_REQUEST_H
 
@@ -90,11 +89,9 @@ private:
 protected:
   /// The priority of the request.
   unsigned long priority_;
-
 };
 
 ACE_END_VERSIONED_NAMESPACE_DECL
-
 
 #include /**/ "ace/post.h"
 #endif /* ACE_METHOD_REQUEST_H */

@@ -20,7 +20,6 @@
 #include <string>
 
 namespace G3D {
-
 /**
     Provides generalized Windows registry querying.
 
@@ -41,7 +40,6 @@ namespace G3D {
     to ensure that a debug assert or false return is for a different error.
 */
 class RegistryUtil {
-
 public:
     /** returns true if the key exists */
     static bool keyExists(const std::string& key);
@@ -76,9 +74,7 @@ public:
 
     /** returns false if the key could not be written for any reason. */
     static bool writeString(const std::string& key, const std::string& valueData);
-
 };
-
 } // namespace G3D
 
 #endif // G3D_WIN32

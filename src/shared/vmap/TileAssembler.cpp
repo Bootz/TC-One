@@ -46,7 +46,6 @@ namespace VMAP
         out = ixMatrix * out;
         out = iyMatrix * out;
         return(out);
-
     }
     //=================================================================
 
@@ -80,7 +79,6 @@ namespace VMAP
 
     std::string getModNameFromModPosName(const std::string& pModPosName)
     {
-
         size_t spos = pModPosName.find_first_of('#');
         std::string modelFileName = pModPosName.substr(0,spos);
         return(modelFileName);
@@ -142,7 +140,6 @@ namespace VMAP
     //=================================================================
     bool TileAssembler::convertWorld()
     {
-
         #ifdef _ASSEMBLER_DEBUG
         #   ifdef _DEBUG
         ::g_df = fopen("../TileAssembler_debug.txt", "wb");
@@ -392,7 +389,6 @@ namespace VMAP
                             // we have to read one int. This is needed during the export and we have to skip it here
                             int tempNVectors;
                             if(fread(&tempNVectors, sizeof(int), 1, rf) != 1) { fclose(rf); return(false); }
-
                         }
                         else
                         {
@@ -566,9 +562,7 @@ namespace VMAP
                     pModelPosition.iPos = Vector3(vposarray[0], vposarray[1], vposarray[2]);
                     pModelPosition.iDir = Vector3(vdirarray[0], vdirarray[1], vdirarray[2]);
                     pModelPosition.iScale = scale;
-
                 }
                 //==========================================
-
             }                                               // VMAP
 

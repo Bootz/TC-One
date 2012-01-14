@@ -87,7 +87,6 @@ public:
     // Disallow copy construction and assignment.
     ACE_Malloc_Header (ACE_Malloc_Header const &);
     void operator= (ACE_Malloc_Header const &);
-
   };
 
   /**

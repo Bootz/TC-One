@@ -1,4 +1,4 @@
-/** 
+/**
   @file Vector3.inl
 
   @maintainer Morgan McGuire, matrix@graphics3d.com
@@ -29,7 +29,6 @@ inline unsigned int hashCode(const G3D::Vector3& v) {
 }
 
 namespace G3D {
-
 //----------------------------------------------------------------------------
 inline Vector3::Vector3() : x(0.0f), y(0.0f), z(0.0f) {
 }
@@ -65,7 +64,6 @@ inline const float& Vector3::operator[] (int i) const {
 inline float& Vector3::operator[] (int i) {
     return ((float*)this)[i];
 }
-
 
 //----------------------------------------------------------------------------
 inline Vector3& Vector3::operator= (const Vector3& rkVector) {
@@ -246,5 +244,4 @@ inline bool Vector3::isZero() const {
 inline bool Vector3::isUnit() const {
     return G3D::fuzzyEq(squaredMagnitude(), 1.0f);
 }
-
 } // namespace

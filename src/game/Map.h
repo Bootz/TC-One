@@ -100,7 +100,7 @@ struct CreatureMover
 struct InstanceTemplate
 {
     uint32 map;
-    uint32 parent;    
+    uint32 parent;
     uint32 maxPlayers;
     uint32 reset_delay;
     uint32 access_id;
@@ -360,7 +360,6 @@ class TRINITY_DLL_SPEC Map : public GridRefManager<NGridType>, public Trinity::O
         typedef std::set<WorldObject*> ActiveNonPlayers;
         ActiveNonPlayers m_activeNonPlayers;
         ActiveNonPlayers::iterator m_activeNonPlayersIter;
-
 
     private:
         typedef GridReadGuard ReadGuard;

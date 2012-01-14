@@ -463,7 +463,6 @@ struct MapEntry
     // Helpers
     uint32 Expansion() const { return addon; }
 
-
     bool IsDungeon() const { return map_type == MAP_INSTANCE || map_type == MAP_RAID; }
     bool Instanceable() const { return map_type == MAP_INSTANCE || map_type == MAP_RAID || map_type == MAP_BATTLEGROUND || map_type == MAP_ARENA; }
     bool IsRaid() const { return map_type == MAP_RAID; }

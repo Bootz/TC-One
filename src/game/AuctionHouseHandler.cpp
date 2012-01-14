@@ -182,7 +182,6 @@ void WorldSession::HandleAuctionSellItem( WorldPacket & recv_data )
         return;
     }
 
-
     // client send time in minutes, convert to common used sec time
     etime *= MINUTE;
 

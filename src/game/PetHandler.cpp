@@ -128,19 +128,16 @@ void WorldSession::HandlePetAction( WorldPacket & recv_data )
                     // Not let attack through obstructions
                     if(sWorld.getConfig(CONFIG_PET_LOS))
                     {
-
                       if(!pet->IsWithinLOSInMap(TargetUnit))
                         return;
-
                     }
-                    
+
                     pet->clearUnitState(UNIT_STAT_FOLLOW);
                     // This is true if pet has no target or has target but targets differs.
                     if(pet->getVictim() != TargetUnit || ( pet->getVictim() == TargetUnit && !pet->GetCharmInfo()->IsCommandAttack() ))
                     {
                         if (pet->getVictim())
                             pet->AttackStop();
-
 
                         if(pet->GetTypeId() != TYPEID_PLAYER && ((Creature*)pet)->IsAIEnabled)
                         {
@@ -184,7 +181,6 @@ void WorldSession::HandlePetAction( WorldPacket & recv_data )
                         else
                             //dismissing a summoned pet is like killing them (this prevents returning a soulshard...)
                             p->setDeathState(CORPSE);
-
                     }
                     else                                    // charmed or possessed
                         _player->Uncharm();
@@ -323,7 +319,6 @@ void WorldSession::HandlePetAction( WorldPacket & recv_data )
                 // reset specific flags in case of spell fail. AI will reset other flags
                 if (pet->GetCharmInfo())
                     pet->GetCharmInfo()->SetIsCommandAttack(false);
-
             }
             break;
         }

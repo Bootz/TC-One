@@ -299,7 +299,6 @@ private:
   ACE_Flow_Spec *sending_flowspec_;
   ACE_Flow_Spec *receiving_flowspec_;
 #endif
-
 };
 
 /**
@@ -389,7 +388,6 @@ typedef int (*ACE_QOS_CONDITION_FUNC) (iovec *caller_id,
                                        iovec *callee_data,
                                        ACE_SOCK_GROUP *g,
                                        unsigned long callbackdata);
-
 
 /**
  * @class ACE_Accept_QoS_Params

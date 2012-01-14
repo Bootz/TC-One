@@ -35,7 +35,6 @@ typedef unsigned __int32 uint32_t;
 namespace SOCKETS_NAMESPACE {
 #endif
 
-
 /** Ipv6 address implementation.
     \ingroup basic */
 class Ipv6Address : public SocketAddress
@@ -95,14 +94,10 @@ private:
     bool m_valid;
 };
 
-
-
-
 #ifdef SOCKETS_NAMESPACE
 } // namespace SOCKETS_NAMESPACE {
 #endif
 #endif // IPPROTO_IPV6
 #endif // ENABLE_IPV6
 #endif // _SOCKETS_Ipv6Address_H
-
 

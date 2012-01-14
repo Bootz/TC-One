@@ -1,4 +1,3 @@
-
 #include "precompiled.h"
 #include "def_hyjal.h"
 #include "hyjal_trash.h"

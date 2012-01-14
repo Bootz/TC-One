@@ -854,7 +854,6 @@ namespace ACE
                                        int iovcnt,
                                        const ACE_Time_Value *timeout,
                                        size_t *bytes_transferred);
-
 }
 
 // Close versioned namespace, if enabled by the user.

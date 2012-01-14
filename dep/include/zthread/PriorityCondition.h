@@ -28,7 +28,6 @@
 #include "zthread/Waitable.h"
 
 namespace ZThread {
-  
   class PriorityConditionImpl;
 
   /**
@@ -47,11 +46,10 @@ namespace ZThread {
    * first
    */
   class ZTHREAD_API PriorityCondition : public Waitable, private NonCopyable {
-
     PriorityConditionImpl* _impl;
-  
+
   public:
-  
+
     /**
      * @see Condition::Condition(Lockable& l)
      */
@@ -61,7 +59,7 @@ namespace ZThread {
      * @see Condition::~Condition()
      */
     ~PriorityCondition();
-  
+
     /**
      * @see Condition::signal()
      */
@@ -81,9 +79,7 @@ namespace ZThread {
      * @see Condition::wait(unsigned long timeout)
      */
     virtual bool wait(unsigned long timeout);
-  
   };
-  
 } // namespace ZThread
 
 #endif // __ZTPRIORITYCONDITION_H__

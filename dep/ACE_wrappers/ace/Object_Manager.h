@@ -197,7 +197,6 @@ template <class T> class ACE_Cleanup_Adapter;
  */
 class ACE_Export ACE_Object_Manager : public ACE_Object_Manager_Base
 {
-
 public:
   /**
    * Explicitly initialize (construct the singleton instance of) the
@@ -469,7 +468,6 @@ class ACE_Service_Object;
 ACE_END_VERSIONED_NAMESPACE_DECL
 ACE_FACTORY_DECLARE (ACE, ACE_Service_Manager)
 #endif /* ! ACE_LACKS_ACE_SVCCONF */
-
 
 #include /**/ "ace/post.h"
 #endif /* ACE_OBJECT_MANAGER_H */

@@ -43,16 +43,13 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include "SocketAddress.h"
 #include "Thread.h"
 
-
 #ifdef SOCKETS_NAMESPACE
 namespace SOCKETS_NAMESPACE {
 #endif
 
-
 class ISocketHandler;
 class SocketAddress;
 class IFile;
-
 
 /** \defgroup basic Basic sockets */
 /** Socket base class.
@@ -130,7 +127,6 @@ public:
         STREAMSOCK_CALL_ON_CONNECT =    0x020000L, ///< OnConnect will be called next ISocketHandler cycle if true
         STREAMSOCK_RETRY_CONNECT =  0x040000L, ///< Try another connection attempt next ISocketHandler cycle
         STREAMSOCK_LINE_PROTOCOL =  0x080000L, ///< Line protocol mode flag
-
     };
 */
 
@@ -241,7 +237,6 @@ public:
 
     /** \name Event callbacks */
     //@{
-
     /** Called when there is something to be read from the file descriptor. */
     virtual void OnRead();
     /** Called when there is room for another write on the file descriptor. */
@@ -369,7 +364,6 @@ public:
 
     // IP options
     //@{
-
     bool SetIpOptions(const void *p, socklen_t len);
     bool SetIpTOS(unsigned char tos);
     unsigned char IpTOS();
@@ -420,7 +414,6 @@ public:
     // SOCKET options
     /** @name Socket Options */
     //@{
-
     bool SoAcceptconn();
     bool SetSoBroadcast(bool x = true);
     bool SetSoDebug(bool x = true);
@@ -470,7 +463,6 @@ public:
     //@}
 
     // TCP options in TcpSocket.h/TcpSocket.cpp
-
 
 #ifdef HAVE_OPENSSL
     /** @name SSL Support */
@@ -734,7 +726,5 @@ static  WSAInitializer m_winsock_init; ///< Winsock initialization singleton cla
 }
 #endif
 
-
 #endif // _SOCKETS_Socket_H
-
 

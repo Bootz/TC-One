@@ -224,7 +224,6 @@ protected:
 class ACE_Export ACE_POSIX_Asynch_Read_Stream_Result : public virtual ACE_Asynch_Read_Stream_Result_Impl,
                                                        public ACE_POSIX_Asynch_Result
 {
-
   /// Factory classes will have special permissions.
   friend class ACE_POSIX_Asynch_Read_Stream;
 
@@ -299,7 +298,6 @@ public:
   /// Destructor.
   virtual ~ACE_POSIX_Asynch_Read_Stream (void);
 };
-
 
 /**
  * @class ACE_POSIX_Asynch_Write_Stream_Result
@@ -450,7 +448,6 @@ protected:
 class ACE_Export ACE_POSIX_Asynch_Read_File : public virtual ACE_Asynch_Read_File_Impl,
                                               public ACE_POSIX_Asynch_Read_Stream
 {
-
 public:
   /// Constructor.
   ACE_POSIX_Asynch_Read_File (ACE_POSIX_Proactor *posix_proactor);
@@ -483,7 +480,6 @@ private:
             int priority,
             int signal_number = 0);
 };
-
 
 /**
  * @class ACE_POSIX_Asynch_Write_File_Result
@@ -651,7 +647,6 @@ protected:
   // I/O handle for the new connection.
 };
 
-
 /**
  * @class ACE_POSIX_Asynch_Accept
  *
@@ -798,7 +793,6 @@ protected:
   void connect_handle (ACE_HANDLE handle);
 };
 
-
 /**
  * @class ACE_POSIX_Asynch_Connect
  *
@@ -901,7 +895,6 @@ private:
   /// through the auxillary thread  in the asynch pseudo task.
   ACE_SYNCH_MUTEX lock_;
 };
-
 
 /**
  * @class ACE_POSIX_Asynch_Transmit_File_Result
@@ -1032,7 +1025,6 @@ public:
   virtual ~ACE_POSIX_Asynch_Transmit_File (void);
 };
 
-
 /**
  * @class ACE_POSIX_Asynch_Read_Dgram
  *
@@ -1151,7 +1143,6 @@ protected:
 
   /// I/O handle used for writing.
   ACE_HANDLE handle_;
-
   };
 
 /**
@@ -1212,7 +1203,6 @@ protected:
   ACE_POSIX_Asynch_Write_Dgram (void);
 };
 
-
 /*****************************************************/
 
 /**
@@ -1224,7 +1214,6 @@ protected:
 class ACE_Export ACE_POSIX_Asynch_Read_Dgram_Result : public virtual ACE_Asynch_Read_Dgram_Result_Impl,
                                                       public virtual ACE_POSIX_Asynch_Result
 {
-
   /// Factory classes will have special permissions.
   friend class ACE_POSIX_Asynch_Read_Dgram;
 
@@ -1289,7 +1278,6 @@ protected:
 
   /// I/O handle used for reading.
   ACE_HANDLE handle_;
-
 };
 
 ACE_END_VERSIONED_NAMESPACE_DECL

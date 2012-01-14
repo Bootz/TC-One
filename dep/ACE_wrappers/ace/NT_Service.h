@@ -98,7 +98,6 @@ ACE_BEGIN_VERSIONED_NAMESPACE_DECL
  */
 class ACE_Export ACE_NT_Service : public ACE_Task<ACE_MT_SYNCH>
 {
-
 public:
   // = Initialization and termination methods.
   /// Constructor primarily for use when running the service.
@@ -156,7 +155,6 @@ public:
   /// Set the svc_handle_ member.  This is only a public function because
   /// the macro-generated service function calls it.
   void svc_handle (const SERVICE_STATUS_HANDLE new_svc_handle);
-
 
   // = Methods which can be used to do SCP-like functions. The first group
   // are used to register/insert and remove the service's definition in the

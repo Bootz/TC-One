@@ -71,7 +71,6 @@ struct TRINITY_DLL_DECL boss_kurinnaxxAI : public ScriptedAI
             DoCast(m_creature,SPELL_ENRAGE,true);
         }
 
-
         //MORTALWOUND_Timer
         if (MORTALWOUND_Timer < diff)
         {
@@ -134,7 +133,6 @@ struct TRINITY_DLL_DECL boss_kurinnaxxAI : public ScriptedAI
             }
         }else SANDTRAP_Timer -= diff;
 
-        
         DoMeleeAttackIfReady();
     }
 };

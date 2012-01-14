@@ -122,7 +122,6 @@ typedef UNORDERED_MAP<uint32/*(mapid,spawnMode) pair*/,CellObjectGuidsMap> MapOb
 
 typedef UNORDERED_MAP<uint64/*(instance,guid) pair*/,time_t> RespawnTimes;
 
-
 // trinity string ranges
 #define MIN_TRINITY_STRING_ID           1                    // 'mangos_string'
 #define MAX_TRINITY_STRING_ID           2000000000
@@ -335,7 +334,6 @@ class ObjectMgr
         void RemoveGroup(Group* group) { mGroupSet.erase( group ); }
         GroupSet::iterator GetGroupSetBegin() { return mGroupSet.begin(); }
         GroupSet::iterator GetGroupSetEnd()   { return mGroupSet.end(); }
-
 
         Guild* GetGuildByLeader(uint64 const&guid) const;
         Guild* GetGuildById(const uint32 GuildId) const;

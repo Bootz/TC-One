@@ -26,7 +26,6 @@
 #include "zthread/Config.h"
 
 namespace ZThread {
-
 /**
  * @class Time
  * @author Eric Crahen <http://www.code-foo.com>
@@ -38,7 +37,6 @@ namespace ZThread {
  * starts at 0 and counts upwards. This class offers millisecond resolution.
  */
 class ZTHREAD_API Time {
-
   unsigned long _seconds;
   unsigned long _milliseconds;
 
@@ -53,12 +51,10 @@ class ZTHREAD_API Time {
    * @return unsigned long old milliseconds value
    */
   unsigned long milliseconds(unsigned long millis) {
-
     unsigned long n = _milliseconds;
     _milliseconds = millis;
 
     return n;
-
   }
 
   /**
@@ -68,16 +64,13 @@ class ZTHREAD_API Time {
    * @return unsigned long old seconds value
    */
   unsigned long seconds(unsigned long secs) {
-
     unsigned long n = _seconds;
     _seconds = secs;
 
     return n;
-
   }
 
  public:
-
 
   /**
    * Create a Time object with the current time relative to the
@@ -92,7 +85,6 @@ class ZTHREAD_API Time {
    */
   Time(const Time& t)
     : _seconds(t._seconds), _milliseconds(t._milliseconds) { }
-
 
   /**
    * Get the number of milliseconds in this Time object.
@@ -119,13 +111,11 @@ class ZTHREAD_API Time {
    * @return const Time& this object
    */
   const Time& operator+=(unsigned long millis) {
-
     _milliseconds += millis;
     _seconds += (_milliseconds / 1000);
     _milliseconds %= 1000;
 
     return *this;
-
   }
 
   /**
@@ -135,27 +125,20 @@ class ZTHREAD_API Time {
    * @return const Time& this object
    */
 const Time& operator-=(unsigned long millis) {
-
     if(_milliseconds > millis)
       _milliseconds -= millis;
 
     else {
-
       while(_seconds > 0 && _milliseconds < millis) {
-
         _milliseconds += 1000;
         _seconds -= 1;
-
       }
 
       _milliseconds = (_milliseconds < millis) ? 0 : (_milliseconds - millis);
-
     }
 
     return *this;
-
 }
-
 
   /**
    * Add the value of another Time object to this one.
@@ -164,13 +147,11 @@ const Time& operator-=(unsigned long millis) {
    * @return const Time& this object
    */
   const Time& operator+=(const Time& t) {
-
     _milliseconds += t.milliseconds();
     _seconds += (_milliseconds / 1000) + t.seconds();
     _milliseconds %= 1000;
 
     return *this;
-
   }
 
   /**
@@ -181,45 +162,30 @@ const Time& operator-=(unsigned long millis) {
    * @return const Time& this object
    */
 const Time& operator-=(const Time& t) {
-
   unsigned long millis = t.milliseconds();
   unsigned long secs = t.seconds();
 
   if(_seconds >= secs) {
-
     if(_milliseconds > millis) {
       _milliseconds -= millis;
       _seconds -= secs;
-
     } else {
-
       while(_seconds > 0 && _milliseconds < millis) {
-
         _milliseconds += 1000;
         _seconds -= 1;
-
       }
 
       _milliseconds = (_milliseconds < millis) ? 0 : (_milliseconds - millis);
       _seconds = (_seconds < secs) ? 0 : (_seconds - secs);
-
     }
-
   } else {
-
     _milliseconds = 0;
     _seconds = 0;
-
   }
 
   return *this;
-
 }
-
 };
-
-
-
 } // namespace ZThread
 
 #endif // __ZTTIME_H__

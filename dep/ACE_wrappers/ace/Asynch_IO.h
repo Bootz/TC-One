@@ -103,7 +103,6 @@ class ACE_Time_Value;
  */
 class ACE_Export ACE_Asynch_Result
 {
-
 public:
   /// Number of bytes transferred by the operation.
   size_t bytes_transferred (void) const;
@@ -167,7 +166,6 @@ public:
    */
   int signal_number (void) const;
 
-
   /// Destructor.
   virtual ~ACE_Asynch_Result (void);
 
@@ -200,7 +198,6 @@ class ACE_Asynch_Operation_Impl;
  */
 class ACE_Export ACE_Asynch_Operation
 {
-
 public:
   /**
    * Initializes the factory with information which will be used with
@@ -250,7 +247,6 @@ public:
    */
   int cancel (void);
 
-
   // = Access methods.
 
   /// Return the underlying proactor.
@@ -290,7 +286,6 @@ class ACE_Asynch_Read_Stream_Impl;
  */
 class ACE_Export ACE_Asynch_Read_Stream : public ACE_Asynch_Operation
 {
-
 public:
   /// A do nothing constructor.
   ACE_Asynch_Read_Stream (void);
@@ -381,7 +376,6 @@ public:
  */
   class ACE_Export Result : public ACE_Asynch_Result
   {
-
     /// The concrete implementation result classes only construct this
     /// class.
     friend class ACE_POSIX_Asynch_Read_Stream_Result;
@@ -434,7 +428,6 @@ class ACE_Asynch_Write_Stream_Result_Impl;
  */
 class ACE_Export ACE_Asynch_Write_Stream : public ACE_Asynch_Operation
 {
-
 public:
   /// A do nothing constructor.
   ACE_Asynch_Write_Stream (void);
@@ -537,7 +530,6 @@ public:
  */
   class ACE_Export Result : public ACE_Asynch_Result
   {
-
     /// The concrete implementation result classes only construct this
     /// class.
     friend class ACE_POSIX_Asynch_Write_Stream_Result;
@@ -593,7 +585,6 @@ class ACE_Asynch_Read_File_Result_Impl;
  */
 class ACE_Export ACE_Asynch_Read_File : public ACE_Asynch_Read_Stream
 {
-
 public:
   /// A do nothing constructor.
   ACE_Asynch_Read_File (void);
@@ -693,7 +684,6 @@ public:
  */
   class ACE_Export Result : public ACE_Asynch_Read_Stream::Result
   {
-
     /// The concrete implementation result classes only construct this
     /// class.
     friend class ACE_POSIX_Asynch_Read_File_Result;
@@ -744,7 +734,6 @@ class ACE_Asynch_Write_File_Result_Impl;
  */
 class ACE_Export ACE_Asynch_Write_File : public ACE_Asynch_Write_Stream
 {
-
 public:
   /// A do nothing constructor.
   ACE_Asynch_Write_File (void);
@@ -829,7 +818,6 @@ public:
  */
   class ACE_Export Result : public ACE_Asynch_Write_Stream::Result
   {
-
     /// The concrete implementation result classes only construct this
     /// class.
     friend class ACE_POSIX_Asynch_Write_File_Result;
@@ -878,7 +866,6 @@ class ACE_Asynch_Accept_Impl;
  */
 class ACE_Export ACE_Asynch_Accept : public ACE_Asynch_Operation
 {
-
 public:
   /// A do nothing constructor.
   ACE_Asynch_Accept (void);
@@ -961,7 +948,6 @@ public:
  */
   class ACE_Export Result : public ACE_Asynch_Result
   {
-
     /// The concrete implementation result classes only construct this
     /// class.
     friend class ACE_POSIX_Asynch_Accept_Result;
@@ -1015,7 +1001,6 @@ class ACE_Asynch_Connect_Impl;
  */
 class ACE_Export ACE_Asynch_Connect : public ACE_Asynch_Operation
 {
-
 public:
   /// A do nothing constructor.
   ACE_Asynch_Connect (void);
@@ -1067,7 +1052,6 @@ public:
  */
   class ACE_Export Result : public ACE_Asynch_Result
   {
-
     /// The concrete implementation result classes only construct this
     /// class.
     friend class ACE_POSIX_Asynch_Connect_Result;
@@ -1120,7 +1104,6 @@ class ACE_Asynch_Transmit_File_Impl;
  */
 class ACE_Export ACE_Asynch_Transmit_File : public ACE_Asynch_Operation
 {
-
 public:
   // Forward declarations
   class Header_And_Trailer;
@@ -1193,7 +1176,6 @@ public:
  */
   class ACE_Export Result : public ACE_Asynch_Result
   {
-
     /// The concrete implementation result classes only construct this
     /// class.
     friend class ACE_POSIX_Asynch_Transmit_File_Result;
@@ -1245,7 +1227,6 @@ public:
  */
   class ACE_Export Header_And_Trailer
   {
-
   public:
     /// Constructor.
     Header_And_Trailer (ACE_Message_Block *header = 0,
@@ -1310,7 +1291,6 @@ private:
   ACE_UNIMPLEMENTED_FUNC (ACE_Asynch_Transmit_File (const ACE_Asynch_Transmit_File &))
 };
 
-
 // Forward declarations
 class ACE_Asynch_Read_Dgram_Result_Impl;
 class ACE_Asynch_Read_Dgram_Impl;
@@ -1331,7 +1311,6 @@ class ACE_Addr;
  */
 class ACE_Export ACE_Asynch_Read_Dgram : public ACE_Asynch_Operation
 {
-
 public:
   /// A do nothing constructor.
   ACE_Asynch_Read_Dgram (void);
@@ -1406,7 +1385,6 @@ public:
  */
   class ACE_Export Result : public ACE_Asynch_Result
   {
-
     /// The concrete implementation result classes only construct this
     /// class.
     friend class ACE_POSIX_Asynch_Read_Dgram_Result;
@@ -1467,7 +1445,6 @@ class ACE_Asynch_Write_Dgram_Result_Impl;
  */
 class ACE_Export ACE_Asynch_Write_Dgram : public ACE_Asynch_Operation
 {
-
 public:
   /// A do nothing constructor.
   ACE_Asynch_Write_Dgram (void);
@@ -1542,7 +1519,6 @@ public:
  */
   class ACE_Export Result : public ACE_Asynch_Result
   {
-
     /// The concrete implementation result classes only construct this
     /// class.
     friend class ACE_POSIX_Asynch_Write_Dgram_Result;
@@ -1580,7 +1556,6 @@ private:
   ACE_UNIMPLEMENTED_FUNC (void operator= (const ACE_Asynch_Write_Dgram &))
   ACE_UNIMPLEMENTED_FUNC (ACE_Asynch_Write_Dgram (const ACE_Asynch_Write_Dgram &))
 };
-
 
 /**
  * @class ACE_Handler
@@ -1720,7 +1695,6 @@ class ACE_Asynch_Acceptor;
  */
 class ACE_Export ACE_Service_Handler : public ACE_Handler
 {
-
   /// The Acceptor is the factory and therefore should have special
   /// privileges.
   friend class ACE_Asynch_Acceptor<ACE_Service_Handler>;

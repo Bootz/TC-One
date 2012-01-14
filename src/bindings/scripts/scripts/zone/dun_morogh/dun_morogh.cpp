@@ -83,7 +83,6 @@ struct TRINITY_DLL_DECL npc_narm_faulkAI : public ScriptedAI
             spellHit = true;
         }
     }
-
 };
 CreatureAI* GetAI_npc_narm_faulk(Creature *_Creature)
 {

@@ -382,7 +382,6 @@ void BattleGround::YellToAll(Creature* creature, const char* text, uint32 langua
     }
 }
 
-
 void BattleGround::RewardHonorToTeam(uint32 Honor, uint32 TeamID)
 {
     for(std::map<uint64, BattleGroundPlayer>::iterator itr = m_Players.begin(); itr != m_Players.end(); ++itr)
@@ -524,12 +523,10 @@ void BattleGround::EndBattleGround(uint32 winner)
     }
 
     if(!isArena()){
-
     if(m_score[GetTeamIndexByTeamId(ALLIANCE)] == m_score[GetTeamIndexByTeamId(HORDE)])
         almost_winning_team = 0;         //no real winner
     if(m_score[GetTeamIndexByTeamId(ALLIANCE)] > m_score[GetTeamIndexByTeamId(HORDE)])
         almost_winning_team = ALLIANCE;
-
     }
 
     for(std::map<uint64, BattleGroundPlayer>::iterator itr = m_Players.begin(); itr != m_Players.end(); ++itr)
@@ -579,7 +576,6 @@ void BattleGround::EndBattleGround(uint32 winner)
     {
         if(sWorld.getConfig(CONFIG_PREMATURE_BG_REWARD))    // We're feeling generous, giving rewards to people who not earned them ;)
         {    //nested ifs for the win! its boring writing that, forgive me my unfunniness
-            
             if(almost_winning_team == team)                    //player's team had more points
                 RewardMark(plr,ITEM_WINNER_COUNT);
             else
@@ -646,7 +642,7 @@ void BattleGround::RewardMark(Player *plr,uint32 count)
     if(!plr || !count)
         return;
 
-    BattleGroundMarks mark;    
+    BattleGroundMarks mark;
     switch(GetTypeID())
     {
         case BATTLEGROUND_AV:
@@ -658,7 +654,7 @@ void BattleGround::RewardMark(Player *plr,uint32 count)
         case BATTLEGROUND_AB:
             mark = ITEM_AB_MARK_OF_HONOR;
             break;
-        case BATTLEGROUND_EY:            
+        case BATTLEGROUND_EY:
             mark = ITEM_EY_MARK_OF_HONOR;
             break;
         default:

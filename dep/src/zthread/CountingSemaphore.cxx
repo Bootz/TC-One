@@ -26,67 +26,42 @@
 using namespace ZThread;
 
 namespace ZThread {
-
-
   CountingSemaphore::CountingSemaphore(int initialCount) {
-  
     _impl = new FifoSemaphoreImpl(initialCount, 0 , false);
-  
   }
-
 
   CountingSemaphore::~CountingSemaphore() {
-
     try {
-
       if(_impl != 0)
         delete _impl;
-
     } catch(...) { }
-
   }
-
 
   void CountingSemaphore::wait() {
     _impl->acquire();
   }
 
-
   bool CountingSemaphore::tryWait(unsigned long ms) {
-
     return _impl->tryAcquire(ms);
-
   }
 
-
   void CountingSemaphore::post() {
-
     _impl->release();
-
   }
 
   int CountingSemaphore::count() {
-
     return _impl->count();
-
   }
 
   void CountingSemaphore::acquire() {
-
     _impl->acquire();
-
   }
 
   bool CountingSemaphore::tryAcquire(unsigned long ms) {
-
     return _impl->tryAcquire(ms);
-
   }
 
   void CountingSemaphore::release() {
-
     _impl->release();
-
   }
-
 } // namespace ZThread

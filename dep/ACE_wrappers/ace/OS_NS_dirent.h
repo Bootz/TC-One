@@ -79,7 +79,6 @@ inline void ace_rewinddir_helper (ACE_DIR *dir)
 ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 namespace ACE_OS {
-
   ACE_NAMESPACE_INLINE_FUNCTION
   void closedir (ACE_DIR *);
 
@@ -136,7 +135,6 @@ namespace ACE_OS {
   extern ACE_Export
   struct ACE_DIRENT *readdir_emulation (ACE_DIR *);
 #endif /* ACE_LACKS_READDIR */
-
 } /* namespace ACE_OS */
 
 ACE_END_VERSIONED_NAMESPACE_DECL

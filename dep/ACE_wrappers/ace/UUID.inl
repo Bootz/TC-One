@@ -35,7 +35,6 @@ namespace ACE_Utils
   ACE_INLINE
   UUID::~UUID (void)
   {
-
   }
 
   ACE_INLINE void

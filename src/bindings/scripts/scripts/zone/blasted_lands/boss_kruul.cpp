@@ -66,7 +66,6 @@ struct TRINITY_DLL_DECL boss_kruulAI : public ScriptedAI
     {
         // When a player, pet or totem gets killed, Lord Kazzak casts this spell to instantly regenerate 70,000 health.
         DoCast(m_creature,SPELL_CAPTURESOUL);
-
     }
 
     void SummonHounds(Unit* victim)

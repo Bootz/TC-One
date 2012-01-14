@@ -25,7 +25,6 @@
 #include <assert.h>
 
 namespace G3D {
-
 /**
  A rigid body RT (rotation-translation) transformation.
 
@@ -310,9 +309,7 @@ public:
     CoordinateFrame lerp(
         const CoordinateFrame&  other,
         float                   alpha) const;
-
 };
-
 } // namespace
 
 #endif

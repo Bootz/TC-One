@@ -1,4 +1,3 @@
-
 #include "precompiled.h"
 #include "def_hyjal.h"
 #include "hyjal_trash.h"
@@ -111,7 +110,6 @@ float AllianceOverrunWP[55][3]=//waypoints in the alliance base used in the end 
     {5180.41, -2121.87, 1292.62},//52 garg target3
     {5088.68, -2432.04, 1441.73},//53 garg target4
     {5111.26, -2454.73, 1449.63}//54 garg target5
-
 };
 
 float HordeOverrunWP[21][3]=//waypoints in the horde base used in the end in the cleaning wave
@@ -496,7 +494,6 @@ struct mob_giant_infernalAI : public hyjal_trashAI
     }
 };
 
-
 CreatureAI* GetAI_mob_giant_infernal(Creature* _Creature)
 {
     return new mob_giant_infernalAI(_Creature);
@@ -592,7 +589,6 @@ struct mob_abominationAI : public hyjal_trashAI
     }
 };
 
-
 CreatureAI* GetAI_mob_abomination(Creature* _Creature)
 {
     return new mob_abominationAI(_Creature);
@@ -646,7 +642,6 @@ struct mob_ghoulAI : public hyjal_trashAI
                 m_creature->setDeathState(DEAD);
                 m_creature->RemoveCorpse();
             }
-
         }
     }
 
@@ -691,7 +686,6 @@ struct mob_ghoulAI : public hyjal_trashAI
         DoMeleeAttackIfReady();
     }
 };
-
 
 CreatureAI* GetAI_mob_ghoul(Creature* _Creature)
 {
@@ -811,7 +805,6 @@ struct mob_necromancerAI : public hyjal_trashAI
     }
 };
 
-
 CreatureAI* GetAI_mob_necromancer(Creature* _Creature)
 {
     return new mob_necromancerAI(_Creature);
@@ -912,7 +905,6 @@ struct mob_bansheeAI : public hyjal_trashAI
     }
 };
 
-
 CreatureAI* GetAI_mob_banshee(Creature* _Creature)
 {
     return new mob_bansheeAI(_Creature);
@@ -983,7 +975,6 @@ struct mob_crypt_fiendAI : public hyjal_trashAI
                         Start(false, true);
                         SetDespawnAtEnd(false);
                     }
-
                 }
             }
         }
@@ -997,7 +988,6 @@ struct mob_crypt_fiendAI : public hyjal_trashAI
         DoMeleeAttackIfReady();
     }
 };
-
 
 CreatureAI* GetAI_mob_crypt_fiend(Creature* _Creature)
 {
@@ -1069,7 +1059,6 @@ struct mob_fel_stalkerAI : public hyjal_trashAI
                         Start(false, true);
                         SetDespawnAtEnd(false);
                     }
-
                 }
             }
         }
@@ -1083,7 +1072,6 @@ struct mob_fel_stalkerAI : public hyjal_trashAI
         DoMeleeAttackIfReady();
     }
 };
-
 
 CreatureAI* GetAI_mob_fel_stalker(Creature* _Creature)
 {
@@ -1194,7 +1182,6 @@ struct mob_frost_wyrmAI : public hyjal_trashAI
         }else FrostBreathTimer -= diff;
     }
 };
-
 
 CreatureAI* GetAI_mob_frost_wyrm(Creature* _Creature)
 {
@@ -1328,7 +1315,6 @@ struct mob_gargoyleAI : public hyjal_trashAI
         }else StrikeTimer -= diff;
     }
 };
-
 
 CreatureAI* GetAI_mob_gargoyle(Creature* _Creature)
 {

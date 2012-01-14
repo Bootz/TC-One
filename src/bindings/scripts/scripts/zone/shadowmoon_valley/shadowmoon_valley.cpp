@@ -1356,7 +1356,6 @@ struct TRINITY_DLL_DECL mob_torloth_the_magnificentAI : public ScriptedAI
             m_creature->CombatStop();
         }else if(!Timers)
         {
-
             SpellTimer1 = SpawnCast[6].Timer1;
             SpellTimer2 = SpawnCast[7].Timer1;
             SpellTimer3 = SpawnCast[8].Timer1;

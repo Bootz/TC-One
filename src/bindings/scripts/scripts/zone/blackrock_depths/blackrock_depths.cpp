@@ -327,7 +327,6 @@ CreatureAI* GetAI_npc_grimstone(Creature *_Creature)
         Grimstone_AI->AddWaypoint(i, RingLocations[i][0], RingLocations[i][1], RingLocations[i][2]);
 
     return (CreatureAI*)Grimstone_AI;
-
 }
 
 /*######
@@ -776,7 +775,6 @@ bool QuestAccept_npc_marshal_windsor(Player *player, Creature *creature, Quest c
                 pInstance->SetData(DATA_QUEST_JAIL_BREAK,ENCOUNTER_STATE_IN_PROGRESS);
                 creature->setFaction(11);
         }
-
         }
     return false;
 }

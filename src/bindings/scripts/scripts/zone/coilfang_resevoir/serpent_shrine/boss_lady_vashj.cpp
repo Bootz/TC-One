@@ -450,7 +450,6 @@ struct TRINITY_DLL_DECL boss_lady_vashjAI : public ScriptedAI
 
                     if(SummonSporebat_Timer < 5000)
                         SummonSporebat_Timer = 5000;
-
                 }else SummonSporebat_Timer -= diff;
             }
 
@@ -785,12 +784,10 @@ struct TRINITY_DLL_DECL mob_toxic_sporebatAI : public ScriptedAI
 
     void EnterCombat(Unit *who)
     {
-
     }
 
     void MoveInLineOfSight(Unit *who)
     {
-
     }
 
     void MovementInform(uint32 type, uint32 id)
@@ -804,7 +801,6 @@ struct TRINITY_DLL_DECL mob_toxic_sporebatAI : public ScriptedAI
 
     void UpdateAI (const uint32 diff)
     {
-
         /*if(!m_creature->isInCombat())
             m_creature->SetInCombatState(false);*/
 
@@ -900,7 +896,6 @@ struct TRINITY_DLL_DECL mob_coilfang_striderAI : public ScriptedAI
 
     void UpdateAI (const uint32 diff)
     {
-
         if (!UpdateVictim() )
             return;
 

@@ -17,7 +17,6 @@
 #include "G3D/Triangle.h"
 
 namespace G3D {
-
 /**
  A 3D Ray.
  */
@@ -121,15 +120,12 @@ public:
         const Vector3& edge01,
         const Vector3& edge02) const;
 
-
     inline float intersectionTime(
         const Vector3& vert0,
         const Vector3& vert1,
         const Vector3& vert2) const {
-
         return intersectionTime(vert0, vert1, vert2, vert1 - vert0, vert2 - vert0);
     }
-
 
     inline float intersectionTime(
         const Vector3&  vert0,
@@ -138,7 +134,6 @@ public:
         double&         w0,
         double&         w1,
         double&         w2) const {
-
         return intersectionTime(vert0, vert1, vert2, vert1 - vert0, vert2 - vert0, w0, w1, w2);
     }
 
@@ -177,7 +172,6 @@ public:
         const Vector3&  normal) const;
 };
 
-
 #define EPSILON 0.000001
 #define CROSS(dest,v1,v2) \
           dest[0]=v1[1]*v2[2]-v1[2]*v2[1]; \
@@ -197,7 +191,6 @@ inline float Ray::intersectionTime(
     const Vector3& vert2,
     const Vector3& edge1,
     const Vector3& edge2) const {
-
     (void)vert1;
     (void)vert2;
 
@@ -236,7 +229,6 @@ inline float Ray::intersectionTime(
         return (float)inf();
     }
 
-
     // Case where we don't need correct (u, v):
     const float t = DOT(edge2, qvec);
 
@@ -249,7 +241,6 @@ inline float Ray::intersectionTime(
     }
 }
 
-
 inline float Ray::intersectionTime(
     const Vector3&  vert0,
     const Vector3&  vert1,
@@ -259,7 +250,6 @@ inline float Ray::intersectionTime(
     double&         w0,
     double&         w1,
     double&         w2) const {
-
     (void)vert1;
     (void)vert2;
 
@@ -321,7 +311,6 @@ inline float Ray::intersectionTime(
 #undef CROSS
 #undef DOT
 #undef SUB
-
 }// namespace
 
 #endif

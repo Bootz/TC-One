@@ -32,7 +32,6 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 namespace SOCKETS_NAMESPACE {
 #endif
 
-
 /**
    This class and its subclasses is intended to be used as replacement
    for the internal data type 'ipaddr_t' and various implementations of
@@ -85,12 +84,8 @@ public:
     virtual std::auto_ptr<SocketAddress> GetCopy() = 0;
 };
 
-
-
-
 #ifdef SOCKETS_NAMESPACE
 } // namespace SOCKETS_NAMESPACE {
 #endif
 #endif // _SOCKETS_SocketAddress_H
-
 

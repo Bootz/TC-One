@@ -115,7 +115,6 @@ enum SpellIds
     /* Shield Orb Spells*/
     SPELL_SHADOW_BOLT                                   = 45680, //45679 would be correct but triggers to often //TODO fix console error
 
-
     /* Anveena's spells and cosmetics (Or, generally, everything that has "Anveena" in name) */
     SPELL_ANVEENA_PRISON                                = 46367, // She hovers locked within a bubble
     SPELL_ANVEENA_ENERGY_DRAIN                          = 46410, // Sunwell energy glow animation (Control mob uses this)
@@ -713,7 +712,6 @@ struct TRINITY_DLL_DECL boss_kiljaedenAI : public Scripted_NoMovementAI
             }
             else return;
         }
-
 }
 };
 
@@ -912,7 +910,6 @@ struct TRINITY_DLL_DECL mob_felfire_portalAI : public Scripted_NoMovementAI
 
     // TODO: Timers
     void Reset() {
-
     }
 
     void EnterCombat(Unit* who) {}
@@ -1092,7 +1089,6 @@ struct TRINITY_DLL_DECL mob_shield_orbAI : public ScriptedAI
                 DoTeleportTo(x,y,SHIELD_ORB_Z);
                 PointReached = true;
             }else CheckTimer -= diff;
-
         }
 
         if (Timer < diff){
@@ -1133,7 +1129,6 @@ struct TRINITY_DLL_DECL mob_sinster_reflectionAI : public ScriptedAI
     void EnterCombat(Unit* who){}
 
     void UpdateAI(const uint32 diff){
-
         if(Class == 0){
             Class = m_creature->getVictim()->getClass();
             switch(Class){
@@ -1252,7 +1247,6 @@ struct TRINITY_DLL_DECL mob_sinster_reflectionAI : public ScriptedAI
             for(uint8 i = 0; i < 3; ++i)
                 Timer[i] -= diff;
         }
-
 };
 
 CreatureAI* GetAI_mob_sinster_reflection(Creature *_Creature)

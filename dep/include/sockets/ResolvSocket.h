@@ -94,14 +94,10 @@ private:
     bool m_cached;
 };
 
-
-
-
 #ifdef SOCKETS_NAMESPACE
 }
 #endif
 
 #endif // ENABLE_RESOLVER
 #endif // _SOCKETS_ResolvSocket_H
-
 

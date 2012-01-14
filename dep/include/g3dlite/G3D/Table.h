@@ -28,7 +28,6 @@
 #   pragma warning (disable : 4786)
 #endif
 
-
 template<typename Key>
 struct GHashCode{};
 
@@ -75,8 +74,6 @@ struct GHashCode<std::string>
 };
 
 namespace G3D {
-
-
 /**
  An unordered data structure mapping keys to values.
 
@@ -102,7 +99,6 @@ namespace G3D {
   </PRE>
 
   And rely on the default enum operator==.
-
 
   Periodically check that debugGetLoad() is low (> 0.1).  When it gets near
   1.0 your hash function is badly designed and maps too many inputs to
@@ -131,7 +127,6 @@ private:
         Entry       entry;
         Node*       next;
 
-
         /** Provide pooled allocation for speed. */
         inline void* operator new (size_t size) {
             return System::malloc(size);
@@ -140,7 +135,6 @@ private:
         inline void operator delete (void* p) {
             System::free(p);
         }
-
 
         Node(Key key, Value value, size_t hashCode, Node* next) {
             this->entry.key   = key;
@@ -180,7 +174,6 @@ private:
      Re-hashes for a larger bucket size.
      */
     void resize(size_t numBuckets) {
-
         Node** oldBucket = bucket;
         bucket = (Node**)System::alignedMalloc(sizeof(Node*) * numBuckets, 16);
         System::memset(bucket, 0, sizeof(Node*) * numBuckets);
@@ -342,7 +335,6 @@ public:
             table(const_cast<Table<Key, Value>*>(table)),
             numBuckets(numBuckets),
             bucket(bucket) {
-
             if (numBuckets == 0) {
                 // Empty table
                 isDone = true;
@@ -419,7 +411,6 @@ public:
         }
     };
 
-
     /**
      C++ STL style iterator method.  Returns the first Entry, which
      contains a key and value.  Use preincrement (++entry) to get to
@@ -448,14 +439,12 @@ public:
          System::memset(bucket, 0, sizeof(Node*) * numBuckets);
     }
 
-
     /**
      Returns the number of keys.
      */
     size_t size() const {
         return _size;
     }
-
 
     /**
      If you insert a pointer into the key or value of a table, you are
@@ -515,7 +504,6 @@ public:
     to remove an element that isn't present.
     */
    void remove(const Key& key) {
-
       size_t code = m_HashFunc(key);
       size_t b = code % numBuckets;
 
@@ -546,7 +534,6 @@ public:
           n = n->next;
        } while (n != NULL);
 
-
       alwaysAssertM(false, "Tried to remove a key that was not in the table.");
    }
 
@@ -555,7 +542,6 @@ public:
     @deprecated Use get(key, val) or
     */
    Value& get(const Key& key) const {
-
         size_t  code = m_HashFunc(key);
         size_t b = code % numBuckets;
 
@@ -616,14 +602,12 @@ public:
        return false;
    }
 
-
    /**
     Short syntax for get.
     */
    inline Value& operator[](const Key &key) const {
       return get(key);
    }
-
 
    /**
     Returns an array of all of the keys in the table.
@@ -685,7 +669,6 @@ public:
        }
    }
 };
-
 } // namespace
 
 #ifdef G3D_WIN32

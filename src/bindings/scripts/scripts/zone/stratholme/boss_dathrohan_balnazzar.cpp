@@ -114,7 +114,6 @@ struct TRINITY_DLL_DECL boss_dathrohan_balnazzarAI : public ScriptedAI
 
         m_creature->SetUInt32Value(UNIT_FIELD_DISPLAYID,10545);
         m_creature->SetFloatValue(OBJECT_FIELD_SCALE_X, 1.00f);
-
     }
 
     void JustDied(Unit* Victim)
@@ -214,8 +213,6 @@ struct TRINITY_DLL_DECL boss_dathrohan_balnazzarAI : public ScriptedAI
 
             //START ELSE TRANSFORMED
         } else {
-
-
             //MindBlast
             if (MindBlast_Timer < diff && !m_creature->IsNonMeleeSpellCasted(false))
             {

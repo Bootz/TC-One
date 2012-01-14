@@ -1615,7 +1615,6 @@ enum CreatureTypeFlags
     CREATURE_TYPEFLAGS_EXOTIC          = 0x10000           //can be tamed by hunter as exotic pet
 };
 
-
 enum CreatureEliteType
 {
     CREATURE_ELITE_NORMAL          = 0,

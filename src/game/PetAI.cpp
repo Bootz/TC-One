@@ -73,7 +73,6 @@ void PetAI::_stopAttack()
     m_creature->AttackStop();
     me->GetCharmInfo()->SetIsCommandAttack(false);
     HandleReturnMovement();
-
 }
 
 void PetAI::UpdateAI(const uint32 diff)
@@ -360,7 +359,6 @@ void PetAI::HandleReturnMovement()
             }
         }
     }
-
 }
 
 void PetAI::DoAttack(Unit *target, bool chase)

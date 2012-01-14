@@ -59,14 +59,11 @@ public:
 
     virtual void reset_read() const = 0;
     virtual void reset_write() = 0;
-
 };
-
 
 #ifdef SOCKETS_NAMESPACE
 }
 #endif
 
 #endif // _SOCKETS_IFile_H
-
 

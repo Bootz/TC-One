@@ -61,7 +61,6 @@ struct TRINITY_DLL_DECL boss_gatewatcher_iron_handAI : public ScriptedAI
         Shadow_Power_Timer = 25000;
         Jackhammer_Timer = 45000;
         Stream_of_Machine_Fluid_Timer = 55000;
-
     }
     void EnterCombat(Unit *who)
     {

@@ -33,7 +33,6 @@ With an external Class we read that log and display the activity in a graphical 
 
 namespace VMAP
 {
-
     //==========================================
     enum C_TYPES
     {
@@ -115,7 +114,6 @@ namespace VMAP
             bool appendCmd(const Command& pCommand);
             bool appendCmds(const G3D::Array<Command>& pCmdArray);
     };
-
 }
 #endif
 

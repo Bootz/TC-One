@@ -40,7 +40,6 @@
 ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 namespace ACE_OS {
-
   // these are non-standard names...
 
   /** @name Functions from <cctype>
@@ -52,7 +51,6 @@ namespace ACE_OS {
    *  here.  Instead, we change by prepending "ace_".
    */
   //@{
-
   /// Returns true if the character is an alphanumeric character.
   ACE_NAMESPACE_INLINE_FUNCTION
   int ace_isalnum (ACE_TCHAR c);
@@ -129,7 +127,6 @@ namespace ACE_OS {
   ACE_NAMESPACE_INLINE_FUNCTION
   int ace_isctype (int c, ctype_t desc);
   //@}
-
 } /* namespace ACE_OS */
 
 ACE_END_VERSIONED_NAMESPACE_DECL

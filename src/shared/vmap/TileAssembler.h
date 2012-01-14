@@ -50,12 +50,10 @@ namespace VMAP
             float iScale;
             void init()
             {
-
                 // Swap x and y the raw data uses the axis differently
                 ixMatrix = G3D::Matrix3::fromAxisAngle(G3D::Vector3::unitY(),-(G3D::pi()*iDir.x/180.0));
                 iyMatrix = G3D::Matrix3::fromAxisAngle(G3D::Vector3::unitX(),-(G3D::pi()*iDir.y/180.0));
                 izMatrix = G3D::Matrix3::fromAxisAngle(G3D::Vector3::unitZ(),-(G3D::pi()*iDir.z/180.0));
-
             }
             G3D::Vector3 transform(const G3D::Vector3& pIn) const;
             void moveToBasePos(const G3D::Vector3& pBasePos) { iPos -= pBasePos; }

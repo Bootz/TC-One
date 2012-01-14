@@ -31,10 +31,8 @@ struct TRINITY_DLL_DECL instance_blood_furnace : public ScriptedInstance
 {
     instance_blood_furnace(Map *map) : ScriptedInstance(map) {Initialize();};
 
-
     uint64 Sewer1GUID;
     uint64 Sewer2GUID;
-
 
     void Initialize()
     {

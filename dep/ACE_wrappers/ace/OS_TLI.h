@@ -10,7 +10,6 @@
  */
 //=============================================================================
 
-
 #ifndef ACE_OS_TLI_H
 # define ACE_OS_TLI_H
 # include /**/ "ace/pre.h"
@@ -262,7 +261,6 @@ namespace ACE_OS
 
   ACE_NAMESPACE_INLINE_FUNCTION
   int t_unbind (ACE_HANDLE fildes);
-
 } /* namespace ACE_OS */
 
 ACE_END_VERSIONED_NAMESPACE_DECL

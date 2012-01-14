@@ -92,7 +92,6 @@ class TRINITY_DLL_SPEC InstanceData
         virtual uint64 GetData64(uint32 /*DataId*/) { return 0; }
         virtual void SetData64(uint32 /*DataId*/, uint64 /*Value*/) {}
 
-
         //All-purpose data storage 32 bit
         virtual uint32 GetData(uint32) { return 0; }
         virtual void SetData(uint32, uint32 data) {}
@@ -116,11 +115,10 @@ class TRINITY_DLL_SPEC InstanceData
             for(std::vector<BossInfo>::iterator i = bosses.begin(); i != bosses.end(); ++i)
                 saveStream << (uint32)i->state << " ";
             return saveStream.str();
-        }        
+        }
 
     private:
         std::vector<BossInfo> bosses;
-
 };
 #endif
 

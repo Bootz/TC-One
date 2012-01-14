@@ -414,7 +414,6 @@ struct TRINITY_DLL_DECL boss_kelthuzadAI : public ScriptedAI
 
                     //Update guardian count
                     GuardiansOfIcecrown_Count++;
-
                 }
                 //5 seconds until summoning next guardian
                 GuardiansOfIcecrown_Timer = 5000;
@@ -433,7 +432,6 @@ CreatureAI* GetAI_boss_kelthuzadAI(Creature *_Creature)
 
 void AddSC_boss_kelthuzad()
 {
-
     Script *newscript;
     newscript = new Script;
     newscript->Name="boss_kelthuzad";

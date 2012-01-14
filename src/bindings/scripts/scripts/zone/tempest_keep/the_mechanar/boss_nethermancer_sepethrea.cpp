@@ -236,7 +236,6 @@ struct TRINITY_DLL_DECL mob_ragin_flamesAI : public ScriptedAI
 
         DoMeleeAttackIfReady();
     }
-
 };
 CreatureAI* GetAI_mob_ragin_flames(Creature *_Creature)
 {

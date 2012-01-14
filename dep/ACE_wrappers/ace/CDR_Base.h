@@ -24,7 +24,6 @@
  */
 //=============================================================================
 
-
 #ifndef ACE_CDR_BASE_H
 #define ACE_CDR_BASE_H
 
@@ -369,7 +368,6 @@ ACE_END_VERSIONED_NAMESPACE_DECL
 #if defined (__ACE_INLINE__)
 # include "ace/CDR_Base.inl"
 #endif  /* __ACE_INLINE__ */
-
 
 #include /**/ "ace/post.h"
 

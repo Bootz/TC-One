@@ -84,7 +84,6 @@ struct TRINITY_DLL_DECL npc_swiftmountainAI : public npc_escortAI
     }
 };
 
-
 bool QuestAccept_npc_swiftmountain(Player* pPlayer, Creature* pCreature, const Quest* pQuest)
 {
     if (pQuest->GetQuestId() == QUEST_HOMEWARD)
@@ -198,7 +197,6 @@ struct TRINITY_DLL_DECL npc_pluckyAI : public ScriptedAI
     uint32 ChickenTimer;
 
     void Reset()   {
-
        Transformed = false;
        Chicken     = false;
        m_creature->RemoveFlag(UNIT_NPC_FLAGS, UNIT_NPC_FLAG_GOSSIP);

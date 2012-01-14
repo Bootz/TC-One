@@ -53,7 +53,6 @@ struct TRINITY_DLL_DECL boss_grilekAI : public ScriptedAI
         //Avartar_Timer
         if (Avartar_Timer < diff)
         {
-
             DoCast(m_creature, SPELL_AVARTAR);
             Unit* target = NULL;
 

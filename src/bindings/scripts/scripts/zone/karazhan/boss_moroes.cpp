@@ -164,7 +164,6 @@ struct TRINITY_DLL_DECL boss_moroesAI : public ScriptedAI
             Creature *pCreature = NULL;
             std::vector<uint32> AddList;
 
-
             for(uint8 i = 0; i < 6; ++i)
                 AddList.push_back(Adds[i]);
 
@@ -188,7 +187,7 @@ struct TRINITY_DLL_DECL boss_moroesAI : public ScriptedAI
         {
             for(int i = 0; i < 4; i++)
             {
-                Creature *pCreature = m_creature->SummonCreature(AddId[i], Locations[i][0], Locations[i][1], POS_Z, Locations[i][2], TEMPSUMMON_CORPSE_TIMED_DESPAWN, 10000);                
+                Creature *pCreature = m_creature->SummonCreature(AddId[i], Locations[i][0], Locations[i][1], POS_Z, Locations[i][2], TEMPSUMMON_CORPSE_TIMED_DESPAWN, 10000);
                 if (pCreature)
                 {
                     AddGUID[i] = pCreature->GetGUID();
@@ -221,7 +220,6 @@ struct TRINITY_DLL_DECL boss_moroesAI : public ScriptedAI
                     Temp->DealDamage(Temp, Temp->GetMaxHealth(), NULL, DIRECT_DAMAGE, SPELL_SCHOOL_MASK_NORMAL, NULL, false);
                     Temp->RemoveCorpse();
                 }
-
             }
         }
     }
@@ -305,7 +303,7 @@ struct TRINITY_DLL_DECL boss_moroesAI : public ScriptedAI
                 Blind_Timer = 40000;
             }else Blind_Timer -= diff;
         }
-        
+
         if (InVanish)
         {
             if (Wait_Timer < diff)

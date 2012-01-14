@@ -443,7 +443,6 @@ struct TRINITY_DLL_DECL boss_alythessAI : public Scripted_NoMovementAI
 
         if (who->isTargetableForAttack() && who->isInAccessiblePlaceFor(m_creature) && m_creature->IsHostileTo(who))
         {
-
             float attackRadius = m_creature->GetAttackDistance(who);
             if (m_creature->IsWithinDistInMap(who, attackRadius) && m_creature->GetDistanceZ(who) <= CREATURE_Z_ATTACK_RANGE && m_creature->IsWithinLOSInMap(who))
             {
@@ -490,7 +489,6 @@ struct TRINITY_DLL_DECL boss_alythessAI : public Scripted_NoMovementAI
     {
         switch(spell->Id)
         {
-
         case SPELL_BLAZE:
             target->CastSpell(target, SPELL_BLAZE_SUMMON, true);
         case SPELL_CONFLAGRATION:
@@ -694,7 +692,6 @@ struct TRINITY_DLL_DECL mob_shadow_imageAI : public ScriptedAI
     {
         switch(spell->Id)
         {
-
         case SPELL_SHADOW_FURY:
         case SPELL_DARK_STRIKE:
             if(!target->HasAura(SPELL_DARK_FLAME, 0))

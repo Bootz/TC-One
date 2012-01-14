@@ -375,7 +375,6 @@ int main(int argc, char **argv)
         }
     }
 
-
     /// new data extraction
     std::string newData;
 

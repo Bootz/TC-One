@@ -103,7 +103,6 @@ bool OutdoorPvPObjectiveEP_EWT::Update(uint32 diff)
                 flag2->SendUpdateObjectToAllExcept(NULL);
             }
 
-
             UpdateTowerState();
 
             // complete quest objective

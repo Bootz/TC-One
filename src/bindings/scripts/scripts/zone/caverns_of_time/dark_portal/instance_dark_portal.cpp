@@ -316,10 +316,8 @@ struct TRINITY_DLL_DECL instance_dark_portal : public ScriptedInstance
                         TEMPSUMMON_CORPSE_DESPAWN,0);
                     if (temp)
                     {
-
                         temp->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE);
                         temp->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_SELECTABLE);
-
 
                         if (Unit* boss = SummonedPortalBoss(temp))
                         {

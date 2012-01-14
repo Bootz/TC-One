@@ -332,7 +332,6 @@ void WorldSession::HandleBattleGroundPlayerPortOpcode( WorldPacket &recv_data )
                 uint8 israted = itrPlayerStatus->second.GroupInfo->IsRated;
                 uint8 status = 0;
 
-
                 if(!itrPlayerStatus->second.GroupInfo->IsInvitedToBGInstanceGUID)
                 {
                     // not invited to bg, get template

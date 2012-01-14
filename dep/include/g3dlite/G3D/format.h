@@ -32,7 +32,6 @@
 #endif
 
 namespace G3D {
-
 /**
   Produces a string from arguments of the style of printf.  This avoids
   problems with buffer overflows when using sprintf and makes it easy
@@ -50,8 +49,6 @@ std::string format(
 std::string vformat(
     const char*                 fmt,
     va_list                     argPtr) G3D_CHECK_VPRINTF_ARGS;
-
-
 }; // namespace
 
 #endif

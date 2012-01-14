@@ -272,6 +272,5 @@ void AddSC_go_scripts()
     newscript->Name = "go_sacred_fire_of_life";
     newscript->pGOHello =           &GOHello_go_sacred_fire_of_life;
     newscript->RegisterSelf();
-
 }
 

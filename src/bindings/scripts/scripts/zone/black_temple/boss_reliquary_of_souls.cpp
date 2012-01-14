@@ -99,8 +99,6 @@ static Position Coords[]=
     {450.4, 168.3}
 };
 
-
-
 struct TRINITY_DLL_DECL boss_soul_essenceAI : public ScriptedAI
 {
     boss_soul_essenceAI(Creature *c) : ScriptedAI(c) {}
@@ -348,7 +346,6 @@ struct TargetDistanceOrder : public std::binary_function<const Unit, const Unit,
         return (MainTarget->GetDistance(_Left) < MainTarget->GetDistance(_Right));
     }
 };
-
 
 struct TRINITY_DLL_DECL boss_essence_of_sufferingAI : public boss_soul_essenceAI
 {

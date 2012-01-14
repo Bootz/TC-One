@@ -13,12 +13,10 @@
 #include "G3D/stringutils.h"
 
 namespace G3D {
-
 Plane::Plane(
     Vector4      point0,
     Vector4      point1,
     Vector4      point2) {
-
     debugAssertM(
         point0.w != 0 ||
         point1.w != 0 ||
@@ -60,25 +58,20 @@ Plane::Plane(
     _distance = _normal.dot(point0.xyz());
 }
 
-
 Plane::Plane(
     const Vector3&      point0,
     const Vector3&      point1,
     const Vector3&      point2) {
-
     _normal   = (point1 - point0).cross(point2 - point0).direction();
     _distance = _normal.dot(point0);
 }
 
-
 Plane::Plane(
     const Vector3&      __normal,
     const Vector3&      point) {
-
     _normal   = __normal.direction();
     _distance  = _normal.dot(point);
 }
-
 
 Plane Plane::fromEquation(float a, float b, float c, float d) {
     Vector3 n(a, b, c);
@@ -88,12 +81,10 @@ Plane Plane::fromEquation(float a, float b, float c, float d) {
     return Plane(n, -d);
 }
 
-
 void Plane::flip() {
     _normal   = -_normal;
     _distance  = -_distance;
 }
-
 
 void Plane::getEquation(Vector3& n, float& d) const {
     double _d;
@@ -105,7 +96,6 @@ void Plane::getEquation(Vector3& n, double& d) const {
     n = _normal;
     d = -_distance;
 }
-
 
 void Plane::getEquation(float& a, float& b, float& c, float& d) const {
     double _a, _b, _c, _d;
@@ -123,10 +113,8 @@ void Plane::getEquation(double& a, double& b, double& c, double& d) const {
     d = -_distance;
 }
 
-
 std::string Plane::toString() const {
     return format("Plane(%g, %g, %g, %g)", _normal.x, _normal.y, _normal.z, _distance);
 }
-
 }
 

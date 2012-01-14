@@ -25,13 +25,11 @@
 #include "SemaphoreImpl.h"
 
 namespace ZThread {
-
-  class PrioritySemaphoreImpl : public SemaphoreImpl<priority_list> { 
+  class PrioritySemaphoreImpl : public SemaphoreImpl<priority_list> {
   public:
 
-    PrioritySemaphoreImpl(int count, unsigned int maxCount) 
+    PrioritySemaphoreImpl(int count, unsigned int maxCount)
       : SemaphoreImpl<priority_list>(count, maxCount, true) { }
-
   };
 
   /**
@@ -41,41 +39,28 @@ namespace ZThread {
    * @param maxCount maximum size of the semaphore count
    */
   PrioritySemaphore::PrioritySemaphore(int count, unsigned int maxCount) {
-  
     _impl = new PrioritySemaphoreImpl(count, maxCount);
-  
   }
 
   PrioritySemaphore::~PrioritySemaphore() {
-
     if(_impl != 0)
       delete _impl;
-
   }
 
   void PrioritySemaphore::wait() {
-
     _impl->acquire();
-
   }
 
-
   bool PrioritySemaphore::tryWait(unsigned long ms) {
-
     return _impl->tryAcquire(ms);
-
   }
 
   void PrioritySemaphore::post() {
-
     _impl->release();
-
   }
 
   int PrioritySemaphore::count() {
-
     return _impl->count();
-
   }
 
   ///////////////////////////////////////////////////////////////////////////////
@@ -83,22 +68,14 @@ namespace ZThread {
   //
 
   void PrioritySemaphore::acquire() {
-
     _impl->acquire();
-
   }
 
   bool PrioritySemaphore::tryAcquire(unsigned long ms) {
-
     return _impl->tryAcquire(ms);
-
-
   }
 
   void PrioritySemaphore::release() {
-
     _impl->release();
-
   }
-
 } // namespace ZThread

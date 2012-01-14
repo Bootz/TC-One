@@ -693,7 +693,6 @@ void AuctionHouseBot::addNewAuctionBuyerBotBid(Player *AHBplayer, AHBConfig *con
         // Check whether we do normal bid, or buyout
         if ((bidprice < auction->buyout) || (auction->buyout == 0))
         {
-
             if (auction->bidder > 0)
             {
                 if (auction->bidder == AHBplayer->GetGUIDLow())
@@ -806,7 +805,6 @@ void AuctionHouseBot::Initialize()
     AHBplayerGUID = sConfig.GetIntDefault("AuctionHouseBot.GUID", 0);
     ItemsPerCycle = sConfig.GetIntDefault("AuctionHouseBot.ItemsPerCycle", 200);
 
-
     //Begin Filters
 
     Vendor_Items = sConfig.GetBoolDefault("AuctionHouseBot.VendorItems", false);
@@ -883,7 +881,6 @@ void AuctionHouseBot::Initialize()
             {
                 Field* fields = results->Fetch();
                 npcItems.push_back(fields[0].GetUInt32());
-
             } while (results->NextRow());
 
             delete results;
@@ -910,7 +907,6 @@ void AuctionHouseBot::Initialize()
             {
                 Field* fields = results->Fetch();
                 lootItems.push_back(fields[0].GetUInt32());
-
             } while (results->NextRow());
 
             delete results;

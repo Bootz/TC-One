@@ -484,7 +484,6 @@ struct AISpellInfoType
 
 TRINITY_DLL_SPEC AISpellInfoType * GetAISpellInfo(uint32 i);
 
-
 inline void CreatureAI::SetGazeOn(Unit *target)
 {
     if(me->canAttack(target))

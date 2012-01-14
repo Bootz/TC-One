@@ -1,4 +1,3 @@
-
 // -*- C++ -*-
 
 //=============================================================================
@@ -41,7 +40,6 @@ extern "C"
 #if !defined (ACE_LACKS_NETINET_IN_H)
 #  include /**/ <netinet/in.h>
 #endif /* !ACE_LACKS_NETINET_IN_H */
-
 
 # if defined (ACE_HAS_PHARLAP_RT)
 #   define ACE_IPPROTO_TCP SOL_SOCKET

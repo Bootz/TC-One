@@ -326,7 +326,6 @@ struct TRINITY_DLL_DECL npc_barnesAI : public npc_escortAI
                     WipeTimer = 15000;
                 }else WipeTimer -= diff;
             }
-
         }
     }
 };
@@ -520,7 +519,6 @@ struct TRINITY_DLL_DECL npc_image_of_medivhAI : public ScriptedAI
         YellTimer = 10000;
     }
 
-
     uint32 NextStep(uint32 Step)
     {
         Unit* arca = Unit::GetUnit((*m_creature),ArcanagosGUID);
@@ -598,12 +596,10 @@ struct TRINITY_DLL_DECL npc_image_of_medivhAI : public ScriptedAI
             return 5000;
         default : return 9999999;
         }
-
     }
 
     void UpdateAI(const uint32 diff)
     {
-
         if(YellTimer < diff)
         {
             if(EventStarted)
@@ -629,7 +625,6 @@ struct TRINITY_DLL_DECL npc_image_of_medivhAI : public ScriptedAI
                     DoCast(arca, SPELL_FIRE_BALL);
                 FireMedivhTimer = 5000;
             }else FireMedivhTimer -= diff;
-
         }
     }
 };

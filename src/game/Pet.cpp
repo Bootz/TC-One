@@ -115,7 +115,7 @@ void Pet::AddToWorld()
 {
     ///- Register the pet for guid lookup
     if(!IsInWorld())
-    {   
+    {
         ObjectAccessor::Instance().AddObject(this);
         Unit::AddToWorld();
     }
@@ -235,7 +235,6 @@ bool Pet::LoadPetFromDB( Unit* owner, uint32 petentry, uint32 petnumber, bool cu
 
     switch(getPetType())
     {
-
         case SUMMON_PET:
             petlevel=owner->getLevel();
 
@@ -1071,7 +1070,6 @@ bool Pet::InitStatsForLevel(uint32 petlevel)
                 {
                     case CLASS_WARLOCK:
                     {
-
                         //the damage bonus used for pets is either fire or shadow damage, whatever is higher
                         uint32 fire  = owner->GetUInt32Value(PLAYER_FIELD_MOD_DAMAGE_DONE_POS + SPELL_SCHOOL_FIRE);
                         uint32 shadow = owner->GetUInt32Value(PLAYER_FIELD_MOD_DAMAGE_DONE_POS + SPELL_SCHOOL_SHADOW);

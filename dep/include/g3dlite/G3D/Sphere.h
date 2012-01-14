@@ -18,7 +18,6 @@
 #include "G3D/Sphere.h"
 
 namespace G3D {
-
 /**
  Sphere.
  */
@@ -39,7 +38,6 @@ public:
     Sphere(
         const Vector3&  center,
         float           radius) {
-
         this->center = center;
         this->radius = radius;
     }
@@ -118,7 +116,6 @@ public:
 
     void getBounds(class AABox& out) const;
 };
-
 } // namespace
 
 inline unsigned int hashCode(const G3D::Sphere& sphere) {

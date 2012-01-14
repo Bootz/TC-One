@@ -36,7 +36,6 @@
 ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 namespace ACE_OS {
-
   //@{ @name A set of wrappers for System V message queues.
   ACE_NAMESPACE_INLINE_FUNCTION
   int msgctl (int msqid,
@@ -60,7 +59,6 @@ namespace ACE_OS {
               size_t len,
               int flags);
   //@}
-
 } /* namespace ACE_OS */
 
 ACE_END_VERSIONED_NAMESPACE_DECL

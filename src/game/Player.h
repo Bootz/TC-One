@@ -1077,7 +1077,6 @@ class TRINITY_DLL_SPEC Player : public Unit
                 return EQUIP_ERR_ITEM_NOT_FOUND;
             uint32 count = pItem->GetCount();
             return _CanStoreItem( bag, slot, dest, pItem->GetEntry(), count, pItem, swap, NULL );
-
         }
         uint8 CanStoreItems( Item **pItem,int count) const;
         uint8 CanEquipNewItem( uint8 slot, uint16 &dest, uint32 item, bool swap ) const;
@@ -2053,7 +2052,6 @@ class TRINITY_DLL_SPEC Player : public Unit
         void SetTemporaryUnsummonedPetNumber(uint32 petnumber) { m_temporaryUnsummonedPetNumber = petnumber; }
         uint32 GetOldPetSpell() const { return m_oldpetspell; }
         void SetOldPetSpell(uint32 petspell) { m_oldpetspell = petspell; }
-
 
         /*********************************************************/
         /***                 INSTANCE SYSTEM                   ***/

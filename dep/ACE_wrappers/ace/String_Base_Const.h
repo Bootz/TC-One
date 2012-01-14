@@ -22,7 +22,6 @@
 # pragma once
 #endif /* ACE_LACKS_PRAGMA_ONCE */
 
-
 ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 /**
@@ -43,7 +42,6 @@ public:
   /// Constant that denotes case where no such character position
   /// exists.
   static size_type const npos;
-
 };
 
 ACE_END_VERSIONED_NAMESPACE_DECL

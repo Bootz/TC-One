@@ -55,7 +55,6 @@ float JainaDummySpawn[2][4]=
     {5484.98, -2721.69, 1483.39, 6.00656}
 };
 
-
 // Locations for summoning waves in Horde base
 float HordeBase[4][3]=
 {
@@ -381,14 +380,11 @@ void hyjalAI::Reset()
     bRetreat = false;
     Debug = false;
 
-
     //Flags
     m_creature->SetFlag(UNIT_NPC_FLAGS, UNIT_NPC_FLAG_GOSSIP);
 
     //Initialize spells
     memset(Spell, 0, sizeof(Spell));
-
-
 
     //Reset Instance Data for trash count
     if(pInstance)
@@ -481,7 +477,6 @@ void hyjalAI::SummonCreature(uint32 entry, float Base[4][3])
             default:
                 pCreature = m_creature->SummonCreature(entry, SpawnLoc[0], SpawnLoc[1], SpawnLoc[2], 0, TEMPSUMMON_TIMED_OR_DEAD_DESPAWN, 120000);
                 break;
-
     }
 
     if(pCreature)
@@ -771,7 +766,6 @@ void hyjalAI::UpdateAI(const uint32 diff)
                     HideNearPos(5037.76, -1889.71);
                     for(uint8 i = 0; i < 92; i++)//summon fires
                         m_creature->SummonGameObject(FLAMEOBJECT,AllianceFirePos[i][0],AllianceFirePos[i][1],AllianceFirePos[i][2],AllianceFirePos[i][3],AllianceFirePos[i][4],AllianceFirePos[i][5],AllianceFirePos[i][6],AllianceFirePos[i][7],0);
-
                 }
                 else m_creature->SetVisibility(VISIBILITY_ON);
                 break;
@@ -784,7 +778,6 @@ void hyjalAI::UpdateAI(const uint32 diff)
                     HideNearPos(5542.2, -2629.36);
                     for(uint8 i = 0; i < 65; i++)//summon fires
                         m_creature->SummonGameObject(FLAMEOBJECT,HordeFirePos[i][0],HordeFirePos[i][1],HordeFirePos[i][2],HordeFirePos[i][3],HordeFirePos[i][4],HordeFirePos[i][5],HordeFirePos[i][6],HordeFirePos[i][7],0);
-
                 }
                 else m_creature->SetVisibility(VISIBILITY_ON);
                 break;

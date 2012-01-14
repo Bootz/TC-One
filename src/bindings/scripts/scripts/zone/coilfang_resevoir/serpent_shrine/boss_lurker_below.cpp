@@ -336,7 +336,6 @@ struct TRINITY_DLL_DECL boss_the_lurker_belowAI : public Scripted_NoMovementAI
                 return;
 
              DoMeleeAttackIfReady();
-
          }else if(!Submerged)
              return;
          else if(Submerged)//phase 2, submerged
@@ -415,12 +414,10 @@ struct TRINITY_DLL_DECL mob_coilfang_ambusherAI : public Scripted_NoMovementAI
     {
         MultiShotTimer = 10000;
         ShootBowTimer = 4000;
-
     }
 
     void EnterCombat(Unit *who)
     {
-
     }
 
     void MoveInLineOfSight(Unit *who)
@@ -485,5 +482,4 @@ void AddSC_boss_the_lurker_below()
     newscript->GetAI = &GetAI_mob_coilfang_ambusher;
     newscript->RegisterSelf();
 }
-
 

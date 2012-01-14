@@ -91,11 +91,9 @@ private:
     bool m_b_destructor;
 };
 
-
 #ifdef SOCKETS_NAMESPACE
 }
 #endif
 
 #endif // _SOCKETS_Thread_H
-
 

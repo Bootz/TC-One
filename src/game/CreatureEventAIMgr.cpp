@@ -110,7 +110,6 @@ void CreatureEventAIMgr::LoadCreatureEventAI_Texts(bool check_entry_use)
         sLog.outString();
         sLog.outString(">> Loaded 0 additional CreatureEventAI Texts data. DB table `creature_ai_texts` is empty.");
     }
-
 }
 
 void CreatureEventAIMgr::CheckUnusedAITexts()
@@ -151,7 +150,6 @@ void CreatureEventAIMgr::CheckUnusedAITexts()
 // -------------------
 void CreatureEventAIMgr::LoadCreatureEventAI_Summons(bool check_entry_use)
 {
-
     //Drop Existing EventSummon Map
     m_CreatureEventAI_Summon_Map.clear();
 
@@ -202,7 +200,6 @@ void CreatureEventAIMgr::LoadCreatureEventAI_Summons(bool check_entry_use)
         sLog.outString();
         sLog.outString(">> Loaded 0 CreatureEventAI Summon definitions. DB table `creature_ai_summons` is empty.");
     }
-
 }
 
 void CreatureEventAIMgr::CheckUnusedAISummons()
@@ -798,7 +795,7 @@ void CreatureEventAIMgr::LoadCreatureEventAI_Scripts()
                 {
                     //sLog.outErrorDb("CreatureEventAI: Creature Entry %u has EventAI script but it also has C++ script. EventAI script will be overriden.", cInfo->Entry);
                 }
-            }            
+            }
         } while (result->NextRow());
 
         delete result;

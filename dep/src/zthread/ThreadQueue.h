@@ -27,11 +27,9 @@
 #include "zthread/Guard.h"
 #include "FastLock.h"
 
-
 namespace ZThread {
-
   class ThreadImpl;
-  
+
   /**
    * @class ThreadQueue
    * @version 2.3.0
@@ -41,14 +39,13 @@ namespace ZThread {
    * A ThreadQueue accumulates references to user and reference threads.
    * These are threads that are running outside the scope of the Thread
    * object that created them. ZThreads doesn't have a central manager for
-   * all threads (partly why I renamed the ThreadManager to someting more 
+   * all threads (partly why I renamed the ThreadManager to someting more
    * appropriate). Instead, ZThreads will discover threads it did not create
    * and create a reference thread that allows ZThreads to interact with it.
    * Non user threads that are created by the user never have to touch the
    * ThreadQueue.
    */
   class ThreadQueue : public Singleton<ThreadQueue, StaticInstantiation> {
-
     typedef std::deque<ThreadImpl*> ThreadList;
     typedef std::deque<Task> TaskList;
 
@@ -56,19 +53,19 @@ namespace ZThread {
     ThreadList _pendingThreads;
     ThreadList _referenceThreads;
     ThreadList _userThreads;
-    
+
     //! Shutdown handlers
     TaskList   _shutdownTasks;
 
     //! Serilize access to the thread list
     FastLock _lock;
-    
+
     //! Reference thread waiting to cleanup any user & reference threads
     ThreadImpl* _waiter;
 
   public:
 
-    ThreadQueue(); 
+    ThreadQueue();
 
     /**
      * The thread destroys a ThreadQueue will be a reference thread,
@@ -84,20 +81,19 @@ namespace ZThread {
      *
      * User-threads are known to be executing thier tasks and will be cancel()ed
      * as the ThreadQueue is destroyed when main() goes out of scope. This sends
-     * a request to the task to complete soon. Once the task exits, the thread is 
+     * a request to the task to complete soon. Once the task exits, the thread is
      * transitioned to pending-thread status.
      */
     void insertUserThread(ThreadImpl*);
 
     /**
-     * Insert a pending-thread into the queue. 
-     * 
-     * Pending-threads are known to have completed thier tasks and thier 
-     * resources are reclaimed (lazily) as more threads are started or as the  
+     * Insert a pending-thread into the queue.
+     *
+     * Pending-threads are known to have completed thier tasks and thier
+     * resources are reclaimed (lazily) as more threads are started or as the
      * ThreadQueue is destroyed.
      */
     void insertPendingThread(ThreadImpl*);
-
 
     /**
      * Insert reference thread. Reference threads are not removed until
@@ -106,8 +102,8 @@ namespace ZThread {
     void insertReferenceThread(ThreadImpl*);
 
     /**
-     * Insert a task to be run before threads are joined. 
-     * Any items inserted after the ThreadQueue desctructor has begun to 
+     * Insert a task to be run before threads are joined.
+     * Any items inserted after the ThreadQueue desctructor has begun to
      * execute will be run() immediately.
      */
     void insertShutdownTask(Task&);
@@ -124,11 +120,7 @@ namespace ZThread {
     void pollUserThreads();
 
     void pollReferenceThreads();
-
   };
-  
-
 } // namespace ZThread
-
 
 #endif  // __ZTTHREADQUEUE_H__

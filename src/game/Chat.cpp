@@ -148,7 +148,6 @@ ChatCommand * ChatHandler::getCommandTable()
         { NULL,             0,                  false, NULL,                                           "", NULL }
     };
 
-
     static ChatCommand banCommandTable[] =
     {
         { "account",        SEC_ADMINISTRATOR,  true,  &ChatHandler::HandleBanAccountCommand,          "", NULL },
@@ -337,7 +336,6 @@ ChatCommand * ChatHandler::getCommandTable()
         { "tp",             SEC_GAMEMASTER,     false, &ChatHandler::HandlePetTpCommand,               "", NULL },
         { NULL,             0,                  false, NULL,                                           "", NULL }
     };
-
 
     static ChatCommand groupCommandTable[] =
     {

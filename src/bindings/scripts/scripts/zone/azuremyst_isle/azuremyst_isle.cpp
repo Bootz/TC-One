@@ -304,7 +304,6 @@ struct TRINITY_DLL_DECL npc_injured_draeneiAI : public ScriptedAI
     {
         return;
     }
-
 };
 CreatureAI* GetAI_npc_injured_draenei(Creature *_Creature)
 {
@@ -414,7 +413,6 @@ CreatureAI* GetAI_npc_magwinAI(Creature *_Creature)
 
     return (CreatureAI*)magwinAI;
 }
-
 
 /*######
 ## npc_susurrus
@@ -688,6 +686,5 @@ void AddSC_azuremyst_isle()
     newscript->Name="mob_nestlewood_owlkin";
     newscript->GetAI = &GetAI_mob_nestlewood_owlkinAI;
     newscript->RegisterSelf();
-
 }
 

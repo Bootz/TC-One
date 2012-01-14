@@ -49,12 +49,8 @@ private:
     Mutex& m_mutex;
 };
 
-
-
-
 #ifdef SOCKETS_NAMESPACE
 }
 #endif
 #endif // _SOCKETS_Lock_H
-
 

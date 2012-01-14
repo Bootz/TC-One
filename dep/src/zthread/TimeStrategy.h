@@ -65,7 +65,7 @@
 #  include "macos/UpTimeStrategy.h"
 
 #elif defined(HAVE_PERFORMANCECOUNTER)
-              
+
 #  include "win32/PerformanceCounterStrategy.h"
 
 #elif defined(HAVE_FTIME)
@@ -77,7 +77,6 @@
 #  include "posix/GetTimeOfDayStrategy.h"
 
 #endif
-
 
 #ifndef __ZTTIMESTRATEGY_H__
 #error "No TimeStrategy implementation could be selected"

@@ -43,7 +43,6 @@ struct sockaddr_un {
 };
 #endif /* ACE_LACKS_SOCKADDR_UN */
 
-
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */

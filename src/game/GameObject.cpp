@@ -901,7 +901,6 @@ void GameObject::UseDoorOrButton(uint32 time_to_restore)
     SetLootState(GO_ACTIVATED);
 
     m_cooldownTime = time(NULL) + time_to_restore;
-
 }
 
 void GameObject::SetGoArtKit(uint32 kit)

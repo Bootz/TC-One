@@ -37,7 +37,6 @@
 ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 namespace ACE_OS {
-
   /** @name Functions from <cstring>
    *
    *  Included are the functions defined in <cstring> and their <cwchar>
@@ -46,7 +45,6 @@ namespace ACE_OS {
    *  @todo To be complete, we should add strcoll, and strxfrm.
    */
   //@{
-
   /// Finds characters in a buffer (const void version).
   ACE_NAMESPACE_INLINE_FUNCTION
   const void *memchr (const void *s, int c, size_t len);
@@ -194,7 +192,6 @@ namespace ACE_OS {
   extern ACE_Export
   char *strerror_emulation (int errnum);
 #endif /* ACE_LACKS_STRERROR */
-
 
   /// Returns a string describing the signal number passed in the
   /// argument @a signum. If the supplied signal number is out of range,
@@ -460,7 +457,6 @@ namespace ACE_OS {
   extern ACE_Export
   wchar_t *strtok_r_emulation (ACE_WCHAR_T *s, const ACE_WCHAR_T *tokens, ACE_WCHAR_T **lasts);
 # endif  // ACE_HAS_WCHAR && ACE_LACKS_WCSTOK
-
 } /* namespace ACE_OS */
 
 ACE_END_VERSIONED_NAMESPACE_DECL

@@ -159,7 +159,6 @@ void guardAI::UpdateAI(const uint32 diff)
 
                 //Set our global cooldown
                 GlobalCooldown = GENERIC_CREATURE_COOLDOWN;
-
             }                                               //If no spells available and we arn't moving run to target
             else if ((*m_creature).GetMotionMaster()->GetCurrentMovementGeneratorType()!=TARGETED_MOTION_TYPE)
             {

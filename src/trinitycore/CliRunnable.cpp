@@ -70,14 +70,13 @@ char * command_finder(const char* text, int state)
     }
 
   return ((char*)NULL);
-
 }
 
 char ** cli_completion(const char * text, int start, int end)
 {
   char ** matches;
   matches = (char**)NULL;
-  
+
   if(start == 0)
     matches = rl_completion_matches((char*)text,&command_finder);
   else
@@ -256,7 +255,6 @@ bool ChatHandler::HandleAccountOnlineListCommand(const char* args)
         }
         else
             PSendSysMessage(LANG_ACCOUNT_LIST_ERROR,name.c_str());
-
     }while(resultDB->NextRow());
 
     delete resultDB;
@@ -341,7 +339,6 @@ bool ChatHandler::HandleServerSetDiffTimeCommand(const char *args)
     return true;
 }
 
-
 /// @}
 
 #ifdef linux
@@ -401,7 +398,6 @@ void CliRunnable::run()
                 break;
             }
 
-
             if(!*command_str)
             {
 	      #if PLATFORM == WINDOWS
@@ -423,13 +419,11 @@ void CliRunnable::run()
 	     #if PLATFORM != WINDOWS
 	    add_history(command.c_str());
 	     #endif
-
 	}
         else if (feof(stdin))
         {
             World::StopNow(SHUTDOWN_EXIT_CODE);
         }
-
     }
 
     ///- End the database thread

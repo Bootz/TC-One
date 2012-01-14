@@ -356,7 +356,6 @@ void Group::ChangeLeader(const uint64 &guid)
 
 void Group::CheckLeader(const uint64 &guid, bool isLogout)
 {
-
     if(IsLeader(guid))
     {
         if(isLogout)
@@ -373,7 +372,7 @@ void Group::CheckLeader(const uint64 &guid, bool isLogout)
         if(!isLogout && !m_leaderLogoutTime) //normal member logins
         {
             Player *leader = NULL;
-            
+
             //find the leader from group members
             for(GroupReference *itr = GetFirstMember(); itr != NULL; itr = itr->next())
             {
@@ -394,7 +393,6 @@ void Group::CheckLeader(const uint64 &guid, bool isLogout)
 
 bool Group::ChangeLeaderToFirstOnlineMember()
 {
-
     for(GroupReference *itr = GetFirstMember(); itr != NULL; itr = itr->next())
     {
         Player* player = itr->getSource();
@@ -406,7 +404,6 @@ bool Group::ChangeLeaderToFirstOnlineMember()
        }
     }
     return false;
-
 }
 
 void Group::Disband(bool hideDestroy)
@@ -599,7 +596,6 @@ void Group::GroupLoot(const uint64& playerGUID, Loot *loot, WorldObject* object)
         }
         else
             i->is_underthreshold=1;
-
     }
 }
 
@@ -964,7 +960,6 @@ void Group::SendUpdate()
             data << (uint64)m_looterGuid;                   // looter guid
             data << (uint8)m_lootThreshold;                 // loot threshold
             data << (uint8)m_difficulty;                    // Heroic Mod Group
-
         }
         player->GetSession()->SendPacket( &data );
     }
@@ -976,7 +971,7 @@ void Group::Update(time_t diff)
     if (m_leaderLogoutTime)
     {
         time_t thisTime = time(NULL);
-    
+
         if (thisTime > m_leaderLogoutTime + sWorld.getConfig(CONFIG_GROUPLEADER_RECONNECT_PERIOD))
         {
             ChangeLeaderToFirstOnlineMember();
@@ -1610,7 +1605,6 @@ void Group::BroadcastGroupUpdate(void)
     // -- not very efficient but safe
     for(member_citerator citr = m_memberSlots.begin(); citr != m_memberSlots.end(); ++citr)
     {
-
         Player *pp = objmgr.GetPlayer(citr->guid);
         if(pp && pp->IsInWorld())
         {

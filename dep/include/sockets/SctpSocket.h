@@ -36,7 +36,6 @@ namespace SOCKETS_NAMESPACE {
 
 class SocketAddress;
 
-
 class SctpSocket : public StreamSocket
 {
 public:
@@ -99,12 +98,10 @@ private:
     char *m_buf; ///< Temporary receive buffer
 };
 
-
 #ifdef SOCKETS_NAMESPACE
 } // namespace SOCKETS_NAMESPACE
 #endif
 
 #endif // USE_SCTP
 #endif // _SOCKETS_SctpSocket_H
-
 

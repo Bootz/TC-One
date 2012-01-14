@@ -52,7 +52,7 @@ float IntroWay[8][3] =
     {-11189.20,-1931.25,125},
     {-11153.76,-1948.93,125},
     {-11128.73,-1929.75,125},
-    {-11140   , -1915  ,122}, 
+    {-11140   , -1915  ,122},
     {-11163   , -1903  ,91.473}
 };
 
@@ -133,7 +133,6 @@ struct TRINITY_DLL_DECL boss_nightbaneAI : public ScriptedAI
                 return;
             }else
             {
-
                 BellowingRoarTimer = 30000;
                 CharredEarthTimer = 15000;
                 DistractingAshTimer = 20000;
@@ -178,7 +177,7 @@ struct TRINITY_DLL_DECL boss_nightbaneAI : public ScriptedAI
     {
         if(pInstance)
             pInstance->SetData(DATA_NIGHTBANE_EVENT, IN_PROGRESS);
-        
+
         HandleTerraceDoors(false);
         DoYell(YELL_AGGRO, LANG_UNIVERSAL, NULL);
     }
@@ -208,7 +207,7 @@ struct TRINITY_DLL_DECL boss_nightbaneAI : public ScriptedAI
                 else ScriptedAI::AttackStart(who,false);
         }
     }
-    
+
     void MovementInform(uint32 type, uint32 id)
     {
         if(type != POINT_MOTION_TYPE)
@@ -224,7 +223,7 @@ struct TRINITY_DLL_DECL boss_nightbaneAI : public ScriptedAI
                 Phase = 1;
                 return;
             }
-        
+
             WaitTimer = 1;
         }
 
@@ -292,37 +291,37 @@ struct TRINITY_DLL_DECL boss_nightbaneAI : public ScriptedAI
             if(Intro)
             {
                 if(MovePhase >= 7)
-                {    
+                {
                     m_creature->RemoveUnitMovementFlag(MOVEMENTFLAG_ONTRANSPORT + MOVEMENTFLAG_LEVITATING);
                     m_creature->HandleEmoteCommand(EMOTE_ONESHOT_LAND);
                     m_creature->GetMotionMaster()->MovePoint(8,IntroWay[7][0],IntroWay[7][1],IntroWay[7][2]);
                 }
-                else 
+                else
                 {
                     m_creature->GetMotionMaster()->MovePoint(MovePhase,IntroWay[MovePhase][0],IntroWay[MovePhase][1],IntroWay[MovePhase][2]);
                     ++MovePhase;
                 }
             }
-            
+
             if(Flying)
             {
                 if(MovePhase >= 7)
-                {    
+                {
                     m_creature->RemoveUnitMovementFlag(MOVEMENTFLAG_ONTRANSPORT + MOVEMENTFLAG_LEVITATING);
                     m_creature->HandleEmoteCommand(EMOTE_ONESHOT_LAND);
                     m_creature->GetMotionMaster()->MovePoint(8,IntroWay[7][0],IntroWay[7][1],IntroWay[7][2]);
                 }
-                else 
+                else
                 {
                     m_creature->GetMotionMaster()->MovePoint(MovePhase,IntroWay[MovePhase][0],IntroWay[MovePhase][1],IntroWay[MovePhase][2]);
                     ++MovePhase;
                 }
             }
-            
+
             WaitTimer = 0;
         }else WaitTimer -= diff;
 
-        if(!UpdateVictim()) 
+        if(!UpdateVictim())
             return;
 
         if(Flying)
@@ -359,7 +358,7 @@ struct TRINITY_DLL_DECL boss_nightbaneAI : public ScriptedAI
             if (TailSweepTimer < diff)
             {
                 if (Unit* target = SelectUnit(SELECT_TARGET_RANDOM, 0))
-                    if (!m_creature->HasInArc( M_PI, target)) 
+                    if (!m_creature->HasInArc( M_PI, target))
                         DoCast(target,SPELL_TAIL_SWEEP);
                 TailSweepTimer = 15000;//timer
             }else TailSweepTimer -= diff;
@@ -368,7 +367,7 @@ struct TRINITY_DLL_DECL boss_nightbaneAI : public ScriptedAI
             {
                 if (Unit* target = SelectUnit(SELECT_TARGET_RANDOM, 0))
                     DoCast(target,SPELL_SEARING_CINDERS);
-                SearingCindersTimer = 10000; //timer 
+                SearingCindersTimer = 10000; //timer
             }else SearingCindersTimer -= diff;
 
             uint32 Prozent;
@@ -393,7 +392,6 @@ struct TRINITY_DLL_DECL boss_nightbaneAI : public ScriptedAI
             {
                 if (RainofBonesTimer < diff && !RainBones) // only once at the beginning of phase 2
                 {
-
                     if (!Skeletons)
                     {
                         for(int i = 0; i < 5; i++)
@@ -443,13 +441,12 @@ struct TRINITY_DLL_DECL boss_nightbaneAI : public ScriptedAI
             {
                 if(rand()%2 == 0)
                     DoYell(YELL_LAND_PHASE_1, LANG_UNIVERSAL, NULL);
-                else 
+                else
                     DoYell(YELL_LAND_PHASE_2, LANG_UNIVERSAL, NULL);
 
                 (*m_creature).GetMotionMaster()->Clear(false);
                 m_creature->GetMotionMaster()->MovePoint(3,IntroWay[3][0],IntroWay[3][1],IntroWay[3][2]);
-                Flying = true;  
-
+                Flying = true;
             }else FlyTimer -= diff;
         }
     }

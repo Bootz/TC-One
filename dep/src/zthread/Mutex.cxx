@@ -24,45 +24,30 @@
 #include "MutexImpl.h"
 
 namespace ZThread {
-
   class FifoMutexImpl : public MutexImpl<fifo_list, NullBehavior> { };
 
-
   Mutex::Mutex() {
-
     _impl = new FifoMutexImpl();
-
   }
 
   Mutex::~Mutex() {
-
     if(_impl != 0)
       delete _impl;
   }
 
   // P
   void Mutex::acquire() {
-
     _impl->acquire();
-
   }
-
 
   // P
   bool Mutex::tryAcquire(unsigned long ms) {
-
     return _impl->tryAcquire(ms);
-
   }
 
   // V
   void Mutex::release() {
-
     _impl->release();
-
   }
-
-
-
-} // namespace ZThread 
+} // namespace ZThread
 

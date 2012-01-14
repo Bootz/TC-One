@@ -250,7 +250,6 @@ void Log::Initialize()
 
     // Char log settings
     m_charLog_Dump = sConfig.GetBoolDefault("CharLogDump", false);
-
 }
 
 FILE* Log::openLogFile(char const* configFileName,char const* configTimeStampFlag, char const* mode)
@@ -532,7 +531,6 @@ void Log::outDetail( const char * str, ... )
 
     if( m_logLevel > 1 )
     {
-
         if(m_colored)
             SetColor(true,m_colors[LogDetails]);
 
@@ -677,7 +675,6 @@ void Log::outCommand( uint32 account, const char * str, ... )
 
 void Log::outChar(const char * str, ... )
 {
-
     if (!str)
         return;
 

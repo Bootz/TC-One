@@ -9,7 +9,6 @@ ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 namespace ACE_OS
 {
-
 ACE_INLINE int
 kill (pid_t pid, int signum)
 {
@@ -237,7 +236,6 @@ raise (const int signum)
   ACE_OSCALL_RETURN (::raise (signum), int, -1);
 #endif /* ACE_LACKS_RAISE */
 }
-
 }  /* end namespace ACE_OS */
 
 ACE_END_VERSIONED_NAMESPACE_DECL

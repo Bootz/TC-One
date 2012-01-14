@@ -201,7 +201,6 @@ ACE_Atomic_Op<ACE_Thread_Mutex, long>::value_i (void)
   return this->value_;
 }
 
-
 ACE_INLINE
 ACE_Atomic_Op<ACE_Thread_Mutex, unsigned long>::ACE_Atomic_Op (void)
   : value_ (0)
@@ -414,7 +413,6 @@ ACE_Atomic_Op<ACE_Thread_Mutex, int>::operator= (int rhs)
   ACE_Atomic_Op_GCC<int>::operator= (rhs);
   return *this;
 }
-
 
 ACE_INLINE
 ACE_Atomic_Op<ACE_Thread_Mutex, unsigned int>::ACE_Atomic_Op (void) :

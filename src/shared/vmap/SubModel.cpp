@@ -28,7 +28,6 @@ using namespace G3D;
 
 namespace VMAP
 {
-
     //==========================================================
     /**
     Functions to use ModelContainer with a AABSPTree
@@ -246,6 +245,5 @@ namespace VMAP
         }
     }
     //==========================================================
-
 }
 

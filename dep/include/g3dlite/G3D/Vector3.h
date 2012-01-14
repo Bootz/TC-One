@@ -21,7 +21,6 @@
 #include <string>
 
 namespace G3D {
-
 class Vector2;
 class Vector3;
 class Vector4;
@@ -40,7 +39,6 @@ Vector2 b;
 b = v.xz();
 j = b.xx();
 </PRE>
-
 
   <B>Warning</B>
 
@@ -160,7 +158,6 @@ public:
      */
     Vector3 fastDirection() const;
 
-
     /**
       See also G3D::Ray::reflect.
       The length is 1.
@@ -173,7 +170,6 @@ public:
      </PRE>
      */
     Vector3 reflectionDirection(const Vector3& normal) const;
-
 
     /**
      Returns Vector3::zero() if the length is nearly zero, otherwise
@@ -301,7 +297,6 @@ public:
         @cite Henrik Wann Jensen, Realistic Image Synthesis using Photon Mapping eqn 2.24
     */
     static Vector3 cosRandom(const Vector3& normal);
-
 
     /**
      Random vector distributed over the hemisphere about normal.
@@ -494,7 +489,6 @@ inline G3D::Vector3 operator*(int s, const G3D::Vector3& v) {
 }
 
 std::ostream& operator<<(std::ostream& os, const Vector3&);
-
 }
 
 unsigned int hashCode(const G3D::Vector3& v);

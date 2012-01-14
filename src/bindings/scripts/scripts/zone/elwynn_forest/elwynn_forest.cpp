@@ -83,7 +83,6 @@ struct TRINITY_DLL_DECL npc_henze_faulkAI : public ScriptedAI
             spellHit = true;
         }
     }
-
 };
 CreatureAI* GetAI_npc_henze_faulk(Creature *_Creature)
 {

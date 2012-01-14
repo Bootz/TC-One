@@ -43,7 +43,6 @@ namespace VMAP
     ModelContainer::ModelContainer(unsigned int pNTriangles, unsigned int pNNodes, unsigned int pNSubModel) :
     BaseModel(pNNodes, pNTriangles)
     {
-
         iNSubModel = pNSubModel;
         iSubModel = 0;
         if(pNSubModel > 0) iSubModel = new SubModel[iNSubModel];
@@ -143,7 +142,6 @@ namespace VMAP
         treeNode.setBounds(lo,hi);
 
         setTreeNode(treeNode, currentTreeNodePos);
-
     }
 
     //==========================================================
@@ -153,7 +151,6 @@ namespace VMAP
 
     ModelContainer::ModelContainer(AABSPTree<SubModel *> *pTree)
     {
-
         int nSubModels, nNodes, nTriangles;
         nSubModels = nNodes = nTriangles = 0;
         countSubModelsAndNodesAndTriangles(*pTree->root, nSubModels, nNodes, nTriangles);

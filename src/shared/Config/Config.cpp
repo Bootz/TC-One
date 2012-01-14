@@ -27,12 +27,10 @@ Config::Config() : mIgnoreCase(true), mConf(NULL)
 {
 }
 
-
 Config::~Config()
 {
     delete mConf;
 }
-
 
 bool Config::SetSource(const char *file, bool ignorecase)
 {
@@ -88,7 +86,6 @@ bool Config::GetString(const char* name, char const **value)
     return true;
 }
 
-
 std::string Config::GetStringDefault(const char* name, const char* def)
 {
     if(!mConf)
@@ -100,7 +97,6 @@ std::string Config::GetStringDefault(const char* name, const char* def)
 
     return std::string(node->getValue());
 }
-
 
 bool Config::GetBool(const char* name, bool *value)
 {
@@ -124,13 +120,11 @@ bool Config::GetBool(const char* name, bool *value)
     return true;
 }
 
-
 bool Config::GetBoolDefault(const char* name, const bool def)
 {
     bool val;
     return GetBool(name, &val) ? val : def;
 }
-
 
 bool Config::GetInt(const char* name, int *value)
 {
@@ -146,7 +140,6 @@ bool Config::GetInt(const char* name, int *value)
     return true;
 }
 
-
 bool Config::GetFloat(const char* name, float *value)
 {
     if(!mConf)
@@ -161,13 +154,11 @@ bool Config::GetFloat(const char* name, float *value)
     return true;
 }
 
-
 int Config::GetIntDefault(const char* name, const int def)
 {
     int val;
     return GetInt(name, &val) ? val : def;
 }
-
 
 float Config::GetFloatDefault(const char* name, const float def)
 {

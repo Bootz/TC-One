@@ -20,17 +20,15 @@
  *
  */
 
-
 #ifndef __ZTRUNNABLE_H__
 #define __ZTRUNNABLE_H__
 
 #include "zthread/Config.h"
 
 namespace ZThread {
-
   /**
    * @class Runnable
-   * 
+   *
    * @author Eric Crahen <http://www.code-foo.com>
    * @date <2003-07-16T17:45:35-0400>
    * @version 2.2.11
@@ -49,10 +47,7 @@ namespace ZThread {
      * Task to be performed in another thread of execution
      */
     virtual void run() = 0;
-
   };
- 
-
 }
 
 #endif // __ZTRUNNABLE_H__

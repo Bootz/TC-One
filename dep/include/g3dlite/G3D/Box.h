@@ -22,12 +22,10 @@
 #include "G3D/Plane.h"
 
 namespace G3D {
-
 class CoordinateFrame;
 
 /**
  An arbitrary 3D box, useful as a bounding box.
-
 
   To construct a box from a coordinate frame, center and extent, use the idiom:
 
@@ -85,7 +83,6 @@ public:
         const Vector3&      max);
 
     Box(const class AABox& b);
-
 
     /**
      Returns the object to world transformation for
@@ -222,7 +219,6 @@ public:
 
     void getBounds(class AABox&) const;
 };
-
 }
 
 #endif

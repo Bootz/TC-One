@@ -37,7 +37,6 @@ ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 namespace ACE_OS
 {
-
 #if defined (ACE_VXWORKS) && defined (ACE_LACKS_GETHOSTBYADDR)
   extern ACE_Export
 #else
@@ -75,7 +74,6 @@ namespace ACE_OS
                                    struct hostent *result,
                                    ACE_HOSTENT_DATA buffer,
                                    int *h_errnop);
-
 
   ACE_NAMESPACE_INLINE_FUNCTION
   struct hostent *getipnodebyaddr (const void *src, size_t len,
@@ -129,7 +127,6 @@ namespace ACE_OS
   extern ACE_Export
   int netdb_release (void);
 # endif /* defined (ACE_MT_SAFE) && ACE_LACKS_NETDB_REENTRANT_FUNCTIONS */
-
 } /* namespace ACE_OS */
 
 ACE_END_VERSIONED_NAMESPACE_DECL

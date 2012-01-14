@@ -60,10 +60,8 @@ private:
 #endif
 };
 
-
 #ifdef SOCKETS_NAMESPACE
 }
 #endif
 #endif // _SOCKETS_Mutex_H
-
 

@@ -1,4 +1,3 @@
-
 #include "precompiled.h"
 #include "def_hyjal.h"
 #include "hyjal_trash.h"
@@ -244,17 +243,14 @@ struct TRINITY_DLL_DECL mob_towering_infernalAI : public ScriptedAI
 
     void EnterCombat(Unit *who)
     {
-
     }
 
     void KilledUnit(Unit *victim)
     {
-
     }
 
     void JustDied(Unit *victim)
     {
-
     }
 
     void MoveInLineOfSight(Unit *who)

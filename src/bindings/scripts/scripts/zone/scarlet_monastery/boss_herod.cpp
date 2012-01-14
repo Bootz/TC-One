@@ -47,7 +47,6 @@ struct TRINITY_DLL_DECL boss_herodAI : public ScriptedAI
     uint32 Cleave_Timer;
     uint32 Whirlwind_Timer;
 
-
     void Reset()
     {
         Enrage = false;
@@ -110,7 +109,6 @@ CreatureAI* GetAI_boss_herod(Creature *_Creature)
     return new boss_herodAI (_Creature);
 }
 
-
 float Location[12][3]=
 {
     {1945.81, -431.54, 16.36},
@@ -131,7 +129,6 @@ uint32 Wait[12][1]=
 {
     {0},{0},{0},{0},{0},{0},{0},{0},{0},{0},{0},{600000}
 };
-
 
 struct TRINITY_DLL_DECL mob_scarlet_traineeAI : public npc_escortAI
 {

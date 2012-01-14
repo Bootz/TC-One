@@ -94,7 +94,6 @@ struct TRINITY_DLL_DECL npc_darrowshire_spiritAI : public ScriptedAI
     }
 
     void EnterCombat(Unit *who) { }
-
 };
 CreatureAI* GetAI_npc_darrowshire_spirit(Creature *_Creature)
 {

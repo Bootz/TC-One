@@ -41,7 +41,6 @@ ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 namespace ACE_OS
 {
-
   typedef ACE_WCHAR_T WChar;
 
 #if defined (ACE_HAS_WCHAR)
@@ -182,7 +181,6 @@ namespace ACE_OS
   ACE_NAMESPACE_INLINE_FUNCTION
   wint_t ungetwc (wint_t c, FILE* fp);
 #endif /* ACE_HAS_WCHAR */
-
 } /* namespace ACE_OS */
 
 ACE_END_VERSIONED_NAMESPACE_DECL

@@ -34,8 +34,6 @@ ACE_Bound_Ptr_Counter<ACE_LOCK>::create_strong (void)
   return temp;
 }
 
-
-
 template <class ACE_LOCK> inline long
 ACE_Bound_Ptr_Counter<ACE_LOCK>::attach_strong (ACE_Bound_Ptr_Counter<ACE_LOCK>* counter)
 {
@@ -72,7 +70,6 @@ ACE_Bound_Ptr_Counter<ACE_LOCK>::detach_strong (ACE_Bound_Ptr_Counter<ACE_LOCK>*
       // the lock. So save the pointer to free, then release, then
       // free.
       counter_del = counter;
-
   }  // Release the lock
 
   delete counter_del;
@@ -117,7 +114,6 @@ ACE_Bound_Ptr_Counter<ACE_LOCK>::detach_weak (ACE_Bound_Ptr_Counter<ACE_LOCK>* c
       // the lock. So save the pointer to free, then release, then
       // free.
       counter_del = counter;
-
   }  // Release the lock
 
   delete counter_del;

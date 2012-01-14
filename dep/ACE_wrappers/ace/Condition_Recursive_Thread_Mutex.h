@@ -97,7 +97,6 @@ private:
 
   /// Reference to the recursive mutex.
   ACE_Recursive_Thread_Mutex &mutex_;
-
 };
 
 class ACE_Export ACE_Condition_Recursive_Thread_Mutex

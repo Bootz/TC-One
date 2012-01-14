@@ -80,7 +80,6 @@ struct TRINITY_DLL_DECL boss_pandemoniusAI : public ScriptedAI
             case 1: DoScriptText(SAY_AGGRO_2, m_creature); break;
             case 2: DoScriptText(SAY_AGGRO_3, m_creature); break;
         }
-
     }
 
     void UpdateAI(const uint32 diff)

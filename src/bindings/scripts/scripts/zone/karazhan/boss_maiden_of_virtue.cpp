@@ -126,12 +126,10 @@ struct TRINITY_DLL_DECL boss_maiden_of_virtueAI : public ScriptedAI
                 DoCast(target,SPELL_HOLYWRATH);
 
             Holywrath_Timer = 20000+(rand()%10000);     //20-30 secs sounds nice
-
         }else Holywrath_Timer -= diff;
 
         DoMeleeAttackIfReady();
     }
-
 };
 
 CreatureAI* GetAI_boss_maiden_of_virtue(Creature *_Creature)

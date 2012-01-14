@@ -1,6 +1,3 @@
-
-
-
 #include "mempool.h"
 
 AsyncDNSMemPool::PoolChunk::PoolChunk(size_t _size):

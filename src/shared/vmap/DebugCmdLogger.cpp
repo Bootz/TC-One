@@ -24,7 +24,6 @@ using namespace G3D;
 
 namespace VMAP
 {
-
     bool CommandFileRW::appendCmd(const Command&
 #ifdef _DEBUG
         pCommand

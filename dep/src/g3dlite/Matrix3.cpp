@@ -18,7 +18,6 @@
 #include "G3D/Quat.h"
 
 namespace G3D {
-
 const float Matrix3::EPSILON = 1e-06f;
 
 const Matrix3& Matrix3::zero() {
@@ -48,7 +47,6 @@ bool Matrix3::fuzzyEq(const Matrix3& b) const {
     }
     return true;
 }
-
 
 bool Matrix3::isOrthonormal() const {
     Vector3 X = getColumn(0);
@@ -111,7 +109,6 @@ void Matrix3::set(
           float fEntry00, float fEntry01, float fEntry02,
           float fEntry10, float fEntry11, float fEntry12,
           float fEntry20, float fEntry21, float fEntry22) {
-
     elt[0][0] = fEntry00;
     elt[0][1] = fEntry01;
     elt[0][2] = fEntry02;
@@ -122,7 +119,6 @@ void Matrix3::set(
     elt[2][1] = fEntry21;
     elt[2][2] = fEntry22;
 }
-
 
 //----------------------------------------------------------------------------
 Vector3 Matrix3::getColumn (int iCol) const {
@@ -142,14 +138,12 @@ void Matrix3::setColumn(int iCol, const Vector3 &vector) {
     elt[2][iCol] = vector.z;
 }
 
-
 void Matrix3::setRow(int iRow, const Vector3 &vector) {
     debugAssert((iRow >= 0) && (iRow < 3));
     elt[iRow][0] = vector.x;
     elt[iRow][1] = vector.y;
     elt[iRow][2] = vector.z;
 }
-
 
 //----------------------------------------------------------------------------
 bool Matrix3::operator== (const Matrix3& rkMatrix) const {
@@ -289,7 +283,6 @@ Matrix3 operator* (double fScalar, const Matrix3& rkMatrix) {
 Matrix3 operator* (float fScalar, const Matrix3& rkMatrix) {
     return (double)fScalar * rkMatrix;
 }
-
 
 Matrix3 operator* (int fScalar, const Matrix3& rkMatrix) {
     return (double)fScalar * rkMatrix;
@@ -1320,7 +1313,6 @@ Matrix3 Matrix3::fromEulerAnglesXYZ (float fYAngle, float fPAngle,
 //----------------------------------------------------------------------------
 Matrix3 Matrix3::fromEulerAnglesXZY (float fYAngle, float fPAngle,
                                   float fRAngle) {
-
     float fCos, fSin;
 
     fCos = cosf(fYAngle);
@@ -1343,7 +1335,6 @@ Matrix3 Matrix3::fromEulerAnglesYXZ(
     float fYAngle,
     float fPAngle,
     float fRAngle) {
-
     float fCos, fSin;
 
     fCos = cos(fYAngle);
@@ -1366,7 +1357,6 @@ Matrix3 Matrix3::fromEulerAnglesYZX(
     float fYAngle,
     float fPAngle,
     float fRAngle) {
-
     float fCos, fSin;
 
     fCos = cos(fYAngle);
@@ -1679,9 +1669,5 @@ std::string Matrix3::toString() const {
             elt[1][0], elt[1][1], elt[1][2],
             elt[2][0], elt[2][1], elt[2][2]);
 }
-
-
-
 } // namespace
-
 

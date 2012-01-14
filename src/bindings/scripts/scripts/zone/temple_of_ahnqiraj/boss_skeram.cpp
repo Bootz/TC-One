@@ -305,7 +305,6 @@ struct TRINITY_DLL_DECL boss_skeramAI : public ScriptedAI
         Invisible = true;
     PLACES_CLEANUP
     }
-
 };
 
 CreatureAI* GetAI_boss_skeram(Creature *_Creature)

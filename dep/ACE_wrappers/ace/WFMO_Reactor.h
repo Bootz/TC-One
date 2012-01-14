@@ -476,7 +476,6 @@ protected:
 
   /// Number of records to be deleted
   size_t handles_to_be_deleted_;
-
 };
 
 /**
@@ -767,7 +766,6 @@ public:
    */
   virtual int handle_events (ACE_Time_Value &max_wait_time);
   virtual int alertable_handle_events (ACE_Time_Value &max_wait_time);
-
 
   // = Event handling control.
 

@@ -24,7 +24,6 @@
 #define __ZTNONCOPYABLE_H__
 
 namespace ZThread {
-
   /**
    * @class NonCopyable
    * @author Eric Crahen <http://www.code-foo.com>
@@ -38,7 +37,6 @@ namespace ZThread {
    * Based on Dave Abrahams contribution to the Boost library.
    */
   class NonCopyable {
-
     //! Restrict the copy constructor
     NonCopyable(const NonCopyable&);
 
@@ -52,9 +50,7 @@ namespace ZThread {
 
     //! Destroy a NonCopyable object
     ~NonCopyable() { }
-
   }; /* NonCopyable */
-
 } // namespace ZThread
 
 #endif // __ZTNONCOPYABLE_H__

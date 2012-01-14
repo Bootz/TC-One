@@ -33,7 +33,6 @@
 
 BattleGroundAV::BattleGroundAV()
 {
-
     m_BgObjects.resize(BG_AV_OBJECT_MAX);
     m_BgCreatures.resize(AV_CPLACE_MAX+AV_STATICCPLACE_MAX);
 }
@@ -93,7 +92,6 @@ void BattleGroundAV::HandleKillUnit(Creature *unit, Player *killer)
         Creature* creature = GetBGCreature(AV_CPLACE_HERALD);
         if(creature)
             YellToAll(creature,GetTrinityString(LANG_BG_AV_A_CAPTAIN_DEAD),LANG_UNIVERSAL);
-
     }
     else if ( entry == BG_AV_CreatureInfo[AV_NPC_H_CAPTAIN][0] )
     {
@@ -221,7 +219,6 @@ void BattleGroundAV::HandleQuestComplete(uint32 questid, Player *player)
             break;
     }
 }
-
 
 void BattleGroundAV::UpdateScore(uint16 team, int16 points )
 { //note: to remove reinforcementpoints points must be negative, for adding reinforcements points must be positive
@@ -403,7 +400,6 @@ void BattleGroundAV::Update(time_t diff)
             DoorOpen(BG_AV_OBJECT_DOOR_H);
             DoorOpen(BG_AV_OBJECT_DOOR_A);
 
-
             for(BattleGroundPlayerMap::const_iterator itr = GetPlayers().begin(); itr != GetPlayers().end(); ++itr)
                 if(Player* plr = objmgr.GetPlayer(itr->first))
                     plr->RemoveAurasDueToSpell(SPELL_PREPARATION);
@@ -475,7 +471,6 @@ void BattleGroundAV::AddPlayer(Player *plr)
     m_PlayerScores[plr->GetGUID()] = sc;
     if(m_MaxLevel==0)
         m_MaxLevel=(plr->getLevel()%10 == 0)? plr->getLevel() : (plr->getLevel()-(plr->getLevel()%10))+10; //TODO: just look at the code \^_^/ --but queue-info should provide this information..
-
 }
 
 void BattleGroundAV::EndBattleGround(uint32 winner)
@@ -531,7 +526,6 @@ void BattleGroundAV::RemovePlayer(Player* plr,uint64 /*guid*/)
     plr->RemoveAurasDueToSpell(AV_BUFF_H_CAPTAIN);
 }
 
-
 void BattleGroundAV::HandleAreaTrigger(Player *Source, uint32 Trigger)
 {
     // this is wrong way to implement these things. On official it done by gameobject spell cast.
@@ -574,7 +568,6 @@ void BattleGroundAV::HandleAreaTrigger(Player *Source, uint32 Trigger)
 
 void BattleGroundAV::UpdatePlayerScore(Player* Source, uint32 type, uint32 value)
 {
-
     std::map<uint64, BattleGroundScore*>::iterator itr = m_PlayerScores.find(Source->GetGUID());
 
     if(itr == m_PlayerScores.end())                         // player not found...
@@ -609,11 +602,8 @@ void BattleGroundAV::UpdatePlayerScore(Player* Source, uint32 type, uint32 value
     }
 }
 
-
-
 void BattleGroundAV::EventPlayerDestroyedPoint(BG_AV_Nodes node)
 {
-
     uint32 object = GetObjectThroughNode(node);
     sLog.outDebug("bg_av: player destroyed point node %i object %i",node,object);
 
@@ -796,7 +786,6 @@ void BattleGroundAV::PopulateNode(BG_AV_Nodes node)
             DelCreature(node);
         if( !AddSpiritGuide(node, BG_AV_CreaturePos[node][0], BG_AV_CreaturePos[node][1], BG_AV_CreaturePos[node][2], BG_AV_CreaturePos[node][3], owner))
             sLog.outError("AV: couldn't spawn spiritguide at node %i",node);
-
     }
     for(uint8 i=0; i<4; i++)
     {
@@ -813,7 +802,6 @@ void BattleGroundAV::DePopulateNode(BG_AV_Nodes node)
     if( !IsTower(node) && m_BgCreatures[node] )
         DelCreature(node);
 }
-
 
 const BG_AV_Nodes BattleGroundAV::GetNodeThroughObject(uint32 object)
 {
@@ -873,7 +861,6 @@ const uint32 BattleGroundAV::GetObjectThroughNode(BG_AV_Nodes node)
     return 0;
 }
 
-
 //called when using banner
 
 void BattleGroundAV::EventPlayerClickedOnFlag(Player *source, GameObject* target_obj)
@@ -926,7 +913,6 @@ void BattleGroundAV::EventPlayerDefendsPoint(Player* player, uint32 object)
         sLog.outError("BG_AV: player defends point which doesn't belong to his team %i",node);
         return;
     }
-
 
    //spawn new go :)
     if(m_Nodes[node].Owner == ALLIANCE)
@@ -986,7 +972,6 @@ void BattleGroundAV::EventPlayerAssaultsPoint(Player* player, uint32 object)
     sLog.outDebug("bg_av: player assaults point object %i node %i",object,node);
     if(owner == team || team == m_Nodes[node].TotalOwner)
         return; //surely a gm used this object
-
 
     if(node == BG_AV_NODES_SNOWFALL_GRAVE) //snowfall is a bit special in capping + it gets eyecandy stuff
     {
@@ -1181,7 +1166,6 @@ void BattleGroundAV::SendMineWorldStates(uint32 mine)
         UpdateWorldState(BG_AV_MineWorldStates[mine2][prevowner],0);
 }
 
-
 WorldSafeLocsEntry const* BattleGroundAV::GetClosestGraveYard(float x, float y, float z, uint32 team)
 {
     WorldSafeLocsEntry const* good_entry = NULL;
@@ -1210,7 +1194,6 @@ WorldSafeLocsEntry const* BattleGroundAV::GetClosestGraveYard(float x, float y, 
 
     return good_entry;
 }
-
 
 bool BattleGroundAV::SetupBattleGround()
 {
@@ -1444,7 +1427,5 @@ void BattleGroundAV::ResetBGSubclass()
     for(uint16 i = 0; i < AV_CPLACE_MAX+AV_STATICCPLACE_MAX; i++)
         if(m_BgCreatures[i])
             DelCreature(i);
-
 }
-
 

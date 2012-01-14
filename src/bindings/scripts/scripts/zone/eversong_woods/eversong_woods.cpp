@@ -218,9 +218,7 @@ struct TRINITY_DLL_DECL npc_secondTrialAI : public ScriptedAI
     uint32 timerJudLight;
     uint32 timerCommand;
 
-
     void Reset() {
-
       timer = 2000;
       questPhase = 0;
       summonerGuid = 0;
@@ -262,7 +260,6 @@ struct TRINITY_DLL_DECL npc_secondTrialAI : public ScriptedAI
     void UpdateAI(const uint32 diff)
     {
       if ( questPhase == 1 ) {
-
         if ( timer < diff ) {
               m_creature->SetUInt32Value(UNIT_FIELD_BYTES_1, PLAYER_STATE_NONE);
               m_creature->setFaction(FACTION_HOSTILE);
@@ -327,7 +324,6 @@ struct TRINITY_DLL_DECL npc_secondTrialAI : public ScriptedAI
     void Activate(uint64 summonerguid);
     void KilledUnit(Unit* Killed);
     void JustDied(Unit* Killer);
-
 };
 
 /*######
@@ -345,12 +341,10 @@ struct TRINITY_DLL_DECL master_kelerun_bloodmournAI : public ScriptedAI
     uint64 paladinGuid[4];
 
     void Reset() {
-
       questPhase = 0;
       timer = 60000;
       paladinPhase = 0;
       uint64 paladinGuid[] = {0,0,0,0};
-
     }
 
     void EnterCombat(Unit *who) {}
@@ -364,9 +358,7 @@ struct TRINITY_DLL_DECL master_kelerun_bloodmournAI : public ScriptedAI
       }
       // fight the 4 paladin mobs phase
       else if ( questPhase == 2 ) {
-
         if ( timer < diff ) {
-
           Creature* paladinSpawn;
           paladinSpawn = (Unit::GetCreature((*m_creature), paladinGuid[paladinPhase]));
             if ( paladinSpawn ) {
@@ -404,9 +396,7 @@ struct TRINITY_DLL_DECL master_kelerun_bloodmournAI : public ScriptedAI
 
     void StartEvent()
     {
-
       if ( questPhase == 1 ) { // no player check, quest can be finished as group, so no complex playerguid/group search code
-
         for (int i = 0; i<4; i++) {
           Creature* Summoned;
           Summoned = DoSpawnCreature(PaladinEntry[i], SpawnPosition[i].x, SpawnPosition[i].y, SpawnPosition[i].z, SpawnPosition[i].o, TEMPSUMMON_TIMED_OR_DEAD_DESPAWN, 180000);
@@ -423,7 +413,6 @@ struct TRINITY_DLL_DECL master_kelerun_bloodmournAI : public ScriptedAI
     void SecondTrialKill();
     void SummonedCreatureDespawn(Creature* c) {}
 };
-
 
 bool GossipHello_master_kelerun_bloodmourn(Player *player, Creature *_Creature)
 {
@@ -451,9 +440,7 @@ bool QuestAccept_master_kelerun_bloodmourn(Player *player, Creature *creature, Q
 }
 
 void master_kelerun_bloodmournAI::SecondTrialKill() {
-
       if ( questPhase > 0 ) {
-
         ++paladinPhase;
 
         if ( paladinPhase < 4 )
@@ -464,7 +451,6 @@ void master_kelerun_bloodmournAI::SecondTrialKill() {
   }
 
 void npc_secondTrialAI::JustDied(Unit* Killer) {
-
       if (Killer->GetTypeId() == TYPEID_PLAYER)
       {
           Creature* Summoner;
@@ -475,7 +461,6 @@ void npc_secondTrialAI::JustDied(Unit* Killer) {
 
           // last kill quest complete for group
           if ( m_creature->GetEntry() == CHAMPION_SUNSTRIKER ) {
-
             if( Group *pGroup = ((Player*)Killer)->GetGroup() )
             {
                for(GroupReference *itr = pGroup->GetFirstMember(); itr != NULL; itr = itr->next())
@@ -496,16 +481,13 @@ void npc_secondTrialAI::JustDied(Unit* Killer) {
   }
 
 void npc_secondTrialAI::KilledUnit(Unit* Killed) {
-
   if ( Killed->GetTypeId() == TYPEID_PLAYER ) {
-
       if ( ((Player*)Killed)->GetQuestStatus(QUEST_SECOND_TRIAL) == QUEST_STATUS_INCOMPLETE )
         ((Player*)Killed)->FailQuest(QUEST_SECOND_TRIAL);
   }
 }
 
 void npc_secondTrialAI::Activate(uint64 summonerguid) {
-
       questPhase=1;
       summonerGuid = summonerguid;
     }

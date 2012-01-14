@@ -36,7 +36,6 @@
 ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 namespace ACE_OS {
-
   ACE_NAMESPACE_INLINE_FUNCTION
   int last_error (void);
 
@@ -48,7 +47,6 @@ namespace ACE_OS {
 
   ACE_NAMESPACE_INLINE_FUNCTION
   int set_errno_to_wsa_last_error (void);
-
 } /* namespace ACE_OS */
 
 #if defined (ACE_HAS_WINCE_BROKEN_ERRNO)

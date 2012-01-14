@@ -24,57 +24,34 @@
 #include "ConditionImpl.h"
 
 namespace ZThread {
-
   class PriorityConditionImpl : public ConditionImpl<priority_list> {
   public:
     PriorityConditionImpl(Lockable& l) : ConditionImpl<priority_list>(l) {}
-
   };
 
   PriorityCondition::PriorityCondition(Lockable& lock) {
-  
     _impl = new PriorityConditionImpl(lock);
-
   }
-
 
   PriorityCondition::~PriorityCondition() {
-  
     if(_impl != 0)
       delete _impl;
-
   }
-
-
 
   void PriorityCondition::wait() {
-
     _impl->wait();
-
   }
-
-
 
   bool PriorityCondition::wait(unsigned long ms) {
-
     return _impl->wait(ms);
-
   }
-
-
 
   void PriorityCondition::signal() {
-
     _impl->signal();
-
   }
-
 
   void PriorityCondition::broadcast() {
-
     _impl->broadcast();
-
   }
-
 } // namespace ZThread
 

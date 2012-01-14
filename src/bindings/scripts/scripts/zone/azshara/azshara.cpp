@@ -358,7 +358,6 @@ struct TRINITY_DLL_DECL mob_rizzle_sprysprocketAI : public ScriptedAI
 
             Check_Timer = 1000;
         } else Check_Timer -= diff;
-
     }
 
     void SendText(const char *text, Player* player)
@@ -399,7 +398,6 @@ struct TRINITY_DLL_DECL mob_rizzle_sprysprocketAI : public ScriptedAI
         ++CurrWP;
         ContinueWP = true;
     }
-
 };
 
 bool GossipHello_mob_rizzle_sprysprocket(Player *player, Creature *_Creature)

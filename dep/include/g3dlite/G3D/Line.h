@@ -16,7 +16,6 @@
 #include "G3D/Vector3.h"
 
 namespace G3D {
-
 class Plane;
 
 /**
@@ -78,9 +77,7 @@ public:
      */
     Vector3 intersection(const Plane &plane) const;
 };
-
 };// namespace
-
 
 #endif
 

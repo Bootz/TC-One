@@ -563,7 +563,6 @@ CreatureAI* GetAI_npc_creditmarker_visit_with_ancestors(Creature *_Creature)
 
 struct TRINITY_DLL_DECL mob_sparrowhawkAI : public ScriptedAI
 {
-
     mob_sparrowhawkAI(Creature *c) : ScriptedAI(c) {}
 
     uint32 Check_Timer;

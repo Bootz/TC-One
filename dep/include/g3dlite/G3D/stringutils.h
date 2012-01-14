@@ -15,7 +15,6 @@
 #include <string>
 
 namespace G3D {
-
 extern const char* NEWLINE;
 
 /**
@@ -123,9 +122,7 @@ inline bool isSlash(const char c) {
 inline bool isQuote(const char c) {
     return (c == '\'') || (c == '\"');
 }
-
 }; // namespace
 
 #endif
-
 

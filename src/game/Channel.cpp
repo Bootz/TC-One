@@ -695,12 +695,10 @@ void Channel::SendToOne(WorldPacket *data, uint64 who)
 
 void Channel::Voice(uint64 guid1, uint64 guid2)
 {
-
 }
 
 void Channel::DeVoice(uint64 guid1, uint64 guid2)
 {
-
 }
 
 // done

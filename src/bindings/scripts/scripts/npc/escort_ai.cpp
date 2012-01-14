@@ -188,7 +188,7 @@ void npc_escortAI::EnterEvadeMode()
         debug_log("TSCR: EscortAI has left combat and is now returning to THE home");
         m_creature->GetMotionMaster()->MoveTargetedHome();
     }
-    
+
     Reset();
 }
 
@@ -448,12 +448,10 @@ void npc_escortAI::Start(bool bIsActiveAttacker, bool bRun, uint64 uiPlayerGUID,
 
     if(!ScriptWP) // sd2 never adds wp in script, but tc does
     {
-
     if (!WaypointList.empty())
         WaypointList.clear();
 
     FillPointMovementListForCreature();
-
     }
 
     if (WaypointList.empty())

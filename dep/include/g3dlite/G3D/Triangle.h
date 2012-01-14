@@ -22,7 +22,6 @@
 #include <string>
 
 namespace G3D {
-
 /**
   A generic triangle representation.  This should not be used
   as the underlying triangle for creating models; it is intended
@@ -104,9 +103,7 @@ public:
     }
 
     void getBounds(class AABox&) const;
-
 };
-
 } // namespace
 
 inline unsigned int hashCode(const G3D::Triangle& t) {

@@ -37,7 +37,6 @@ ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 namespace ACE_OS
 {
-
   ACE_NAMESPACE_INLINE_FUNCTION
   int getrlimit (int resource,
                  struct rlimit *rl);
@@ -46,11 +45,9 @@ namespace ACE_OS
   int getrusage (int who,
                  struct rusage *rusage);
 
-
   ACE_NAMESPACE_INLINE_FUNCTION
   int setrlimit (int resource,
                  const struct rlimit *rl);
-
 } /* namespace ACE_OS */
 
 ACE_END_VERSIONED_NAMESPACE_DECL

@@ -110,7 +110,6 @@ inline int ace_sigsuspend_helper (const sigset_t *s)
 }
 #endif /* ACE_HAS_SIGSUSPEND */
 
-
 # if !defined (SIG_BLOCK)
 #   define SIG_BLOCK   1
 # endif /* SIG_BLOCK   */
@@ -166,7 +165,6 @@ typedef struct sigaction ACE_SIGACTION;
 #endif
 
 namespace ACE_OS {
-
   //@{ @name A set of wrappers for Signals.
 
   ACE_NAMESPACE_INLINE_FUNCTION
@@ -216,7 +214,6 @@ namespace ACE_OS {
   ACE_NAMESPACE_INLINE_FUNCTION
   int raise (const int signum);
   //@}
-
 } /* namespace ACE_OS */
 
 ACE_END_VERSIONED_NAMESPACE_DECL

@@ -30,7 +30,6 @@
 # include /**/ <string.h>
 #endif /* !ACE_LACKS_STRING_H */
 
-
 // Place all additions (especially function declarations) within extern "C" {}
 #ifdef __cplusplus
 extern "C"

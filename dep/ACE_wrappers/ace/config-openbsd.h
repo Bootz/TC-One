@@ -26,7 +26,6 @@
 # include "ace/config-g++-common.h"
 #endif /* __GNUG__ */
 
-
 #if defined (ACE_HAS_THREADS)
 
 # if !defined (_THREAD_SAFE)
@@ -37,7 +36,6 @@
 # if !defined (ACE_MT_SAFE)
 #  define ACE_MT_SAFE 1
 # endif /* ! ACE_MT_SAFE */
-
 
 // Check if pthreads and native exceptions are being used together.
 // This causes SEGVs to tbe thrown somewhat randomly for some
@@ -55,7 +53,6 @@
 # define ACE_LACKS_READDIR_R
 
 #endif /* ACE_HAS_THREADS */
-
 
 #define ACE_HAS_2_PARAM_ASCTIME_R_AND_CTIME_R
 #define ACE_HAS_3_PARAM_READDIR_R

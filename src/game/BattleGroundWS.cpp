@@ -749,7 +749,6 @@ void BattleGroundWS::HandleKillPlayer(Player *player, Player *killer)
 
 void BattleGroundWS::UpdatePlayerScore(Player *Source, uint32 type, uint32 value)
 {
-
     std::map<uint64, BattleGroundScore*>::iterator itr = m_PlayerScores.find(Source->GetGUID());
 
     if(itr == m_PlayerScores.end())                         // player not found
@@ -799,6 +798,5 @@ void BattleGroundWS::FillInitialWorldStates(WorldPacket& data)
         data << uint32(BG_WS_FLAG_STATE_HORDE) << uint32(2);
     else
         data << uint32(BG_WS_FLAG_STATE_HORDE) << uint32(1);
-
 }
 

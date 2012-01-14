@@ -41,7 +41,6 @@ EndContentData */
 #define GOSSIP_ITEM_TYRANDE         "Aid us in defending Nordrassil"
 #define ITEM_TEAR_OF_GODDESS        24494
 
-
 CreatureAI* GetAI_npc_jaina_proudmoore(Creature *_Creature)
 {
     hyjalAI* ai = new hyjalAI(_Creature);

@@ -164,7 +164,6 @@ struct TRINITY_DLL_DECL boss_pathaleon_the_calculatorAI : public ScriptedAI
             DoCast(m_creature, SPELL_FRENZY);
             DoScriptText(SAY_ENRAGE, m_creature);
             Enraged = true;
-
         }
 
         DoMeleeAttackIfReady();
@@ -192,7 +191,6 @@ struct TRINITY_DLL_DECL mob_nether_wraithAI : public ScriptedAI
         Detonation_Timer = 20000;
         Die_Timer = 2200;
         Detonation = false;
-
     }
 
     void EnterCombat(Unit* who)
@@ -234,7 +232,6 @@ struct TRINITY_DLL_DECL mob_nether_wraithAI : public ScriptedAI
 
         DoMeleeAttackIfReady();
     }
-
 };
 CreatureAI* GetAI_mob_nether_wraith(Creature *_Creature)
 {

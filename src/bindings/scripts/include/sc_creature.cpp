@@ -111,7 +111,6 @@ void ScriptedAI::AttackStart(Unit* pWho, bool melee)
         AttackStartNoMove(pWho);
     else
         AttackStart(pWho);
-
 }
 
 void ScriptedAI::UpdateAI(const uint32 uiDiff)
@@ -322,7 +321,6 @@ SpellEntry const* ScriptedAI::SelectSpell(Unit* pTarget, int32 uiSchool, int32 u
             continue;
         if (fRangeMax && pTempRange->maxRange > fRangeMax)
             continue;
-
 
         //Check if our target is in range
          if (m_creature->IsWithinDistInMap(pTarget, pTempRange->minRange) || !m_creature->IsWithinDistInMap(pTarget, pTempRange->maxRange))
@@ -572,7 +570,6 @@ std::list<Creature*> ScriptedAI::DoFindFriendlyMissingBuff(float fRange, uint32 
 
 Player* ScriptedAI::GetPlayerAtMinimumRange(float fMinimumRange)
 {
-
     Player* pPlayer = NULL;
 
     //NO IMPLEMENTED IN TC1 YET...
@@ -591,7 +588,6 @@ Player* ScriptedAI::GetPlayerAtMinimumRange(float fMinimumRange)
     */
 
     return pPlayer;
-
 }
 
 void ScriptedAI::SetEquipmentSlots(bool bLoadDefault, int32 uiMainHand, int32 uiOffHand, int32 uiRanged)

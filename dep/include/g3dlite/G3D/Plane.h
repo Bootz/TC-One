@@ -17,7 +17,6 @@
 #include "G3D/Vector4.h"
 
 namespace G3D {
-
 /**
  An infinite 2D plane in 3D space.
  */
@@ -150,7 +149,6 @@ public:
 
     std::string toString() const;
 };
-
 } // namespace
 
 #endif

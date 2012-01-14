@@ -20,7 +20,6 @@
 #include "G3D/Vector4.h"
 
 namespace G3D {
-
 /**
   3x3 matrix.  Do not subclass.
  */
@@ -53,7 +52,6 @@ public:
         @cite Graphics Gems II, p. 351--354
         @cite Implementation from Watt and Watt, pg 362*/
     Matrix3(const class Quat& q);
-
 
     /**
      Sets all elements.
@@ -125,7 +123,6 @@ public:
 
         return kProd;
     }
-
 
     /**
      * vector * matrix [1x3 * 3x3 = 1x3]
@@ -285,9 +282,7 @@ protected:
 
     // support for spectral norm
     static float maxCubicRoot (float afCoeff[3]);
-
 };
-
 
 //----------------------------------------------------------------------------
 /**  <code>v * M == M.transpose() * v</code> */
@@ -303,10 +298,7 @@ inline Vector3 operator* (const Vector3& rkPoint, const Matrix3& rkMatrix) {
 
     return kProd;
 }
-
-
 } // namespace
 
 #endif
-
 

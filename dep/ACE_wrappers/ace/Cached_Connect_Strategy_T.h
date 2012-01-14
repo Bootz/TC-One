@@ -205,7 +205,6 @@ template <class SVC_HANDLER, ACE_PEER_CONNECTOR_1,
 class ACE_Bounded_Cached_Connect_Strategy
   : public ACE_Cached_Connect_Strategy_Ex<SVC_HANDLER, ACE_PEER_CONNECTOR_2, CACHING_STRATEGY, ATTRIBUTES, MUTEX>
 {
-
    typedef ACE_Cached_Connect_Strategy_Ex<SVC_HANDLER, ACE_PEER_CONNECTOR_2, CACHING_STRATEGY, ATTRIBUTES, MUTEX>
    CCSEBASE;
 

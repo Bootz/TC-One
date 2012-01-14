@@ -52,7 +52,6 @@ struct TRINITY_DLL_DECL Traveller
     float GetPositionZ() const { return i_traveller.GetPositionZ(); }
     T& GetTraveller(void) { return i_traveller; }
 
-
     float Speed(void) { assert(false); return 0.0f; }
     float GetMoveDestinationTo(float x, float y, float z);
     uint32 GetTotalTrevelTimeTo(float x, float y, float z);
@@ -143,7 +142,6 @@ inline void Traveller<Player>::Relocation(float x, float y, float z, float orien
 {
     MapManager::Instance().GetMap(i_traveller.GetMapId(), &i_traveller)->PlayerRelocation(&i_traveller, x, y, z, orientation);
 }
-
 
 template<>
 inline void Traveller<Player>::MoveTo(float x, float y, float z, uint32 t)

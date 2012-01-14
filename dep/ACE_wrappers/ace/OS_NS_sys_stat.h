@@ -79,7 +79,6 @@ typedef struct stat ACE_stat;
 
 namespace ACE_OS
 {
-
   ACE_NAMESPACE_INLINE_FUNCTION
   ACE_HANDLE creat (const ACE_TCHAR *filename,
                     mode_t mode);
@@ -132,7 +131,6 @@ namespace ACE_OS
 
   ACE_NAMESPACE_INLINE_FUNCTION
   mode_t umask (mode_t cmask);
-
 } /* namespace ACE_OS */
 
 ACE_END_VERSIONED_NAMESPACE_DECL

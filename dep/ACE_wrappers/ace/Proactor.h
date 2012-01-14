@@ -53,7 +53,6 @@ class ACE_Proactor_Timer_Handler;
  */
 class ACE_Proactor_Handle_Timeout_Upcall
 {
-
   /// Type def for the timer queue.
   typedef ACE_Timer_Queue_T<ACE_Handler *,
                             ACE_Proactor_Handle_Timeout_Upcall,
@@ -296,7 +295,6 @@ public:
   /// Resets the <ACE_Proactor::end_event_loop_> static so that the
   /// <run_event_loop> method can be restarted.
   int proactor_reset_event_loop (void);
-
 
   /// This method adds the @a handle to the I/O completion port. This
   /// function is a no-op function for Unix systems and returns 0;
@@ -627,7 +625,6 @@ protected:
 
   /// Mutex to protect work with lists.
   ACE_SYNCH_MUTEX mutex_;
-
 
 private:
   /// Deny access since member-wise won't work...

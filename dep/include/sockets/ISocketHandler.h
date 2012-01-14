@@ -54,7 +54,6 @@ typedef enum {
 class SocketAddress;
 class Mutex;
 
-
 /** Socket container class, event generator.
     \ingroup basic */
 class ISocketHandler
@@ -78,7 +77,6 @@ public:
             SetCloseAndDelete();
         }
         void OnOptions(int,int,int,SOCKET) {}
-
     };
 #endif
 
@@ -220,14 +218,11 @@ public:
     /** Indicates that the handler runs under SocketThread. */
     virtual bool IsSlave() = 0;
 #endif // ENABLE_DETACH
-
 };
-
 
 #ifdef SOCKETS_NAMESPACE
 }
 #endif
 
 #endif // _SOCKETS_ISocketHandler_H
-
 

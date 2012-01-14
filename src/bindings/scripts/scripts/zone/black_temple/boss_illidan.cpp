@@ -356,8 +356,6 @@ static Animation DemonTransformation[]=
     {0, SPELL_DEMON_TRANSFORM_3, 0, 0, 0, 8, true}
 };
 
-
-
 /************************************** Illidan's AI ***************************************/
 struct TRINITY_DLL_DECL boss_illidan_stormrageAI : public ScriptedAI
 {
@@ -964,8 +962,6 @@ struct TRINITY_DLL_DECL flame_of_azzinothAI : public ScriptedAI
     }
 };
 
-
-
 /******* Functions and vars for Akama's AI ******/
 struct TRINITY_DLL_DECL npc_akama_illidanAI : public ScriptedAI
 {
@@ -1018,7 +1014,6 @@ struct TRINITY_DLL_DECL npc_akama_illidanAI : public ScriptedAI
                 for (uint8 i = 0; i < 2; ++i)
                     pInstance->HandleGameObject(DoorGUID[i], true);
             }
-
         }
         else
         {
@@ -1398,7 +1393,6 @@ struct TRINITY_DLL_DECL npc_akama_illidanAI : public ScriptedAI
     }
 };
 
-
 struct TRINITY_DLL_DECL boss_maievAI : public ScriptedAI
 {
     boss_maievAI(Creature *c) : ScriptedAI(c) {};
@@ -1605,7 +1599,6 @@ struct TRINITY_DLL_DECL boss_maievAI : public ScriptedAI
                 DoMeleeAttackIfReady();
     }
 };
-
 
 bool GossipSelect_npc_akama_at_illidan(Player *player, Creature *_Creature, uint32 sender, uint32 action)
 {
@@ -2010,7 +2003,6 @@ void boss_illidan_stormrageAI::HandleTalkSequence()
     TalkCount++;
 }
 
-
 void boss_illidan_stormrageAI::CastEyeBlast()
 {
     m_creature->InterruptNonMeleeSpells(false);
@@ -2082,7 +2074,6 @@ void boss_illidan_stormrageAI::SummonMaiev()
         error_log("SD2 ERROR: Unable to summon Maiev Shadowsong (entry: 23197). Check your database to see if you have the proper SQL for Maiev Shadowsong (entry: 23197)");
     }
 }
-
 
 void boss_illidan_stormrageAI::EnterPhase(PhaseIllidan NextPhase)
 {

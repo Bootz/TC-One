@@ -341,7 +341,6 @@ struct TRINITY_DLL_DECL boss_malchezaarAI : public ScriptedAI
                 target->SetHealth(1);
             }
         }
-
     }
 
     void EnfeebleResetHealth()
@@ -500,7 +499,6 @@ struct TRINITY_DLL_DECL boss_malchezaarAI : public ScriptedAI
             {
                 DoCast(m_creature->getVictim(), SPELL_SUNDER_ARMOR);
                 SunderArmorTimer = 15000;
-
             }else SunderArmorTimer -= diff;
         }
         else

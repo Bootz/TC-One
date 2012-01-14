@@ -39,7 +39,6 @@ class ACE_Time_Value;
 
 namespace ACE_OS
 {
-
   /// Compares two strings (case insensitive const char version).
   ACE_NAMESPACE_INLINE_FUNCTION
   int strcasecmp (const char *s, const char *t);
@@ -69,7 +68,6 @@ namespace ACE_OS
   extern ACE_Export
   int strncasecmp_emulation (const char *s, const char *t, size_t len);
 #endif /* ACE_LACKS_STRCASECMP */
-
 } /* namespace ACE_OS */
 
 ACE_END_VERSIONED_NAMESPACE_DECL

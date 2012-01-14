@@ -34,7 +34,6 @@ BattleGroundNA::BattleGroundNA()
 
 BattleGroundNA::~BattleGroundNA()
 {
-
 }
 
 void BattleGroundNA::Update(time_t diff)
@@ -196,7 +195,6 @@ void BattleGroundNA::FillInitialWorldStates(WorldPacket &data)
 
 void BattleGroundNA::ResetBGSubclass()
 {
-
 }
 
 bool BattleGroundNA::SetupBattleGround()

@@ -164,7 +164,6 @@ struct TRINITY_DLL_DECL boss_doomlordkazzakAI : public ScriptedAI
 
         DoMeleeAttackIfReady();
     }
-
 };
 
 CreatureAI* GetAI_boss_doomlordkazzak(Creature *_Creature)

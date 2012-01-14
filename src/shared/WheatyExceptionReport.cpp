@@ -375,7 +375,6 @@ void WheatyExceptionReport::printTracesForAllThreads()
   CloseHandle( hThreadSnap );
 }
 
-
 //===========================================================================
 // Open the report file, and write the desired information to it.  Called by
 // WheatyUnhandledExceptionFilter
@@ -672,7 +671,6 @@ bool bWriteVariables, HANDLE pThreadHandle)                                     
             ))
         {
             _tprintf( _T("%hs+%I64X"), sip.si.Name, symDisplacement );
-
         }
         else                                                // No symbol found.  Print out the logical address instead.
         {
@@ -715,7 +713,6 @@ bool bWriteVariables, HANDLE pThreadHandle)                                     
             _tprintf( _T("\r\n") );
         }
     }
-
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -728,7 +725,6 @@ PSYMBOL_INFO  pSymInfo,
 ULONG         SymbolSize,
 PVOID         UserContext )
 {
-
     char szBuffer[2048];
 
     __try

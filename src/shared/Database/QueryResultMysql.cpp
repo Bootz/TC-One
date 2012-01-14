@@ -25,7 +25,6 @@
 QueryResultMysql::QueryResultMysql(MYSQL_RES *result, uint64 rowCount, uint32 fieldCount) :
 QueryResult(rowCount, fieldCount), mResult(result)
 {
-
     mCurrentRow = new Field[mFieldCount];
     ASSERT(mCurrentRow);
 

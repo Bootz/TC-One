@@ -165,7 +165,6 @@ struct flock
 ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 namespace ACE_OS {
-
   /**
    * @class ace_flock_t
    *
@@ -304,7 +303,6 @@ namespace ACE_OS {
                     ACE_OFF_T len = 0);
 
   //@}
-
 
   ACE_NAMESPACE_INLINE_FUNCTION
   ACE_HANDLE fileno (FILE *stream);
@@ -536,7 +534,6 @@ namespace ACE_OS {
   int vaswprintf_emulation (wchar_t **bufp, const wchar_t *format, va_list argptr);
 #endif /* !ACE_HAS_VASWPRINTF */
 #endif /* ACE_HAS_WCHAR */
-
 } /* namespace ACE_OS */
 
 ACE_END_VERSIONED_NAMESPACE_DECL

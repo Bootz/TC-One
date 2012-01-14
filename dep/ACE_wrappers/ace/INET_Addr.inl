@@ -2,7 +2,6 @@
 //
 // $Id: INET_Addr.inl 91685 2010-09-09 09:35:14Z johnnyw $
 
-
 #include "ace/OS_NS_string.h"
 #include "ace/Global_Macros.h"
 #include "ace/OS_NS_arpa_inet.h"

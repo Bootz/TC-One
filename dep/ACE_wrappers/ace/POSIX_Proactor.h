@@ -73,7 +73,6 @@ public:
     PROACTOR_CB     = 4
   };
 
-
   enum SystemType  // open for future extention
   {
     ACE_OS_UNDEFINED= 0x0000,
@@ -311,7 +310,6 @@ protected:
 private:
   /// Task to process pseudo-asynchronous accept/connect
   ACE_Asynch_Pseudo_Task  pseudo_task_;
-
 };
 
 // Forward declarations.
@@ -326,7 +324,6 @@ class ACE_AIOCB_Notify_Pipe_Manager;
  */
 class ACE_Export ACE_POSIX_AIOCB_Proactor : public ACE_POSIX_Proactor
 {
-
   /// Handler needs to call application specific code.
   friend class ACE_AIOCB_Notify_Pipe_Manager;
 
@@ -335,7 +332,6 @@ class ACE_Export ACE_POSIX_AIOCB_Proactor : public ACE_POSIX_Proactor
   friend class ACE_POSIX_Asynch_Operation;
   friend class ACE_POSIX_Asynch_Accept;
   friend class ACE_POSIX_Asynch_Connect;
-
 
 public:
   /// Constructor defines max number asynchronous operations
@@ -459,7 +455,6 @@ protected:
   /// Process the internal results queue
   int process_result_queue (void);
 
-
   /// This class takes care of doing <accept> when we use
   /// AIO_CONTROL_BLOCKS strategy.
   ACE_AIOCB_Notify_Pipe_Manager *aiocb_notify_pipe_manager_;
@@ -507,7 +502,6 @@ protected:
  */
 class ACE_Export ACE_POSIX_SIG_Proactor : public ACE_POSIX_AIOCB_Proactor
 {
-
   /**
    * This class does the registering of Asynch Operations with the
    * Proactor which is necessary in the SIG strategy, because we need
@@ -606,7 +600,6 @@ protected:
   sigset_t RT_completion_signals_;
 };
 
-
 #endif /* ACE_HAS_POSIX_REALTIME_SIGNALS */
 
 /**
@@ -619,7 +612,6 @@ protected:
  */
 class ACE_Export ACE_POSIX_Asynch_Timer : public ACE_POSIX_Asynch_Result
 {
-
   /// The factory method for this class is with the POSIX_Proactor
   /// class.
   friend class ACE_POSIX_Proactor;

@@ -12,7 +12,6 @@ ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 namespace ACE_OS
 {
-
 ACE_INLINE void
 closedir (ACE_DIR *d)
 {
@@ -178,7 +177,6 @@ telldir (ACE_DIR *d)
   ACE_NOTSUP_RETURN (-1);
 #endif /* ! ACE_HAS_DIRENT  ||  ACE_LACKS_TELLDIR */
 }
-
 }
 
 ACE_END_VERSIONED_NAMESPACE_DECL

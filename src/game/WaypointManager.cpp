@@ -91,16 +91,13 @@ void WaypointStore::Load()
         waypoint_map[id] = path_data;
 
         last_id = id;
-
     } while(result->NextRow()) ;
-
 
     delete result;
 }
 
 void WaypointStore::UpdatePath(uint32 id)
 {
-
     if(waypoint_map.find(id)!= waypoint_map.end())
         waypoint_map[id]->clear();
 
@@ -142,7 +139,6 @@ void WaypointStore::UpdatePath(uint32 id)
         wp->event_chance = fields[8].GetUInt8();
 
         path_data->push_back(wp);
-
     }while (result->NextRow());
 
     waypoint_map[id] = path_data;

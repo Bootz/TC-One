@@ -81,7 +81,6 @@ struct TRINITY_DLL_DECL boss_moira_bronzebeardAI : public ScriptedAI
             DoCast(m_creature->getVictim(),SPELL_SMITE);
             Smite_Timer = 10000;
         }else Smite_Timer -= diff;
-
     }
 };
 CreatureAI* GetAI_boss_moira_bronzebeard(Creature *_Creature)

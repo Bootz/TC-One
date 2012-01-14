@@ -36,7 +36,6 @@
 #endif
 
 namespace ZThread {
-  
   /**
    * @class CountedPtr
    *
@@ -47,7 +46,6 @@ namespace ZThread {
    */
   template <typename T, typename CountT = AtomicCount>
     class CountedPtr {
-
 #if !defined(__MWERKS__)
 #if !defined(_MSC_VER) || (_MSC_VER > 1200)
       template <typename U, typename V> friend class CountedPtr;
@@ -80,10 +78,8 @@ namespace ZThread {
 #if !defined(_MSC_VER) || (_MSC_VER > 1200)
 
       CountedPtr(const CountedPtr& ptr) : _count(ptr._count), _instance(ptr._instance) {
-
         if(_count)
           (*_count)++;
-
       }
 
 #endif
@@ -91,77 +87,60 @@ namespace ZThread {
 
       template <typename U, typename V>
       CountedPtr(const CountedPtr<U, V>& ptr) : _count(ptr._count), _instance(ptr._instance) {
-
         if(_count)
           (*_count)++;
-
       }
 
       ~CountedPtr() {
-
         if(_count && --(*_count) == 0) {
-   
-          if(_instance) 
+          if(_instance)
             delete _instance;
 
           delete _count;
-      
         }
-
       }
-  
 
 #if !defined(__MWERKS__)
 #if !defined(_MSC_VER) || (_MSC_VER > 1200)
 
       const CountedPtr& operator=(const CountedPtr& ptr) {
-    
         typedef CountedPtr<T, CountT> ThisT;
 
         ThisT(ptr).swap(*this);
         return *this;
-
-      } 
+      }
 
 #endif
 #endif
 
       template <typename U, typename V>
       const CountedPtr& operator=(const CountedPtr<U, V>& ptr) {
-    
         typedef CountedPtr<T, CountT> ThisT;
 
         ThisT(ptr).swap(*this);
         return *this;
-
-      } 
+      }
 
       void reset() {
-
         typedef CountedPtr<T, CountT> ThisT;
         ThisT().swap(*this);
-
       }
 
 #if !defined(__MWERKS__)
 #if !defined(_MSC_VER) || (_MSC_VER > 1200)
 
       void swap(CountedPtr& ptr) {
-
         std::swap(_count, ptr._count);
         std::swap(_instance, ptr._instance);
-
       }
 
 #endif
 #endif
-	  
+
       template <typename U, typename V>
       void swap(CountedPtr<U, V>& ptr) {
-
         std::swap(_count, ptr._count);
         std::swap(_instance, ptr._instance);
-
       }
 
       // Convience operators
@@ -181,7 +160,6 @@ namespace ZThread {
         return _instance < ptr._instance;
       }
 
-
 #if !defined(__MWERKS__)
 #if !defined(_MSC_VER) || (_MSC_VER > 1200)
 
@@ -197,7 +175,6 @@ namespace ZThread {
         return _count == ptr._count;
       }
 
-
       friend inline bool operator==(const CountedPtr& lhs, const CountedPtr& rhs) {
         return lhs.equal(rhs);
       }
@@ -205,7 +182,6 @@ namespace ZThread {
       friend inline bool operator<(const CountedPtr& lhs, const CountedPtr& rhs) {
         return lhs.less(rhs);
       }
-
 
       T& operator*() {
         assert(_instance != 0);
@@ -221,7 +197,7 @@ namespace ZThread {
         assert(_instance != 0);
         return _instance;
       }
- 
+
       bool operator!() const {
         return _instance == 0;
       }
@@ -229,25 +205,24 @@ namespace ZThread {
       operator bool() const {
         return _instance != 0;
       }
-      
     }; /* CountedPtr */
 
-  template<typename U, typename V, typename X, typename Y> 
+  template<typename U, typename V, typename X, typename Y>
     inline bool operator<(CountedPtr<U, V> const &lhs, CountedPtr<X, Y> const &rhs) {
     return lhs.less(rhs);
   }
 
-  template<typename U, typename V, typename X, typename Y> 
+  template<typename U, typename V, typename X, typename Y>
     inline bool operator==(CountedPtr<U, V> const &lhs, CountedPtr<X, Y> const &rhs) {
     return lhs.equal(rhs.get);
   }
 
-  template<typename U, typename V, typename X, typename Y> 
+  template<typename U, typename V, typename X, typename Y>
     inline bool operator!=(CountedPtr<U, V> const &lhs, CountedPtr<X, Y> const &rhs) {
     return !(lhs.equal(rhs.get));
   }
 
-  template<typename U, typename V, typename X, typename Y> 
+  template<typename U, typename V, typename X, typename Y>
     inline void swap(CountedPtr<U, V> const &lhs, CountedPtr<X, Y> const &rhs) {
     lhs.swap(rhs);
   }
@@ -260,30 +235,28 @@ namespace ZThread {
     return lhs.less(rhs);
   }
 
-  template<typename U, typename V> 
+  template<typename U, typename V>
     inline bool operator==(CountedPtr<U, V> const &lhs, CountedPtr<U, V> const &rhs) {
     return lhs.equal(rhs.get);
   }
 
-  template<typename U, typename V> 
+  template<typename U, typename V>
     inline bool operator!=(CountedPtr<U, V> const &lhs, CountedPtr<U, V> const &rhs) {
     return !(lhs.equal(rhs.get));
   }
 
-  template<typename U, typename V> 
+  template<typename U, typename V>
     inline void swap(CountedPtr<U, V> const &lhs, CountedPtr<U, V> const &rhs) {
     lhs.swap(rhs);
   }
 
 #endif
 #endif
-
 } // namespace ZThread
 
 #ifdef _MSC_VER
 # pragma warning(pop)
 # pragma warning(pop)
-#endif    
-
+#endif
 
 #endif // __ZTCOUNTEDPTR_H__

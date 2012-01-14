@@ -37,7 +37,6 @@ ACE_BEGIN_VERSIONED_NAMESPACE_DECL
 
 namespace ACE_OS
 {
-
   ACE_NAMESPACE_INLINE_FUNCTION
   ssize_t readv (ACE_HANDLE handle,
                  const iovec *iov,
@@ -63,7 +62,6 @@ namespace ACE_OS
                             const iovec *iov,
                             int iovcnt);
 #endif /* ACE_LACKS_WRITEV */
-
 } /* namespace ACE_OS */
 
 ACE_END_VERSIONED_NAMESPACE_DECL

@@ -34,7 +34,6 @@ Models with a lot of vectors are not merged into a resulting model, but separate
 
 namespace VMAP
 {
-
     #define MIN_VERTICES_FOR_OWN_CONTAINER_FILE 65000
 
     // if we are in an instance
@@ -82,7 +81,6 @@ namespace VMAP
                 sprintf(b,"%03u_%d_%d", pMapId, pXPos, pYPos);
                 return(std::string(b));
             }
-
     };
 
     //=====================================================
@@ -142,7 +140,6 @@ namespace VMAP
             }
             inline bool isWorldAreaMap(unsigned int pMapId) { return(iWorldAreaGroups.contains(pMapId)); }
             void setModelNameFilterMethod(bool (*pFilterMethod)(char *pName)) { iFilterMethod = pFilterMethod; }
-
     };
 }
 #endif                                                      /*_COORDMODELMAPPING_H_*/
