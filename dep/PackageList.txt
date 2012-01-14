@@ -28,5 +28,4 @@ zlib (A Massively Spiffy Yet Delicately Unobtrusive Compression Library)
   OpenSSL v1.0.0d
   sockets v2.2.8
   postgre v1.8.0
-  sqllite v1.3.0
   vld     v1.9d
