@@ -52,11 +52,11 @@ public:
   }
 
   inline unsigned long seconds() const {
-    return (unsigned long)_value.time;
+    return _value.time;
   }
 
-  inline unsigned long milliseconds() const {
-    return _value.millitm;
+  inline unsigned long milliseconds() const {  
+    return _value.millitm;    
   }
 
   unsigned long seconds(unsigned long s) {
@@ -82,4 +82,3 @@ public:
 };
 
 #endif // __ZTTIMESTRATEGY_H__
-

@@ -29,7 +29,7 @@
 #  error "Reserved symbol defined"
 #endif
 
-// Include the dependencies for a Montior
+// Include the dependencies for a Montior 
 #ifdef HAVE_CONFIG_H
 #  include "config.h"
 #endif
@@ -58,4 +58,3 @@
 #endif
 
 #endif // __ZTMONITORSELECT_H__
-

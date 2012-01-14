@@ -24,7 +24,10 @@ zlib (A Massively Spiffy Yet Delicately Unobtrusive Compression Library)
   http://www.zlib.net/
   Version: 1.2.5
 
-
+ZThread (ZThread is an advanced object-oriented threading and synchronization library)
+  http://zthread.sourceforge.net/
+  Version: 2.3.2
+  
   OpenSSL v1.0.0d
   sockets v2.2.8
   postgre v1.8.0

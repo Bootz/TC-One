@@ -37,4 +37,3 @@ namespace ZThread {
 }
 
 #endif // __ZTPRIORITY_H__
-

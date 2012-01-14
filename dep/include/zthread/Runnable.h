@@ -30,7 +30,7 @@ namespace ZThread {
 
   /**
    * @class Runnable
-   *
+   * 
    * @author Eric Crahen <http://www.code-foo.com>
    * @date <2003-07-16T17:45:35-0400>
    * @version 2.2.11
@@ -51,9 +51,8 @@ namespace ZThread {
     virtual void run() = 0;
 
   };
-
+ 
 
 }
 
 #endif // __ZTRUNNABLE_H__
-
