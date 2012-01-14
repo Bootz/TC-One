@@ -53,4 +53,3 @@ typedef struct st_mysql_time
 } MYSQL_TIME;
 
 #endif /* _mysql_time_h_ */
-

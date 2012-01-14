@@ -1,0 +1,32 @@
+TrinityCore uses (parts of or in whole) the following opensource software :
+
+ACE (ADAPTIVE Communication Environment)
+  http://www.cs.wustl.edu/~schmidt/ACE.html
+  Version: 5.8.3
+
+G3D (a commercial-grade C++ 3D engine available as Open Source (BSD License)
+  http://g3d.sourceforge.net/
+  Version: 8.0-Release
+
+MersenneTwister (a very fast random number generator)
+  http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html
+  Version: 0.4.2
+
+MySQL (the world's most popular open source database software)
+  http://www.mysql.com/
+  Version: 5.1.49 (GA)
+
+utf8-cpp (UTF-8 with C++ in a Portable Way)
+  http://utfcpp.sourceforge.net/
+  Version: 2.2.4
+
+zlib (A Massively Spiffy Yet Delicately Unobtrusive Compression Library)
+  http://www.zlib.net/
+  Version: 1.2.5
+
+
+  OpenSSL v1.0.0d
+  sockets v2.2.8
+  postgre v1.8.0
+  sqllite v1.3.0
+  vld     v1.9d
