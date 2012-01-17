@@ -1,7 +1,7 @@
+add_subdirectory(base_create)
+add_subdirectory(full_db)
+add_subdirectory(scripts)
 add_subdirectory(updates)
-add_subdirectory(tools)
-add_subdirectory(full_tables)
-
 
 ########### install files ###############
 
